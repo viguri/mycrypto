@@ -1,0 +1,16 @@
+{
+  "name": "vigcoin",
+  "version": "1.0.0",
+  "description": "A simple blockchain cryptocurrency implementation",
+  "main": "src/server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "open src/index.html && yarn start"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5"
+  }
+}

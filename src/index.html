@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VigCoin - Blockchain Explorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .transaction {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VigCoin Blockchain Explorer</h1>
+        
+        <div class="section">
+            <h2>Create Transaction</h2>
+            <input type="text" id="fromAddress" placeholder="From Address">
+            <input type="text" id="toAddress" placeholder="To Address">
+            <input type="number" id="amount" placeholder="Amount">
+            <button onclick="createTransaction()">Send Transaction</button>
+        </div>
+
+        <div class="section">
+            <h2>Mine Block</h2>
+            <input type="text" id="minerAddress" placeholder="Miner Address">
+            <button onclick="mineBlock()">Mine Block</button>
+        </div>
+
+        <div class="section">
+            <h2>Check Balance</h2>
+            <input type="text" id="checkAddress" placeholder="Address">
+            <button onclick="checkBalance()">Check Balance</button>
+            <div id="balance"></div>
+        </div>
+
+        <div class="section">
+            <h2>Blockchain Status</h2>
+            <button onclick="getBlockchain()">Refresh Blockchain</button>
+            <div id="blockchain"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000';
+
+        async function createTransaction() {
+            const fromAddress = document.getElementById('fromAddress').value;
+            const toAddress = document.getElementById('toAddress').value;
+            const amount = Number(document.getElementById('amount').value);
+
+            try {
+                const response = await fetch(`${API_URL}/transaction`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ fromAddress, toAddress, amount }),
+                });
+                const data = await response.json();
+                alert(data.message);
+            } catch (error) {
+                alert('Error creating transaction: ' + error.message);
+            }
+        }
+
+        async function mineBlock() {
+            const minerAddress = document.getElementById('minerAddress').value;
+
+            try {
+                const response = await fetch(`${API_URL}/mine`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ minerAddress }),
+                });
+                const data = await response.json();
+                alert(data.message);
+                getBlockchain();
+            } catch (error) {
+                alert('Error mining block: ' + error.message);
+            }
+        }
+
+        async function checkBalance() {
+            const address = document.getElementById('checkAddress').value;
+
+            try {
+                const response = await fetch(`${API_URL}/balance/${address}`);
+                const data = await response.json();
+                document.getElementById('balance').innerHTML = 
+                    `Balance for ${data.address}: ${data.balance} VigCoins`;
+            } catch (error) {
+                alert('Error checking balance: ' + error.message);
+            }
+        }
+
+        async function getBlockchain() {
+            try {
+                const response = await fetch(`${API_URL}/blockchain`);
+                const data = await response.json();
+                document.getElementById('blockchain').innerHTML = 
+                    `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                alert('Error fetching blockchain: ' + error.message);
+            }
+        }
+
+        // Initial load of blockchain data
+        getBlockchain();
+    </script>
+</body>
+</html>
