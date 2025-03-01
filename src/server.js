@@ -1,51 +1,85 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
-const { Blockchain, Transaction } = require('./blockchain');
+const Blockchain = require('./blockchain/Blockchain');
+const logger = require('./utils/logger');
 
 const app = express();
-app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000;
+
+// Middleware
 app.use(cors());
+app.use(express.json());
 
-// Initialize our blockchain
-const vigCoin = new Blockchain();
-
-// Routes
-app.get('/blockchain', (req, res) => {
-    res.json(vigCoin);
+// Log middleware
+app.use((req, res, next) => {
+    logger.info('Request received', {
+        component: 'server',
+        method: req.method,
+        path: req.path,
+        ip: req.ip
+    });
+    next();
 });
 
-app.post('/transaction', (req, res) => {
-    const { fromAddress, toAddress, amount } = req.body;
-    
+// Initialize blockchain and server
+const startServer = async () => {
     try {
-        const transaction = new Transaction(fromAddress, toAddress, amount);
-        vigCoin.addTransaction(transaction);
-        res.json({ message: 'Transaction added successfully' });
+        // Create and initialize blockchain
+        const blockchain = new Blockchain();
+        await blockchain.initialize();
+
+        // Import routes
+        const blockchainRoutes = require('./api/routes/blockchain')(blockchain);
+        const transactionRoutes = require('./api/routes/transactions')(blockchain);
+        const registrationRoutes = require('./api/routes/registration')(blockchain);
+        const miningRoutes = require('./api/routes/mining')(blockchain);
+
+        // Mount routes
+        app.use('/blockchain', blockchainRoutes);
+        app.use('/transactions', transactionRoutes);
+        app.use('/register', registrationRoutes);
+        app.use('/mining', miningRoutes);
+
+        // Test endpoint (matches proxy configuration)
+        app.get('/test', (req, res) => {
+            logger.info('Test endpoint hit', {
+                component: 'api'
+            });
+            res.json({ status: 'ok' });
+        });
+
+        // Error handling middleware
+        app.use((err, req, res, next) => {
+            logger.error('Unhandled error', {
+                component: 'server',
+                error: err.message,
+                stack: err.stack
+            });
+
+            res.status(500).json({
+                error: 'ServerError',
+                message: 'Internal server error'
+            });
+        });
+
+        // Start server
+        app.listen(PORT, () => {
+            logger.info('Server started', {
+                component: 'server',
+                port: PORT,
+                genesisHash: blockchain.chain[0].hash
+            });
+        });
+
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        logger.error('Failed to start server', {
+            component: 'server',
+            error: error.message,
+            critical: true
+        });
+        process.exit(1);
     }
-});
+};
 
-app.post('/mine', (req, res) => {
-    const { minerAddress } = req.body;
-    
-    vigCoin.minePendingTransactions(minerAddress);
-    res.json({ 
-        message: 'Block mined successfully',
-        reward: `Mining reward of ${vigCoin.miningReward} coins will be sent to ${minerAddress}`
-    });
-});
-
-app.get('/balance/:address', (req, res) => {
-    const balance = vigCoin.getBalanceOfAddress(req.params.address);
-    res.json({
-        address: req.params.address,
-        balance: balance
-    });
-});
-
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`VigCoin server running on port ${PORT}`);
-});
+// Start the server
+startServer();

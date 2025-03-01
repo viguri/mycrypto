@@ -1,21 +1,27 @@
 # VigCoin
 
-A simple blockchain cryptocurrency implementation built with Node.js. This project demonstrates the basic concepts of blockchain technology and cryptocurrency.
+A secure blockchain cryptocurrency implementation built with Node.js. This project demonstrates blockchain technology concepts with a focus on security and scalability.
 
 ## Features
 
-- Proof-of-work blockchain implementation
-- Transaction management system
-- Mining rewards system
-- REST API for blockchain interaction
-- Web-based interface for easy interaction
-- Balance checking functionality
+- Secure proof-of-work blockchain implementation
+- Public/private key cryptography for transactions
+- Digital signatures and transaction verification
+- Merkle tree implementation for block integrity
+- Transaction validation and memory pool
+- Dynamic mining difficulty adjustment
+- Rate-limited REST API with input validation
+- Comprehensive error handling
+- Web-based interface for blockchain interaction
 
 ## Technical Stack
 
 - Backend: Node.js with Express
-- Frontend: HTML, CSS, JavaScript
-- Cryptography: Node.js crypto module
+- Security: Node.js crypto module for cryptography
+- Validation: Joi for request validation
+- API Protection: Helmet and rate limiting
+- Testing: Jest and Supertest
+- Development: ESLint and Nodemon
 - Package Manager: Yarn
 
 ## Project Structure
@@ -23,10 +29,23 @@ A simple blockchain cryptocurrency implementation built with Node.js. This proje
 ```
 vigcoin/
 ├── src/
-│   ├── blockchain.js    # Core blockchain implementation
-│   ├── server.js        # REST API server
-│   └── index.html       # Web interface
-└── package.json         # Project configuration
+│   ├── blockchain/
+│   │   ├── Block.js         # Block implementation
+│   │   ├── Transaction.js   # Transaction implementation
+│   │   └── Blockchain.js    # Core blockchain logic
+│   ├── api/
+│   │   ├── routes/         # API route handlers
+│   │   ├── middlewares/    # Express middlewares
+│   │   └── validators/     # Request validation schemas
+│   ├── services/
+│   │   └── CryptoService.js # Cryptography utilities
+│   ├── config/            # Configuration files
+│   └── utils/             # Utility functions
+├── tests/                 # Test files
+└── client/               # Web interface
+    ├── src/
+    ├── public/
+    └── index.html
 ```
 
 ## Installation
@@ -44,101 +63,126 @@ cd vigcoin
 yarn install
 ```
 
-## Usage
+## Development
 
-1. Start the server:
+1. Start the development server:
 
 ```bash
-yarn start
+yarn dev
 ```
 
-2. Open `src/index.html` in your web browser to access the web interface.
+2. Run tests:
+
+```bash
+yarn test
+```
+
+3. Lint code:
+
+```bash
+yarn lint
+```
+
+## API Security Features
+
+- Request validation for all endpoints
+- Rate limiting to prevent abuse
+- CORS protection
+- Helmet security headers
+- Error handling middleware
+- Input sanitization
 
 ## API Endpoints
 
-The server runs on `http://localhost:3000` and provides the following endpoints:
+The server runs on `http://localhost:3000` and provides the following secure endpoints:
+
+### Blockchain Operations
 
 - `GET /blockchain` - Get the entire blockchain
-- `POST /transaction` - Create a new transaction
+- `GET /blockchain/validate` - Validate chain integrity
+- `GET /blockchain/block/:index` - Get specific block
+
+### Transaction Operations
+
+- `POST /transactions` - Create a new transaction
   ```json
   {
-    "fromAddress": "address1",
-    "toAddress": "address2",
-    "amount": 50
+    "fromAddress": "sender-address",
+    "toAddress": "recipient-address",
+    "amount": 50,
+    "signature": "transaction-signature"
   }
   ```
+- `GET /transactions/pending` - List pending transactions
+- `GET /transactions/address/:address` - Get address history
+- `GET /transactions/balance/:address` - Get address balance
+
+### Mining Operations
+
 - `POST /mine` - Mine a new block
   ```json
   {
-    "minerAddress": "minerAddress"
+    "minerAddress": "miner-address"
   }
   ```
-- `GET /balance/:address` - Get the balance of a specific address
-
-## Web Interface Features
-
-1. **Create Transaction**
-
-   - Enter sender's address
-   - Enter recipient's address
-   - Specify amount to send
-   - Submit transaction
-
-2. **Mine Block**
-
-   - Enter miner's address
-   - Mine new block (includes mining reward)
-
-3. **Check Balance**
-
-   - Enter address to check
-   - View current balance
-
-4. **Blockchain Viewer**
-   - View entire blockchain
-   - Refresh to see updates
-
-## Technical Details
-
-### Block Structure
-
-Each block contains:
-
-- Timestamp
-- Transactions array
-- Previous block's hash
-- Current block's hash
-- Nonce (for proof-of-work)
-
-### Mining Process
-
-- Proof-of-work system
-- Difficulty level: 2 (number of leading zeros required in hash)
-- Mining reward: 100 VigCoins
-- Automatic verification of chain integrity
-
-### Transaction System
-
-- Tracks sender and recipient addresses
-- Maintains transaction amounts
-- Validates transaction data
-- Manages pending transactions
+- `GET /mine/stats` - Get mining statistics
+- `GET /mine/difficulty` - Get current mining difficulty
 
 ## Security Considerations
 
-This is a basic implementation for educational purposes. In a production environment, you would need to consider:
+This implementation includes:
 
-- Private key/public key cryptography
-- Secure wallet implementation
-- Peer-to-peer networking
-- Transaction verification
-- Network consensus mechanisms
-- Protection against various blockchain attacks
+1. **Cryptographic Security**
 
-## License
+   - Public/private key pairs for wallets
+   - Transaction signing and verification
+   - Secure hash functions
+   - Merkle trees for transaction verification
 
-MIT License (or specify your chosen license)
+2. **Data Validation**
+
+   - Input validation for all API endpoints
+   - Transaction amount validation
+   - Address format verification
+   - Chain integrity checks
+
+3. **API Protection**
+
+   - Rate limiting
+   - CORS protection
+   - Security headers
+   - Request sanitization
+
+4. **Error Handling**
+   - Custom error types
+   - Detailed error messages
+   - Global error handling
+   - Validation error formatting
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## Testing
+
+Run the test suite:
+
+```bash
+# Run all tests
+yarn test
+
+# Run tests in watch mode
+yarn test:watch
+```
+
+## License
+
+MIT License
+
+## Author
+
+Your Name

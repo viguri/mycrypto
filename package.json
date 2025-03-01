@@ -1,16 +1,44 @@
 {
   "name": "vigcoin",
   "version": "1.0.0",
-  "description": "A simple blockchain cryptocurrency implementation",
+  "description": "A secure blockchain cryptocurrency implementation",
   "main": "src/server.js",
   "license": "MIT",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "open src/index.html && yarn start"
+    "dev": "nodemon src/server.js",
+    "client": "node client/server.js",
+    "dev:client": "nodemon client/server.js",
+    "dev:all": "concurrently \"yarn dev\" \"yarn dev:client\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "axios": "^1.8.1",
     "body-parser": "^1.19.0",
-    "cors": "^2.8.5"
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "http-proxy-middleware": "^3.0.3",
+    "joi": "^17.13.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
