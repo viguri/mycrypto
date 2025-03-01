@@ -1,83 +1,44 @@
-const express = require('express');
-const path = require('path');
-const { createProxyMiddleware } = require('http-proxy-middleware');
+import express from 'express';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = 8080;
-const API_TARGET = 'http://localhost:3000';
+const port = process.env.PORT || 8080;
 
-// Request logging
-const logRequest = (req, res, next) => {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [CLIENT] ${req.method} ${req.originalUrl}`);
-    next();
-};
+// Serve static files from public directory
+app.use(express.static(join(__dirname, 'public')));
 
-app.use(logRequest);
-
-// Serve static files from the public directory with caching disabled
-app.use(express.static(path.join(__dirname, 'public'), {
-    etag: false,
-    lastModified: false,
-    setHeaders: (res) => {
-        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
-    }
-}));
-
-// Create API proxy middleware
-const apiProxy = createProxyMiddleware({
-    target: API_TARGET,
+// Configure proxy settings
+const proxyConfig = {
+    target: 'http://localhost:3000',
     changeOrigin: true,
-    pathRewrite: { '^/api': '' }, // Strip /api prefix when forwarding
-    onProxyReq: (proxyReq, req, res) => {
-        // Handle POST requests with JSON body
-        if (req.method === 'POST' && req.body) {
-            const bodyData = JSON.stringify(req.body);
-            // Update headers
-            proxyReq.setHeader('Content-Type', 'application/json');
-            proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
-            // Write body data
-            proxyReq.write(bodyData);
-        }
-
-        // Log proxy requests
-        console.log('[PROXY]', {
-            from: req.originalUrl,
-            to: API_TARGET + proxyReq.path,
-            method: req.method,
-            body: req.body
-        });
-    },
+    pathRewrite: path => path,  // keep original paths
     onError: (err, req, res) => {
-        console.error('[PROXY] Error:', err);
+        console.error('Proxy error:', err);
         res.status(500).json({
             error: 'ProxyError',
-            message: 'Failed to connect to blockchain node'
+            message: 'Failed to connect to API server'
         });
-    }
-});
+    },
+    logLevel: 'warn'
+};
 
-// Parse JSON bodies before proxy middleware
-app.use(express.json());
+// Proxy all /api requests
+app.use('/api', createProxyMiddleware(proxyConfig));
 
-// Mount API routes
-app.use('/api', apiProxy);
-
-// Error handler
-app.use((err, req, res, next) => {
-    console.error('[CLIENT] Error:', err);
-    res.status(500).json({
-        error: 'ServerError',
-        message: err.message
-    });
+// Handle client-side routing
+app.get('*', (req, res) => {
+    res.sendFile(join(__dirname, 'public', 'index.html'));
 });
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`
-[CLIENT] Server started:
-- Client app running at http://localhost:${PORT}
-- API endpoints available at http://localhost:${PORT}/api/*
-- Proxying API requests to ${API_TARGET}
-    `);
+app.listen(port, () => {
+    console.log('\n[CLIENT] Server started:');
+    console.log(`- Client app running at http://localhost:${port}`);
+    console.log(`- API endpoints available at http://localhost:${port}/api/*`);
+    console.log('- Proxying API requests to http://localhost:3000');
 });

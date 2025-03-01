@@ -1,6 +1,6 @@
 const request = require('supertest');
 const express = require('express');
-const registrationRoutes = require('../../../src/api/routes/registration');
+const registrationRoutes = require('../../../src/api/routes/register');
 
 // Mock the logger to avoid logging during tests
 jest.mock('../../../src/utils/logger', () => ({

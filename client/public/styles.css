@@ -1,83 +1,40 @@
-:root {
-    --primary-color: #4CAF50;
-    --error-color: #f44336;
-    --text-color: #333;
-    --border-color: #ddd;
-    --bg-color: #f5f5f5;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* General styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background: var(--bg-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
-#app {
-    max-width: 800px;
+.container {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Header styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #eee;
 }
 
-header h1 {
-    color: var(--primary-color);
+h1 {
+    color: #333;
+    margin: 0 0 20px 0;
 }
 
-#connection-status {
-    padding: 5px 10px;
-    border-radius: 4px;
-    background: var(--primary-color);
-    color: white;
+#status-bar {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9em;
+    color: #666;
 }
 
-section {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-section h2 {
-    margin-bottom: 20px;
-    color: var(--text-color);
-}
-
-button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background: #45a049;
-}
-
-button:disabled {
-    background: #cccccc;
-    cursor: not-allowed;
-}
-
+/* Form styles */
 .form-group {
     margin-bottom: 15px;
 }
@@ -85,86 +42,70 @@ button:disabled {
 label {
     display: block;
     margin-bottom: 5px;
-    color: var(--text-color);
+    color: #555;
 }
 
 input {
     width: 100%;
     padding: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #ddd;
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     font-size: 1em;
 }
 
-#wallet-info {
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Wallet styles */
+.wallet-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.wallet-actions {
+    display: flex;
     gap: 10px;
 }
 
-#wallet-details {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 4px;
-    margin-top: 10px;
+.delete-btn {
+    background-color: #dc3545;
 }
 
-#wallet-details p {
-    margin: 5px 0;
+.delete-btn:hover {
+    background-color: #c82333;
 }
 
-#blockchain-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-#blockchain-info p {
-    padding: 10px;
-    background: #f8f9fa;
-    border-radius: 4px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-    font-size: 0.9em;
-}
-
-/* Wallet Management Styles */
-#wallets-list {
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.wallets-header {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    padding: 10px;
-    background: #f8f9fa;
-    font-weight: bold;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.wallet-item {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color);
-    align-items: center;
-}
-
-.wallet-item:last-child {
-    border-bottom: none;
-}
-
-.wallet-item:hover {
-    background: #f8f9fa;
-}
-
-/* Modal Styles */
+/* Modal styles */
 .modal {
     display: none;
     position: fixed;
@@ -172,64 +113,64 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
     position: relative;
-    background: white;
+    background-color: white;
     margin: 10% auto;
     padding: 20px;
     width: 80%;
     max-width: 600px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .close-modal {
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 20px;
     font-size: 24px;
     cursor: pointer;
     color: #666;
 }
 
-.wallet-transactions {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.transactions-list {
-    margin-top: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
+/* Transaction styles */
 .transaction-item {
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 0.9em;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
 }
 
-@media (max-width: 600px) {
-    #app {
-        padding: 10px;
-    }
+/* Status messages */
+.error, .success {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    display: none;
+}
 
-    section {
-        padding: 15px;
-    }
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
 
-    #blockchain-info {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .wallets-header, .wallet-item {
-        grid-template-columns: 1fr 1fr;
-        font-size: 0.9em;
-    }
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Testing hint */
+.hint {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center;
+    border: 1px solid #ffeeba;
 }

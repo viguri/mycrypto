@@ -1,5 +1,5 @@
-const winston = require('winston');
-const path = require('path');
+import winston from 'winston';
+import path from 'path';
 
 // Custom format for concise logging
 const customFormat = winston.format.printf(({ level, message, timestamp, context }) => {
@@ -44,4 +44,4 @@ const transports = {
 };
 
 // Export transports
-module.exports = transports;
+export default transports;

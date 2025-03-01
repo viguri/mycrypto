@@ -1,131 +1,131 @@
 #!/bin/bash
-
-# VigCoin API Test Script
-# Usage: 
-#   1. Make sure the backend server is running (cd src && node server.js)
-#   2. Make this script executable: chmod +x api_test.sh
-#   3. Run the script: ./api_test.sh
-#
-# Requirements:
-#   - curl
-#   - jq (for JSON formatting)
-#
-# To install jq:
-#   - Mac: brew install jq
-#   - Ubuntu/Debian: sudo apt-get install jq
-#   - Windows: choco install jq
+# Test script for blockchain API endpoints
 
 # Colors for output
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-NC='\033[0m' # No Color
-BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
 
-# Base URL
-API_URL="http://localhost:3000"
+BASE_URL="http://localhost:3000/api"
 
-echo -e "${BLUE}Starting API tests...${NC}\n"
-
-# Function to print test step
-print_step() {
-    echo -e "\n${GREEN}=== $1 ===${NC}"
+# Helper functions
+print_result() {
+    if [ $1 -eq 0 ]; then
+        echo -e "${GREEN}✓ $2${NC}"
+        if [ ! -z "$3" ]; then
+            echo "  Response: $3"
+        fi
+    else
+        echo -e "${RED}✗ $2${NC}"
+        if [ ! -z "$3" ]; then
+            echo -e "${RED}  Error: $3${NC}"
+        fi
+    fi
 }
 
-# Function to store command output
-store_output() {
-    echo "$1" > .temp_output
+print_header() {
+    echo -e "\n${YELLOW}=== $1 ===${NC}"
 }
 
-# Create first wallet
-print_step "Creating first wallet"
-WALLET1=$(curl -s -X POST "$API_URL/api/register/wallet" \
-     -H "Content-Type: application/json" | jq -r '.wallet.address')
-echo "Wallet 1 address: $WALLET1"
+# Test Registration API
+print_header "Testing Registration API"
 
-sleep 1
+# Create new wallet
+echo "Creating wallet 1..."
+WALLET1_RESPONSE=$(curl -s -X POST "${BASE_URL}/register/wallet")
+WALLET1_ADDRESS=$(echo $WALLET1_RESPONSE | jq -r '.wallet.address')
+print_result $? "Create wallet 1" "$WALLET1_RESPONSE"
 
 # Create second wallet
-print_step "Creating second wallet"
-WALLET2=$(curl -s -X POST "$API_URL/api/register/wallet" \
-     -H "Content-Type: application/json" | jq -r '.wallet.address')
-echo "Wallet 2 address: $WALLET2"
+echo "Creating wallet 2..."
+WALLET2_RESPONSE=$(curl -s -X POST "${BASE_URL}/register/wallet")
+WALLET2_ADDRESS=$(echo $WALLET2_RESPONSE | jq -r '.wallet.address')
+print_result $? "Create wallet 2" "$WALLET2_RESPONSE"
 
-sleep 1
+# Get wallet info
+echo "Getting wallet 1 info..."
+WALLET1_INFO=$(curl -s "${BASE_URL}/register/${WALLET1_ADDRESS}")
+print_result $? "Get wallet 1 info" "$WALLET1_INFO"
 
-# List all wallets
-print_step "Listing all wallets"
-curl -s -X GET "$API_URL/api/register/wallets" | jq
+# Get all wallets
+echo "Getting all wallets..."
+ALL_WALLETS=$(curl -s "${BASE_URL}/register/wallets")
+print_result $? "Get all wallets" "$ALL_WALLETS"
 
-sleep 1
+# Test Transaction API
+print_header "Testing Transaction API"
 
-# Get first wallet details
-print_step "Getting Wallet 1 details"
-curl -s -X GET "$API_URL/api/register/$WALLET1" | jq
-
-sleep 1
-
-# Get second wallet details
-print_step "Getting Wallet 2 details"
-curl -s -X GET "$API_URL/api/register/$WALLET2" | jq
-
-sleep 1
-
-# Send transaction from wallet1 to wallet2
-print_step "Creating transaction from Wallet 1 to Wallet 2"
-TX=$(curl -s -X POST "$API_URL/api/transactions" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "from": "'$WALLET1'",
-       "to": "'$WALLET2'",
-       "amount": 50
-     }' | jq -r '.transaction.hash')
-echo "Transaction hash: $TX"
-
-sleep 1
+# Create transaction
+echo "Creating transaction..."
+TX_RESPONSE=$(curl -s -X POST "${BASE_URL}/transactions" \
+    -H "Content-Type: application/json" \
+    -d "{
+        \"from\": \"${WALLET1_ADDRESS}\",
+        \"to\": \"${WALLET2_ADDRESS}\",
+        \"amount\": 50
+    }")
+print_result $? "Create transaction" "$TX_RESPONSE"
+TX_HASH=$(echo $TX_RESPONSE | jq -r '.transaction.hash')
 
 # Get pending transactions
-print_step "Getting pending transactions"
-curl -s -X GET "$API_URL/api/transactions/pending" | jq
-
-sleep 1
-
-# Get wallet1 transactions
-print_step "Getting Wallet 1 transactions"
-curl -s -X GET "$API_URL/api/transactions/wallet/$WALLET1" | jq
-
-sleep 1
-
-# Get wallet2 transactions
-print_step "Getting Wallet 2 transactions"
-curl -s -X GET "$API_URL/api/transactions/wallet/$WALLET2" | jq
-
-sleep 1
+echo "Getting pending transactions..."
+PENDING_TX=$(curl -s "${BASE_URL}/transactions/pending")
+print_result $? "Get pending transactions" "$PENDING_TX"
 
 # Get specific transaction
-print_step "Getting transaction details"
-curl -s -X GET "$API_URL/api/transactions/$TX" | jq
+echo "Getting transaction details..."
+TX_INFO=$(curl -s "${BASE_URL}/transactions/${TX_HASH}")
+print_result $? "Get transaction info" "$TX_INFO"
 
-sleep 1
+# Get wallet transactions
+echo "Getting wallet transactions..."
+WALLET_TX=$(curl -s "${BASE_URL}/transactions/wallet/${WALLET1_ADDRESS}")
+print_result $? "Get wallet transactions" "$WALLET_TX"
 
-# Get blockchain status
-print_step "Getting blockchain status"
-curl -s -X GET "$API_URL/api/blockchain" | jq
+# Test Mining API
+print_header "Testing Mining API"
 
-sleep 1
+# Mine pending transactions
+echo "Mining transactions..."
+MINE_RESPONSE=$(curl -s -X POST "${BASE_URL}/mining/mine")
+print_result $? "Mine transactions" "$MINE_RESPONSE"
 
-# Error case tests
-print_step "Testing error cases"
+# Verify balances after mining
+echo "Verifying wallet balances after mining..."
+WALLET1_FINAL=$(curl -s "${BASE_URL}/register/${WALLET1_ADDRESS}")
+WALLET2_FINAL=$(curl -s "${BASE_URL}/register/${WALLET2_ADDRESS}")
 
-echo -e "\nTesting non-existent wallet:"
-curl -s -X GET "$API_URL/api/register/nonexistentwallet" | jq
+WALLET1_BALANCE=$(echo $WALLET1_FINAL | jq -r '.balance')
+WALLET2_BALANCE=$(echo $WALLET2_FINAL | jq -r '.balance')
 
-echo -e "\nTesting invalid transaction (insufficient balance):"
-curl -s -X POST "$API_URL/api/transactions" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "from": "'$WALLET1'",
-       "to": "'$WALLET2'",
-       "amount": 999999
-     }' | jq
+echo "Wallet 1 balance: $WALLET1_BALANCE"
+echo "Wallet 2 balance: $WALLET2_BALANCE"
 
-echo -e "\n${BLUE}API tests completed${NC}"
+# Test Blockchain API
+print_header "Testing Blockchain API"
+
+# Get blockchain info
+echo "Getting blockchain info..."
+CHAIN_INFO=$(curl -s "${BASE_URL}/blockchain")
+print_result $? "Get blockchain info" "$CHAIN_INFO"
+
+# Get blockchain stats
+echo "Getting blockchain stats..."
+STATS_INFO=$(curl -s "${BASE_URL}/blockchain/stats")
+print_result $? "Get blockchain stats" "$STATS_INFO"
+
+# Get specific block
+echo "Getting genesis block..."
+BLOCK_INFO=$(curl -s "${BASE_URL}/blockchain/block/0")
+print_result $? "Get block info" "$BLOCK_INFO"
+
+# Summary
+print_header "Test Summary"
+BLOCK_COUNT=$(echo $CHAIN_INFO | jq -r '.stats.blockCount')
+WALLET_COUNT=$(echo $CHAIN_INFO | jq -r '.stats.walletCount')
+PENDING_COUNT=$(echo $CHAIN_INFO | jq -r '.stats.pendingCount')
+
+echo "Total blocks: $BLOCK_COUNT"
+echo "Total wallets: $WALLET_COUNT"
+echo "Pending transactions: $PENDING_COUNT"

@@ -1,68 +1,86 @@
-const crypto = require('crypto');
-const logger = require('../utils/logger');
+import crypto from 'crypto';
 
 class CryptoService {
     /**
-     * Hash data using SHA-256
+     * Generate a new keypair and return the public key as wallet address
+     */
+    static async generateKeyPair() {
+        try {
+            const { publicKey } = crypto.generateKeyPairSync('rsa', {
+                modulusLength: 2048,
+                publicKeyEncoding: {
+                    type: 'spki',
+                    format: 'der'
+                },
+                privateKeyEncoding: {
+                    type: 'pkcs8',
+                    format: 'der'
+                }
+            });
+
+            // Use the hash of the public key as the wallet address
+            return crypto.createHash('sha256')
+                .update(publicKey)
+                .digest('hex');
+        } catch (error) {
+            throw new Error('Failed to generate wallet address: ' + error.message);
+        }
+    }
+
+    /**
+     * Generate hash for a block
+     */
+    static async generateBlockHash(block) {
+        try {
+            const blockString = JSON.stringify({
+                index: block.index,
+                timestamp: block.timestamp,
+                merkleRoot: block.merkleRoot,
+                previousHash: block.previousHash,
+                nonce: block.nonce
+            });
+
+            return crypto.createHash('sha256')
+                .update(blockString)
+                .digest('hex');
+        } catch (error) {
+            throw new Error('Failed to generate block hash: ' + error.message);
+        }
+    }
+
+    /**
+     * Generate hash for a transaction
+     */
+    static generateTransactionHash(transaction) {
+        try {
+            const txString = JSON.stringify({
+                from: transaction.from,
+                to: transaction.to,
+                amount: transaction.amount,
+                timestamp: transaction.timestamp,
+                nonce: transaction.nonce
+            });
+
+            return crypto.createHash('sha256')
+                .update(txString)
+                .digest('hex');
+        } catch (error) {
+            throw new Error('Failed to generate transaction hash: ' + error.message);
+        }
+    }
+
+    /**
+     * Generate a simple hash for any input
      */
     static hash(data) {
         try {
-            const stringData = typeof data === 'string' ? data : JSON.stringify(data);
-            const hash = crypto.createHash('sha256').update(stringData).digest('hex');
-            
-            logger.info('Data hashed successfully', {
-                component: 'crypto',
-                dataType: typeof data,
-                hashLength: hash.length
-            });
-
-            return hash;
+            return crypto.createHash('sha256')
+                .update(typeof data === 'string' ? data : JSON.stringify(data))
+                .digest('hex');
         } catch (error) {
-            logger.error('Hashing failed', {
-                component: 'crypto',
-                error: error.message
-            });
-            throw error;
+            throw new Error('Failed to generate hash: ' + error.message);
         }
-    }
-
-    /**
-     * Validate address format
-     */
-    static isValidAddress(address) {
-        try {
-            return typeof address === 'string' && /^[0-9a-f]{64}$/i.test(address);
-        } catch {
-            return false;
-        }
-    }
-
-    /**
-     * Generate transaction hash
-     */
-    static generateTransactionHash(transaction) {
-        const data = {
-            from: transaction.from,
-            to: transaction.to,
-            amount: transaction.amount,
-            timestamp: transaction.timestamp,
-            nonce: transaction.nonce
-        };
-        return this.hash(data);
-    }
-
-    /**
-     * Generate block hash
-     */
-    static generateBlockHash(block) {
-        const data = {
-            previousHash: block.previousHash,
-            timestamp: block.timestamp,
-            transactions: block.transactions,
-            nonce: block.nonce
-        };
-        return this.hash(data);
     }
 }
 
-module.exports = CryptoService;
+export default CryptoService;

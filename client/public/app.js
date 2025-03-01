@@ -17,7 +17,8 @@ class App {
             transactionSection: document.getElementById('transaction-section'),
             sendForm: document.getElementById('send-form'),
             blockCount: document.getElementById('block-count'),
-            pendingCount: document.getElementById('pending-count')
+            pendingCount: document.getElementById('pending-count'),
+            statusMessage: document.getElementById('status-message')
         };
     }
 
@@ -26,9 +27,11 @@ class App {
             this.wallet = await Wallet.load();
             if (this.wallet) {
                 this.updateWalletUI();
+                this.showMessage('Wallet loaded successfully', 'success');
             }
         } catch (error) {
             console.error('Failed to load wallet:', error);
+            this.showMessage('Failed to load wallet: ' + this.getErrorMessage(error), 'error');
         }
     }
 
@@ -56,18 +59,18 @@ class App {
 
     async createWallet() {
         try {
+            this.showMessage('Creating wallet...', 'pending');
             this.elements.createWalletBtn.disabled = true;
-            this.elements.createWalletBtn.textContent = 'Creating...';
 
             this.wallet = await Wallet.create();
             this.updateWalletUI();
+            this.showMessage('Wallet created successfully!', 'success');
 
         } catch (error) {
             console.error('Failed to create wallet:', error);
-            alert('Failed to create wallet: ' + error.message);
+            this.showMessage('Failed to create wallet: ' + this.getErrorMessage(error), 'error');
         } finally {
             this.elements.createWalletBtn.disabled = false;
-            this.elements.createWalletBtn.textContent = 'Create New Wallet';
         }
     }
 
@@ -75,7 +78,7 @@ class App {
         e.preventDefault();
 
         if (!this.wallet) {
-            alert('No wallet available');
+            this.showMessage('No wallet available', 'error');
             return;
         }
 
@@ -84,37 +87,68 @@ class App {
         const amount = parseFloat(form.amount.value);
 
         if (amount <= 0) {
-            alert('Amount must be greater than 0');
+            this.showMessage('Amount must be greater than 0', 'error');
             return;
         }
 
-        let recipientAddress;
-        try {
-            // Convert alias to address if it's not already a valid address
-            recipientAddress = /^[0-9a-f]{64}$/i.test(recipient) 
-                ? recipient 
-                : await CryptoUtils.aliasToAddress(recipient);
-        } catch (error) {
-            alert('Failed to process recipient address or alias');
-            return;
-        }
+        const submitButton = form.querySelector('button');
+        submitButton.disabled = true;
 
         try {
-            form.querySelector('button').disabled = true;
+            this.showMessage('Processing transaction...', 'pending');
+
+            // Check if the recipient is a known address first
+            const response = await fetch(`/api/register/${recipient}`);
+            let recipientAddress;
+
+            if (response.ok) {
+                // It's a valid address
+                recipientAddress = recipient;
+            } else {
+                // Try to convert it as an alias
+                recipientAddress = await CryptoUtils.aliasToAddress(recipient);
+                // Verify the generated alias address exists
+                const aliasCheck = await fetch(`/api/register/${recipientAddress}`);
+                if (!aliasCheck.ok) {
+                    throw new Error('Invalid recipient address or alias');
+                }
+            }
+
             await this.wallet.sendTransaction(recipientAddress, amount);
             
-            form.reset(); // Clear the form
+            form.reset();
             await this.wallet.getBalance();
             this.updateWalletUI();
             
-            alert('Transaction sent successfully!');
+            this.showMessage('Transaction completed successfully!', 'success');
 
         } catch (error) {
             console.error('Transaction failed:', error);
-            alert('Failed to send transaction: ' + error.message);
+            this.showMessage('Failed to send transaction: ' + this.getErrorMessage(error), 'error');
         } finally {
-            form.querySelector('button').disabled = false;
+            submitButton.disabled = false;
         }
+    }
+
+    showMessage(message, type) {
+        if (!this.elements.statusMessage) return;
+        
+        this.elements.statusMessage.textContent = message;
+        this.elements.statusMessage.className = `status-message ${type}`;
+        this.elements.statusMessage.style.display = 'block';
+
+        if (type === 'success' || type === 'error') {
+            setTimeout(() => {
+                this.elements.statusMessage.style.display = 'none';
+            }, 5000);
+        }
+    }
+
+    getErrorMessage(error) {
+        if (error.message.includes('<!DOCTYPE')) {
+            return 'Server error. Please try again later.';
+        }
+        return error.message;
     }
 
     startPolling() {

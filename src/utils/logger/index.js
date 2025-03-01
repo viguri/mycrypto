@@ -1,5 +1,5 @@
-const winston = require('winston');
-const transports = require('./transports');
+import winston from 'winston';
+import transports from './transports.js';
 
 // Custom format for minimal logging
 const minimalFormat = winston.format.printf(({ level, message, timestamp, context }) => {
@@ -39,33 +39,5 @@ const logger = winston.createLogger({
     ]
 });
 
-// Export focused logging interface
-module.exports = {
-    info: (message, context = {}) => {
-        if (context.component || context.critical) {
-            logger.info(message, { context });
-        }
-    },
-    
-    error: (message, context = {}) => {
-        logger.error(message, { context });
-    },
-    
-    warn: (message, context = {}) => {
-        if (context.critical || context.security) {
-            logger.warn(message, { context });
-        }
-    },
-    
-    debug: (message, context = {}) => {
-        if (process.env.NODE_ENV === 'development') {
-            logger.debug(message, { context });
-        }
-    },
-    
-    blockchain: (message, context = {}) => {
-        logger.info(message, { 
-            context: { ...context, component: 'blockchain' }
-        });
-    }
-};
+// Export the logger instance
+export default logger;

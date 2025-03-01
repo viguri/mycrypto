@@ -3,92 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VigCoin Wallet</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Blockchain Explorer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app">
+    <div class="container">
         <header>
-            <h1>VigCoin Wallet</h1>
-            <div id="connection-status">Connecting...</div>
+            <h1>Blockchain Explorer</h1>
+            <div id="status-bar">
+                <span>Blocks: <span id="block-count">0</span></span>
+                <span>Pending: <span id="pending-count">0</span></span>
+                <span>Active Wallets: <span id="wallet-count">0</span></span>
+            </div>
         </header>
 
-        <main>
-            <section id="wallet-section">
+        <div id="user-section" style="display: none;">
+            <div id="status-message" style="display: none;"></div>
+            
+            <section id="wallet-info">
+                <h2>Create Your Wallet</h2>
+                <p>Get started by creating your blockchain wallet.</p>
+                <button id="create-wallet">Create New Wallet</button>
+            </section>
+
+            <section id="wallet-details" style="display: none;">
                 <h2>Your Wallet</h2>
-                <div id="wallet-info">
-                    <p>No wallet detected. Create one to get started.</p>
-                    <button id="create-wallet">Create New Wallet</button>
-                </div>
-                <div id="wallet-details" style="display: none;">
-                    <p>Address: <span id="wallet-address"></span></p>
-                    <p>Balance: <span id="wallet-balance">0</span> VIG</p>
-                </div>
+                <p>Address: <span id="wallet-address"></span></p>
+                <p>Balance: <span id="wallet-balance">0</span> VIG</p>
             </section>
 
             <section id="transaction-section" style="display: none;">
-                <h2>Send VigCoins</h2>
+                <h2>Send Transaction</h2>
                 <form id="send-form">
                     <div class="form-group">
                         <label for="recipient">Recipient Address:</label>
-                        <input type="text" id="recipient" required
-                               placeholder="Enter wallet address or alias (e.g., 'manuel')"
-                               title="Enter a wallet address or an alias. Aliases will be automatically converted to addresses.">
-                        <small>You can use either a full wallet address or a name that will be converted to an address.</small>
+                        <input type="text" id="recipient" name="recipient" required>
                     </div>
                     <div class="form-group">
                         <label for="amount">Amount:</label>
-                        <input type="number" id="amount" min="0.000001" step="0.000001" 
-                               required placeholder="Enter amount to send">
+                        <input type="number" id="amount" name="amount" step="0.01" min="0.01" required>
                     </div>
-                    <button type="submit">Send Transaction</button>
+                    <button type="submit">Send</button>
                 </form>
             </section>
+        </div>
 
-            <section id="blockchain-section">
-                <h2>Manage Wallets</h2>
-                <div id="wallets-list">
-                    <div class="wallets-header">
-                        <span>Address</span>
-                        <span>Balance</span>
-                        <span>Actions</span>
-                    </div>
-                    <div id="wallets-container">
-                        <!-- Wallets will be loaded here dynamically -->
-                    </div>
-                </div>
-                <div id="wallet-details-modal" class="modal" style="display: none;">
-                    <div class="modal-content">
-                        <span class="close-modal">&times;</span>
-                        <h3>Wallet Details</h3>
-                        <div class="wallet-info">
-                            <p>Address: <span class="wallet-address"></span></p>
-                            <p>Balance: <span class="wallet-balance"></span> VIG</p>
-                            <p>Created: <span class="wallet-created"></span></p>
-                        </div>
-                        <div class="wallet-transactions">
-                            <h4>Recent Transactions</h4>
-                            <div class="transactions-list"></div>
-                        </div>
-                    </div>
-                </div>
-                <h2>Blockchain Status</h2>
-                <div id="blockchain-info">
-                    <p>Blocks: <span id="block-count">0</span></p>
-                    <p>Pending Transactions: <span id="pending-count">0</span></p>
-                </div>
-            </section>
-        </main>
+        <div id="admin-section" style="display: none;">
+            <h2>Admin Panel</h2>
+            <div id="wallets-container"></div>
+        </div>
 
-        <footer>
-            <p>VigCoin Wallet v1.0 | <span id="network-status">Mainnet</span></p>
-        </footer>
+        <section id="auth-section">
+            <form id="login-form">
+                <h2>Admin Login</h2>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <div id="login-error" class="error" style="display: none;"></div>
+            </form>
+            <button id="logout-btn" style="display: none;">Logout</button>
+        </section>
     </div>
 
-    <!-- Load scripts -->
-    <script src="/wallet.js"></script>
-    <script src="/wallet-manager.js"></script>
-    <script src="/connection-monitor.js"></script>
-    <script src="/app.js"></script>
+    <div id="wallet-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Wallet Details</h2>
+            <p>Address: <span class="wallet-address"></span></p>
+            <p>Balance: <span class="wallet-balance">0</span> VIG</p>
+            <p>Created: <span class="wallet-created"></span></p>
+            <div class="transactions-list"></div>
+        </div>
+    </div>
+
+    <!-- Load scripts in correct order -->
+    <script src="wallet.js"></script>
+    <script src="wallet-manager.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

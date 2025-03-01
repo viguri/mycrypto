@@ -10,25 +10,32 @@ class Wallet {
         try {
             console.log('Creating new wallet...');
             
-            const response = await fetch('/api/register/wallet', {
+            const response = await fetch('/api/registration/wallet', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 }
             });
 
-            if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Failed to create wallet');
+            // Check if response is JSON
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Server returned invalid response format');
             }
 
             const data = await response.json();
+            console.log('Server response:', data);
+            if (!response.ok) {
+                throw new Error(data.message || 'Failed to create wallet');
+            }
+
             console.log('Wallet created:', data);
 
             const wallet = new Wallet();
-            wallet.address = data.wallet.address;
-            wallet.balance = data.wallet.balance;
-            wallet.createdAt = data.wallet.createdAt;
+            wallet.address = data.wallet?.address || data.address;
+            wallet.balance = data.wallet?.balance || data.balance;
+            wallet.createdAt = data.wallet?.createdAt || data.createdAt;
 
             // Save to local storage
             localStorage.setItem('wallet', JSON.stringify({
@@ -40,6 +47,9 @@ class Wallet {
             return wallet;
         } catch (error) {
             console.error('Wallet creation failed:', error);
+            if (error.name === 'SyntaxError') {
+                throw new Error('Server returned invalid data format');
+            }
             throw error;
         }
     }
@@ -53,14 +63,24 @@ class Wallet {
 
             const data = JSON.parse(stored);
             
-            // Verify wallet still exists on blockchain
-            const response = await fetch(`/api/register/${data.address}`);
-            if (!response.ok) {
-                localStorage.removeItem('wallet');
-                return null;
+            const response = await fetch(`/api/registration/${data.address}`, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Server returned invalid response format');
             }
 
             const walletData = await response.json();
+
+            if (!response.ok) {
+                localStorage.removeItem('wallet');
+                throw new Error(walletData.message || 'Failed to load wallet');
+            }
+
             const wallet = new Wallet();
             wallet.address = walletData.address;
             wallet.balance = walletData.balance;
@@ -70,6 +90,9 @@ class Wallet {
         } catch (error) {
             console.error('Failed to load wallet:', error);
             localStorage.removeItem('wallet');
+            if (error.name === 'SyntaxError') {
+                throw new Error('Server returned invalid data format');
+            }
             return null;
         }
     }
@@ -80,16 +103,30 @@ class Wallet {
                 throw new Error('Wallet not initialized');
             }
 
-            const response = await fetch(`/api/register/${this.address}`);
-            if (!response.ok) {
-                throw new Error('Failed to get wallet info');
+            const response = await fetch(`/api/registration/${this.address}`, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Server returned invalid response format');
             }
 
             const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Failed to get wallet info');
+            }
+
             this.balance = data.balance;
             return this.balance;
         } catch (error) {
             console.error('Failed to get balance:', error);
+            if (error.name === 'SyntaxError') {
+                throw new Error('Server returned invalid data format');
+            }
             throw error;
         }
     }
@@ -103,7 +140,8 @@ class Wallet {
             const response = await fetch('/api/transactions', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
                     from: this.address,
@@ -112,12 +150,21 @@ class Wallet {
                 })
             });
 
-            if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Transaction failed');
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Server returned invalid response format');
             }
 
-            const transaction = await response.json();
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Transaction failed');
+            }
+
+            const transaction = data;
+            
+            // Auto-mine the transaction
+            await this.mineTransaction();
             
             // Update balance after transaction
             await this.getBalance();
@@ -125,6 +172,39 @@ class Wallet {
             return transaction;
         } catch (error) {
             console.error('Transaction failed:', error);
+            if (error.name === 'SyntaxError') {
+                throw new Error('Server returned invalid data format');
+            }
+            throw error;
+        }
+    }
+
+    async mineTransaction() {
+        try {
+            const response = await fetch('/api/mining/mine', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Server returned invalid response format');
+            }
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Mining failed');
+            }
+
+            return data;
+        } catch (error) {
+            console.error('Mining failed:', error);
+            if (error.name === 'SyntaxError') {
+                throw new Error('Server returned invalid data format');
+            }
             throw error;
         }
     }
