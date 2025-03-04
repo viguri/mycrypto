@@ -21,4 +21,4 @@ RUN mkdir -p logs src/storage/blockchain
 EXPOSE 3000 8080
 
 # Set default command
-CMD ["yarn", "dev:all"]
+CMD ["yarn", "start"]

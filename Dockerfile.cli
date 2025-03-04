@@ -11,6 +11,7 @@ RUN yarn install
 # Copy CLI files and required modules
 COPY cli ./cli
 COPY src/utils ./src/utils
+COPY src/cli.js ./src/cli.js
 COPY src/services ./src/services
 
 # Set API URL environment variable to be configurable

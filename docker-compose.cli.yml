@@ -9,7 +9,7 @@ services:
     volumes:
       - ./logs:/app/logs
       - ./src/storage:/app/src/storage
-    command: yarn dev:all
+    command: yarn start
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/blockchain/stats"]
       interval: 10s
@@ -20,9 +20,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.cli
+    volumes:
+      - ./wallets.json:/app/wallets.json
     environment:
       - API_URL=http://server:3000/api
     depends_on:
       server:
         condition: service_healthy
-    # We don't set an entrypoint command here since it will be provided when running the container
+    command: add wallet

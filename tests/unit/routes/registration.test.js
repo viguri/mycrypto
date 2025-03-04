@@ -1,158 +1,217 @@
-const request = require('supertest');
-const express = require('express');
-const registrationRoutes = require('../../../src/api/routes/register');
-
-// Mock the logger to avoid logging during tests
-jest.mock('../../../src/utils/logger', () => ({
-  info: jest.fn(),
-  error: jest.fn(),
-  warn: jest.fn()
-}));
-
-// Mock CryptoService
-jest.mock('../../../src/services/CryptoService', () => ({
-  hash: jest.fn().mockResolvedValue('mocked-hash-address')
-}));
+import request from 'supertest';
+import express from 'express';
+import CryptoService from '../../../src/services/CryptoService.js';
+import { jest } from '@jest/globals';
+import registrationRoutes from '../../../src/api/routes/registration/index.js';
+import { FIXED_TIMESTAMP, testErrorHandler } from '../../setup.js';
+import { TEST_WALLET_ADDRESS } from '../../../src/services/__mocks__/CryptoService.js';
 
 describe('Registration Routes', () => {
   let app;
   let mockBlockchain;
 
   beforeEach(() => {
-    // Create mock blockchain with required methods
+    // Reset all mocks
+    jest.clearAllMocks();
+    
+    // Create mock blockchain
+// Mock the generateKeyPair method to return a consistent address
+    jest.spyOn(CryptoService, 'generateKeyPair').mockResolvedValue('e56bc34a70a6262b3897cbcd02b13ebddc80058ee354f75c3f9d07ce3bd9aec0');
     mockBlockchain = {
       addWallet: jest.fn(),
-      getAllWallets: jest.fn(),
+      getAllWallets: jest.fn(() => []),
       getWallet: jest.fn(),
-      getWalletBalance: jest.fn(),
-      getWalletTransactionCount: jest.fn()
+      hasWallet: jest.fn(() => false),
+      removeWallet: jest.fn(),
+      getWalletTransactionCount: jest.fn(() => 0)
     };
 
     // Create express app and apply routes
     app = express();
     app.use(express.json());
-    app.use('/api/register', registrationRoutes(mockBlockchain));
+    app.use('/api/registration', registrationRoutes(mockBlockchain));
+    app.use(testErrorHandler);
   });
 
   describe('POST /wallet', () => {
     it('should create a new wallet successfully', async () => {
-      // Setup mocks
-      mockBlockchain.addWallet.mockImplementation(() => true);
+      const expectedWallet = {
+        address: TEST_WALLET_ADDRESS,
+        balance: 1000,
+        createdAt: FIXED_TIMESTAMP
+      };
 
-      // Make request
+      mockBlockchain.addWallet.mockResolvedValue(undefined);
+
       const response = await request(app)
-        .post('/api/register/wallet')
+        .post('/api/registration/wallet')
         .expect(201);
 
-      // Assertions
-      expect(response.body).toHaveProperty('wallet');
-      expect(response.body.wallet).toHaveProperty('address', 'mocked-hash-address');
-      expect(response.body.wallet).toHaveProperty('balance', 1000);
-      expect(response.body.wallet).toHaveProperty('createdAt');
-      expect(mockBlockchain.addWallet).toHaveBeenCalled();
-    });
-
-    it('should handle errors when creating wallet fails', async () => {
-      // Setup mocks to simulate error
-      mockBlockchain.addWallet.mockImplementation(() => {
-        throw new Error('Failed to add wallet');
+      expect(response.body).toEqual({
+        success: true,
+        data: expectedWallet,
+        wallet: expectedWallet
       });
 
-      // Make request
+      expect(mockBlockchain.addWallet).toHaveBeenCalledWith(expectedWallet);
+    });
+
+    it('should handle wallet creation errors', async () => {
+      const error = new Error('Failed to create wallet');
+      error.name = 'RegistrationError';
+      mockBlockchain.addWallet.mockRejectedValue(error);
+
       const response = await request(app)
-        .post('/api/register/wallet')
+        .post('/api/registration/wallet')
         .expect(500);
 
-      // Assertions
-      expect(response.body).toHaveProperty('error', 'RegistrationError');
-      expect(response.body).toHaveProperty('message', 'Failed to add wallet');
+      expect(response.body).toEqual({
+        error: 'RegistrationError',
+        message: 'Failed to create wallet'
+      });
     });
   });
 
   describe('GET /wallets', () => {
-    it('should return all wallets successfully', async () => {
-      // Setup mock data
+    it('should return all wallets', async () => {
       const mockWallets = [
-        { address: 'address1', balance: 1000, createdAt: Date.now() },
-        { address: 'address2', balance: 2000, createdAt: Date.now() }
+        { address: 'wallet1', balance: 100, createdAt: FIXED_TIMESTAMP },
+        { address: 'wallet2', balance: 200, createdAt: FIXED_TIMESTAMP, isMainWallet: true }
       ];
       mockBlockchain.getAllWallets.mockReturnValue(mockWallets);
 
-      // Make request
       const response = await request(app)
-        .get('/api/register/wallets')
+        .get('/api/registration/wallets')
         .expect(200);
 
-      // Assertions
-      expect(response.body).toHaveProperty('wallets');
-      expect(response.body.wallets).toHaveLength(2);
-      expect(response.body).toHaveProperty('count', 2);
+      expect(response.body).toEqual({
+        message: 'Wallets retrieved successfully',
+        wallets: expect.arrayContaining([
+          expect.objectContaining({
+            address: 'wallet1',
+            balance: 100,
+            isMainWallet: false
+          }),
+          expect.objectContaining({
+            address: 'wallet2',
+            balance: 200,
+            isMainWallet: true
+          })
+        ])
+      });
     });
 
-    it('should handle errors when retrieving wallets fails', async () => {
-      // Setup mock to return invalid data
-      mockBlockchain.getAllWallets.mockReturnValue(null);
+    it('should handle errors when getting wallets', async () => {
+      const error = new Error('Failed to get wallets');
+      error.name = 'RegistrationError';
+      mockBlockchain.getAllWallets.mockImplementation(() => {
+        throw error;
+      });
 
-      // Make request
       const response = await request(app)
-        .get('/api/register/wallets')
+        .get('/api/registration/wallets')
         .expect(500);
 
-      // Assertions
-      expect(response.body).toHaveProperty('error', 'RetrievalError');
+      expect(response.body).toEqual({
+        error: 'RegistrationError',
+        message: 'Failed to get wallets'
+      });
     });
   });
 
   describe('GET /:address', () => {
-    it('should return wallet info for valid address', async () => {
-      // Setup mock data
-      const mockWallet = {
-        address: 'test-address',
-        createdAt: Date.now()
-      };
+    const mockWallet = {
+      address: 'test-address',
+      balance: 1000,
+      createdAt: FIXED_TIMESTAMP
+    };
+
+    it('should return wallet info by address', async () => {
       mockBlockchain.getWallet.mockReturnValue(mockWallet);
-      mockBlockchain.getWalletBalance.mockReturnValue(1000);
       mockBlockchain.getWalletTransactionCount.mockReturnValue(5);
 
-      // Make request
       const response = await request(app)
-        .get('/api/register/test-address')
+        .get(`/api/registration/${mockWallet.address}`)
         .expect(200);
 
-      // Assertions
-      expect(response.body).toHaveProperty('address', 'test-address');
-      expect(response.body).toHaveProperty('balance', 1000);
-      expect(response.body).toHaveProperty('transactionCount', 5);
-      expect(response.body).toHaveProperty('createdAt');
+      expect(response.body).toEqual({
+        address: mockWallet.address,
+        balance: mockWallet.balance,
+        createdAt: mockWallet.createdAt,
+        isMainWallet: false,
+        transactions: 5
+      });
     });
 
     it('should return 404 for non-existent wallet', async () => {
-      // Setup mock to return null for non-existent wallet
       mockBlockchain.getWallet.mockReturnValue(null);
 
-      // Make request
       const response = await request(app)
-        .get('/api/register/non-existent-address')
+        .get('/api/registration/non-existent')
         .expect(404);
 
-      // Assertions
-      expect(response.body).toHaveProperty('error', 'NotFound');
-      expect(response.body).toHaveProperty('message', 'Wallet not found');
+      expect(response.body).toEqual({
+        error: 'NotFound',
+        message: 'Wallet not found'
+      });
+    });
+  });
+
+  describe('DELETE /:address', () => {
+    beforeEach(() => {
+      mockBlockchain.hasWallet.mockReturnValue(true);
     });
 
-    it('should handle errors when retrieving wallet info fails', async () => {
-      // Setup mock to throw error
-      mockBlockchain.getWallet.mockImplementation(() => {
-        throw new Error('Failed to get wallet');
-      });
-
-      // Make request
+    it('should delete a wallet with admin privileges', async () => {
       const response = await request(app)
-        .get('/api/register/test-address')
+        .delete('/api/registration/test-address')
+        .send({ isAdmin: true })
+        .expect(200);
+
+      expect(response.body).toEqual({
+        message: 'Wallet deleted successfully'
+      });
+      expect(mockBlockchain.removeWallet).toHaveBeenCalledWith('test-address');
+    });
+
+    it('should return 403 without admin privileges', async () => {
+      const response = await request(app)
+        .delete('/api/registration/test-address')
+        .send({ isAdmin: false })
+        .expect(403);
+
+      expect(response.body).toEqual({
+        error: 'Forbidden',
+        message: 'Admin privileges required'
+      });
+      expect(mockBlockchain.removeWallet).not.toHaveBeenCalled();
+    });
+
+    it('should return 404 for non-existent wallet', async () => {
+      mockBlockchain.hasWallet.mockReturnValue(false);
+
+      const response = await request(app)
+        .delete('/api/registration/non-existent')
+        .send({ isAdmin: true })
+        .expect(404);
+
+      expect(response.body).toEqual({
+        error: 'NotFound',
+        message: 'Wallet not found'
+      });
+    });
+
+    it('should not allow deleting main wallet', async () => {
+      const response = await request(app)
+        .delete('/api/registration/main_wallet')
+        .send({ isAdmin: true })
         .expect(400);
 
-      // Assertions
-      expect(response.body).toHaveProperty('error', 'RetrievalError');
+      expect(response.body).toEqual({
+        error: 'InvalidOperation',
+        message: 'Cannot delete main wallet'
+      });
+      expect(mockBlockchain.removeWallet).not.toHaveBeenCalled();
     });
   });
 });

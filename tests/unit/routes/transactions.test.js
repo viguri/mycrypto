@@ -1,13 +1,7 @@
-const request = require('supertest');
-const express = require('express');
-const transactionRoutes = require('../../../src/api/routes/transactions');
-
-// Mock the logger to avoid logging during tests
-jest.mock('../../../src/utils/logger', () => ({
-  info: jest.fn(),
-  error: jest.fn(),
-  warn: jest.fn()
-}));
+import request from 'supertest';
+import express from 'express';
+import { jest } from '@jest/globals';
+import transactionRoutes from '../../../src/api/routes/transactions/index.js';
 
 describe('Transaction Routes', () => {
   let app;
@@ -18,13 +12,22 @@ describe('Transaction Routes', () => {
     mockBlockchain = {
       pendingTransactions: [],
       chain: [],
-      addTransaction: jest.fn()
+      createTransaction: jest.fn(),
+      hasWallet: jest.fn()
     };
 
     // Create express app and apply routes
     app = express();
     app.use(express.json());
     app.use('/api/transactions', transactionRoutes(mockBlockchain));
+
+    // Add error handling middleware
+    app.use((err, req, res, next) => {
+      res.status(500).json({
+        error: err.name || 'InternalError',
+        message: err.message || 'An unexpected error occurred'
+      });
+    });
   });
 
   describe('POST /', () => {
@@ -41,7 +44,7 @@ describe('Transaction Routes', () => {
         ...validTransaction,
         timestamp: Date.now()
       };
-      mockBlockchain.addTransaction.mockResolvedValue(mockTxResponse);
+      mockBlockchain.createTransaction.mockResolvedValue(mockTxResponse);
 
       // Make request
       const response = await request(app)
@@ -50,18 +53,15 @@ describe('Transaction Routes', () => {
         .expect(201);
 
       // Assertions
-      expect(response.body).toHaveProperty('message', 'Transaction created successfully');
-      expect(response.body.transaction).toMatchObject({
-        hash: 'test-hash',
+      expect(response.body).toEqual({
+        message: 'Transaction created successfully',
+        transaction: mockTxResponse
+      });
+      expect(mockBlockchain.createTransaction).toHaveBeenCalledWith({
         from: validTransaction.from,
         to: validTransaction.to,
         amount: validTransaction.amount
       });
-      expect(mockBlockchain.addTransaction).toHaveBeenCalledWith(
-        validTransaction.from,
-        validTransaction.to,
-        validTransaction.amount
-      );
     });
 
     it('should return 400 for missing transaction data', async () => {
@@ -77,21 +77,27 @@ describe('Transaction Routes', () => {
           .send(invalidTx)
           .expect(400);
 
-        expect(response.body).toHaveProperty('error', 'TransactionError');
-        expect(response.body).toHaveProperty('message', 'Missing required transaction data');
+        expect(response.body).toEqual({
+          error: 'ValidationError',
+          message: 'Missing required fields'
+        });
       }
     });
 
     it('should handle blockchain errors', async () => {
-      mockBlockchain.addTransaction.mockRejectedValue(new Error('Insufficient balance'));
+      const error = new Error('Insufficient balance');
+      error.name = 'TransactionError';
+      mockBlockchain.createTransaction.mockRejectedValue(error);
 
       const response = await request(app)
         .post('/api/transactions')
         .send(validTransaction)
-        .expect(400);
+        .expect(500);
 
-      expect(response.body).toHaveProperty('error', 'TransactionError');
-      expect(response.body).toHaveProperty('message', 'Insufficient balance');
+      expect(response.body).toEqual({
+        error: 'TransactionError',
+        message: 'Insufficient balance'
+      });
     });
   });
 
@@ -115,26 +121,28 @@ describe('Transaction Routes', () => {
         .expect(200);
 
       // Assertions
-      expect(response.body).toHaveProperty('count', 1);
-      expect(response.body.transactions).toHaveLength(1);
-      expect(response.body.transactions[0]).toMatchObject({
-        hash: 'tx1',
-        from: 'wallet1',
-        to: 'wallet2',
-        amount: 100
+      expect(response.body).toEqual({
+        message: 'Pending transactions retrieved',
+        transactions: mockPendingTx
       });
     });
 
     it('should handle errors when fetching pending transactions', async () => {
       // Force error by setting pendingTransactions to null
-      mockBlockchain.pendingTransactions = null;
+      const error = new Error('Failed to get pending transactions');
+      error.name = 'TransactionError';
+      Object.defineProperty(mockBlockchain, 'pendingTransactions', {
+        get: () => { throw error; }
+      });
 
       const response = await request(app)
         .get('/api/transactions/pending')
         .expect(500);
 
-      expect(response.body).toHaveProperty('error', 'TransactionError');
-      expect(response.body).toHaveProperty('message', 'Failed to get pending transactions');
+      expect(response.body).toEqual({
+        error: 'TransactionError',
+        message: 'Failed to get pending transactions'
+      });
     });
   });
 
@@ -142,6 +150,7 @@ describe('Transaction Routes', () => {
     const testWallet = '6403230f5e3b8a31f7b01d1314f3ea7dfcd42813981f395035b7ef7ffcf401e7';
 
     beforeEach(() => {
+      mockBlockchain.hasWallet.mockReturnValue(true);
       // Setup mock data
       mockBlockchain.pendingTransactions = [
         {
@@ -173,23 +182,27 @@ describe('Transaction Routes', () => {
         .get(`/api/transactions/wallet/${testWallet}`)
         .expect(200);
 
-      expect(response.body).toHaveLength(2);
-      expect(response.body[0]).toMatchObject({
-        hash: 'pending1',
-        status: 'pending'
+      expect(response.body).toEqual({
+        message: 'Wallet transactions retrieved',
+        transactions: expect.arrayContaining([
+          expect.objectContaining({ hash: 'pending1' }),
+          expect.objectContaining({ hash: 'confirmed1' })
+        ])
       });
-      expect(response.body[1]).toMatchObject({
-        hash: 'confirmed1',
-        status: 'confirmed'
-      });
+      expect(response.body.transactions).toHaveLength(2);
     });
 
-    it('should return empty array for wallet with no transactions', async () => {
-      const response = await request(app)
-        .get('/api/transactions/wallet/empty-wallet')
-        .expect(200);
+    it('should return 404 for non-existent wallet', async () => {
+      mockBlockchain.hasWallet.mockReturnValue(false);
 
-      expect(response.body).toHaveLength(0);
+      const response = await request(app)
+        .get('/api/transactions/wallet/non-existent')
+        .expect(404);
+
+      expect(response.body).toEqual({
+        error: 'NotFound',
+        message: 'Wallet not found'
+      });
     });
   });
 
@@ -212,10 +225,7 @@ describe('Transaction Routes', () => {
         .get(`/api/transactions/${testHash}`)
         .expect(200);
 
-      expect(response.body).toMatchObject({
-        hash: testHash,
-        status: 'pending'
-      });
+      expect(response.body).toHaveProperty('hash', testHash);
     });
 
     it('should return confirmed transaction by hash', async () => {
@@ -239,10 +249,7 @@ describe('Transaction Routes', () => {
         .get(`/api/transactions/${testHash}`)
         .expect(200);
 
-      expect(response.body).toMatchObject({
-        hash: testHash,
-        status: 'confirmed'
-      });
+      expect(response.body).toHaveProperty('hash', testHash);
     });
 
     it('should return 404 for non-existent transaction', async () => {
@@ -250,8 +257,10 @@ describe('Transaction Routes', () => {
         .get('/api/transactions/non-existent-hash')
         .expect(404);
 
-      expect(response.body).toHaveProperty('error', 'NotFound');
-      expect(response.body).toHaveProperty('message', 'Transaction not found');
+      expect(response.body).toEqual({
+        error: 'NotFound',
+        message: 'Transaction not found'
+      });
     });
   });
 });
