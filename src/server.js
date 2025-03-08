@@ -15,10 +15,11 @@
 
 import express from 'express';
 import cors from 'cors';
-import rateLimit from 'express-rate-limit';
 import logger from './utils/logger/index.js';
 import Blockchain from './blockchain/core/Blockchain.js';
 import config from './config/index.js';
+import { securityConfig } from './config/security.js';
+import { createSecurityMiddleware } from './middleware/security.js';
 
 // Import routes
 import registrationRoutes from './api/routes/registration/index.js';
@@ -34,48 +35,52 @@ const blockchain = new Blockchain();
 const app = express();
 const { port } = config.server;
 
-// Security middleware
-const limiter = rateLimit(config.security.rateLimit);
+// Apply security middleware stack
+app.use(createSecurityMiddleware());
 
-// Apply security middleware
-app.use(limiter);
-
-// Configure CORS to allow requests from our frontend
-app.use((req, res, next) => {
-    // Log incoming requests in development
-    if (config.server.env === 'development') {
-        logger.debug('Incoming request', {
-            component: 'server',
-            method: req.method,
-            url: req.url,
-            origin: req.headers.origin
-        });
-    }
-    next();
-});
-
+// Configure CORS with enhanced security settings
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ['http://localhost:8080', 'http://127.0.0.1:62480'];
-        // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin || allowedOrigins.includes(origin)) {
+        if (!origin || securityConfig.trustedOrigins.includes(origin)) {
             callback(null, true);
         } else {
             logger.warn('Blocked request from unauthorized origin', {
                 component: 'server',
                 origin,
-                allowedOrigins
+                allowedOrigins: securityConfig.trustedOrigins
             });
             callback(new Error('Not allowed by CORS'));
         }
     },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-    maxAge: 86400 // Cache preflight requests for 24 hours
+    methods: securityConfig.cors.allowedMethods,
+    allowedHeaders: securityConfig.cors.allowedHeaders,
+    exposedHeaders: securityConfig.cors.exposedHeaders,
+    credentials: securityConfig.cors.credentials,
+    maxAge: securityConfig.cors.maxAge
 }));
 
-app.use(express.json({ limit: config.security.bodyLimit }));
+// Body parser with size limits
+app.use(express.json({ 
+    limit: securityConfig.validation.maxPayloadSize,
+    strict: true
+}));
+
+// Request timeout middleware
+app.use((req, res, next) => {
+    res.setTimeout(securityConfig.api.timeoutMs, () => {
+        logger.warn('Request timeout', {
+            component: 'server',
+            method: req.method,
+            url: req.url,
+            timeout: securityConfig.api.timeoutMs
+        });
+        res.status(408).json({
+            error: 'RequestTimeout',
+            message: 'Request took too long to process'
+        });
+    });
+    next();
+});
 
 // Set default headers and error handling middleware
 app.use((req, res, next) => {
@@ -219,7 +224,7 @@ async function initializeLogging() {
                 port,
                 env: config.server.env,
                 genesisHash: blockchain.chain[0].hash,
-                allowedOrigins: config.security.cors.origin
+                allowedOrigins: securityConfig.trustedOrigins
             });
         });
 

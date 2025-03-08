@@ -1,216 +1,95 @@
 # Security Architecture
 
-## Overview
+This document provides an overview of VigCoin's security architecture. For detailed documentation, see the security folder.
 
-VigCoin implements multiple layers of security to ensure:
+## Quick Links
 
-- Transaction integrity
-- Data immutability
-- API protection
-- System reliability
+- [Security Overview](./security/overview.md)
+- [Configuration Guide](./security/configuration.md)
+- [Blockchain Security](./security/blockchain-security.md)
+- [Security Monitoring](./security/monitoring.md)
 
-## Cryptographic Security
+## Core Security Features
 
-### Key Management
+### 1. Express.js Security (v4.20.0)
+- Protection against XSS via improved response.redirect()
+- Enhanced cookie handling and session security
+- Protection against regex-based DoS attacks
+- Template injection prevention
 
-1. **Wallet Generation**
-   - Uses RSA 2048-bit key pairs
-   - Private keys never leave the client
-   - Addresses derived from public keys using RIPEMD160
+### 2. Dependencies
+All security vulnerabilities resolved with updated dependencies:
+- body-parser: ^1.20.3
+- cookie: ^0.7.0
+- path-to-regexp: ^0.1.10
+- send: ^0.19.0
 
-```javascript
-const wallet = CryptoService.generateKeypair();
-// Format: RSA-2048 in PEM format
-```
+### 3. Key Security Practices
+1. **URL Protection**
+   - Validate and whitelist redirect URLs
+   - Prevent open redirect vulnerabilities
+   - Sanitize URL parameters
 
-2. **Address Generation**
-   - Uses one-way hash function
-   - Prevents public key recovery from address
-   - 40-character hexadecimal format
+2. **Request Protection**
+   - Configure body-parser with size limits
+   - Prevent request flooding
+   - Validate content types
 
-```javascript
-const address = CryptoService.generateAddress(publicKey);
-// Format: 40-character hex string
-```
+3. **Cookie Security**
+   - HttpOnly flag enabled
+   - Secure flag in production
+   - SameSite=Strict policy
+   - Appropriate expiration
 
-### Transaction Security
+4. **Route Security**
+   - Avoid complex regex patterns
+   - Validate route parameters
+   - Prevent parameter pollution
 
-1. **Digital Signatures**
-   - RSA-SHA256 signatures
-   - Prevents transaction tampering
-   - Ensures sender authenticity
-
-```javascript
-// Signing process
-const signature = CryptoService.signTransaction(privateKey, transaction);
-
-// Verification process
-const isValid = CryptoService.verifySignature(
-  publicKey,
-  transaction,
-  signature
-);
-```
-
-2. **Transaction Validation**
-   - Amount validation
-   - Balance verification
-   - Signature verification
-   - Double-spend prevention
-
-## Blockchain Security
-
-### Block Integrity
-
-1. **Block Hashing**
-
-   - SHA256 for block hashes
-   - Includes previous block hash
-   - Includes merkle root
-   - Includes timestamp and nonce
-
-2. **Merkle Trees**
-   - Transaction hash verification
-   - Efficient integrity checking
-   - Prevents transaction tampering
-
-```javascript
-const merkleRoot = block.calculateMerkleRoot();
-// Efficiently verifies all transactions in block
-```
-
-3. **Chain Validation**
-   - Regular integrity checks
-   - Validates all block links
-   - Verifies proof of work
-   - Checks all transactions
-
-### Mining Security
-
-1. **Proof of Work**
-
-   - Adjustable difficulty
-   - Prevents 51% attacks
-   - Ensures chain immutability
-
-2. **Difficulty Adjustment**
-   - Dynamic based on block times
-   - Prevents time-based attacks
-   - Maintains consistent block time
-
-```javascript
-// Adjusts every 10 blocks
-if (chain.length % 10 === 0) {
-  adjustDifficulty();
-}
-```
-
-## API Security
-
-### Request Validation
-
-1. **Input Validation**
-   - Joi schema validation
-   - Type checking
-   - Range validation
-   - Format verification
-
-```javascript
-// Transaction schema example
-const schema = {
-  fromAddress: Joi.string().required(),
-  toAddress: Joi.string().required(),
-  amount: Joi.number().positive().required(),
-  signature: Joi.string().required(),
-};
-```
-
-2. **Rate Limiting**
-   - Prevents DDoS attacks
-   - IP-based limiting
-   - Configurable windows
-   - Custom limits per endpoint
-
-```javascript
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-});
-```
-
-### Network Security
-
-1. **CORS Protection**
-   - Restricted origins
-   - Method limitations
-   - Header restrictions
-
-```javascript
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-```
-
-2. **Security Headers**
-   - Helmet implementation
-   - XSS protection
+5. **Security Headers**
+   - Implemented via Helmet
    - Content Security Policy
+   - HSTS configuration
    - Frame protection
 
-```javascript
-app.use(helmet());
-```
+6. **Rate Limiting**
+   - API endpoint protection
+   - Configurable windows
+   - IP-based limiting
+   - User-based limiting
 
-## Error Handling
+## Best Practices
 
-### Security Errors
+1. **Request Validation**
+   - Validate and whitelist redirect URLs
+   - Configure body-parser with size limits
+   - Use secure cookie settings
+   - Avoid complex regex patterns
 
-1. **Custom Error Types**
-   - Specific error messages
-   - Appropriate status codes
-   - Detailed error information
-
-```javascript
-throw new BlockchainError("Invalid signature", 400);
-```
-
-2. **Error Logging**
-   - Secure error logging
-   - No sensitive data exposure
-   - Stack trace in development only
-
-## Security Best Practices
-
-### Transaction Processing
-
-1. **Amount Validation**
-
-   - Minimum amount check
-   - Maximum amount check
-   - Balance verification
-   - Double-spend check
-
-2. **Address Validation**
-   - Format verification
-   - Existence check
-   - Public key verification
-
-### Data Protection
-
-1. **Sensitive Data**
-
-   - No private key storage
-   - Secure session handling
-   - Protected API endpoints
-
-2. **Data Validation**
+2. **API Security**
+   - Rate limiting for all endpoints
+   - Request size validation
    - Input sanitization
-   - Output encoding
-   - Type verification
+   - Error handling
+
+3. **Blockchain Security**
+   - Transaction validation
+   - Mining protection
+   - Block verification
+   - Network security
+
+4. **Monitoring**
+   - Security event logging
+   - Rate limit monitoring
+   - Performance tracking
+   - Error reporting
+
+## Implementation
+
+See detailed implementation guides:
+- [Configuration Guide](./security/configuration.md)
+- [Blockchain Security](./security/blockchain-security.md)
+- [Security Monitoring](./security/monitoring.md)
 
 ## Security Checklist
 

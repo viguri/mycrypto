@@ -75,6 +75,80 @@ vigcoin/
     └── index.html
 ```
 
+## Security Features
+
+- Express.js 4.20.0 with latest security patches
+- Secure session and cookie handling
+- Protection against XSS and CSRF attacks
+- Rate limiting and request validation
+- Comprehensive blockchain security
+
+## Dependencies
+
+All dependencies are up-to-date with security patches:
+```json
+{
+  "body-parser": "^1.20.3",
+  "cookie": "^0.7.0",
+  "path-to-regexp": "^0.1.10",
+  "send": "^0.19.0"
+}
+```
+
+## Quick Start
+
+1. Install dependencies:
+```bash
+yarn install
+```
+
+2. Configure environment:
+```bash
+cp .env.example .env
+# Edit .env with your settings
+```
+
+3. Run development server:
+```bash
+yarn dev
+```
+
+## Documentation
+
+### Security
+- [Security Overview](docs/security/overview.md)
+- [Security Configuration](docs/security/configuration.md)
+- [Blockchain Security](docs/security/blockchain-security.md)
+- [Security Monitoring](docs/security/monitoring.md)
+
+### API
+- [API Reference](docs/api/reference.md)
+- [API Testing](docs/api_testing.md)
+
+### Testing
+- [Testing Guide](docs/testing.md)
+- [Security Testing](docs/testing/security-testing.md)
+
+## Security Best Practices
+
+1. **Request Validation**
+   - Validate and whitelist redirect URLs
+   - Configure body-parser with size limits
+   - Use secure cookie settings
+   - Avoid complex regex patterns
+
+2. **API Security**
+   - Rate limiting for all endpoints
+   - Request size validation
+   - Input sanitization
+   - Error handling
+
+3. **Blockchain Security**
+   - Transaction validation
+   - Mining protection
+   - Block verification
+   - Network security
+
 ## Installation
 
 1. Clone the repository:

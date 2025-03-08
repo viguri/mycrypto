@@ -190,6 +190,113 @@ Expected Response (200 OK):
 }
 ```
 
+## Security Testing
+
+### Test Categories
+
+#### 1. Security Tests
+
+```javascript
+describe('API Security', () => {
+    it('should enforce body-parser size limits', async () => {
+        const largePayload = Buffer.alloc(1024 * 1024).fill('X'); // 1MB
+        const response = await request(app)
+            .post('/api/blockchain/transaction')
+            .send(largePayload);
+        
+        expect(response.status).toBe(413);
+        expect(response.body.error).toBe('PayloadTooLarge');
+    });
+
+    it('should validate redirect URLs', async () => {
+        const maliciousRedirect = 'http://malicious.com';
+        const response = await request(app)
+            .get(`/api/auth/callback?redirect=${maliciousRedirect}`);
+        
+        expect(response.status).toBe(400);
+        expect(response.body.error).toBe('InvalidRedirectUrl');
+    });
+
+    it('should set secure cookie attributes', async () => {
+        const response = await request(app)
+            .post('/api/auth/login')
+            .send(validCredentials);
+        
+        const cookie = response.headers['set-cookie'][0];
+        expect(cookie).toContain('HttpOnly');
+        expect(cookie).toContain('SameSite=Strict');
+        if (process.env.NODE_ENV === 'production') {
+            expect(cookie).toContain('Secure');
+        }
+    });
+
+    it('should enforce rate limits', async () => {
+        const requests = Array(101).fill().map(() => 
+            request(app).get('/api/blockchain')
+        );
+        
+        const responses = await Promise.all(requests);
+        const rateLimited = responses.filter(r => r.status === 429);
+        expect(rateLimited.length).toBeGreaterThan(0);
+    });
+});
+```
+
+#### 2. Input Validation
+
+```javascript
+describe('Input Validation', () => {
+    it('should reject complex regex patterns', async () => {
+        const complexPattern = '(a+)*b';
+        const response = await request(app)
+            .get(`/api/search?pattern=${complexPattern}`);
+        
+        expect(response.status).toBe(400);
+        expect(response.body.error).toBe('InvalidPattern');
+    });
+
+    it('should sanitize query parameters', async () => {
+        const xssPayload = '<script>alert("xss")</script>';
+        const response = await request(app)
+            .get(`/api/blockchain/block/${xssPayload}`);
+        
+        expect(response.status).toBe(400);
+        expect(response.body.error).toBe('InvalidParameter');
+    });
+});
+```
+
+#### 3. Blockchain API Tests
+
+```javascript
+describe('Blockchain API', () => {
+    it('should validate transaction size', async () => {
+        const transaction = generateOversizedTransaction();
+        const response = await request(app)
+            .post('/api/blockchain/transaction')
+            .send(transaction);
+        
+        expect(response.status).toBe(413);
+        expect(response.body.error).toBe('TransactionTooLarge');
+    });
+
+    it('should enforce mining rate limits', async () => {
+        for (let i = 0; i < 11; i++) {
+            await request(app)
+                .post('/api/blockchain/mine')
+                .send(validBlock);
+        }
+        
+        const response = await request(app)
+            .post('/api/blockchain/mine')
+            .send(validBlock);
+        
+        expect(response.status).toBe(429);
+        expect(response.body.error).toBe('TooManyMiningRequests');
+    });
+});
+```
+
 ## Testing Sequence
 
 1. First create two wallets using the Create New Wallet endpoint
@@ -231,3 +338,76 @@ All endpoints include proper error handling. Common error responses:
   "message": "Internal server error"
 }
 ```
+
+## Test Environment Setup
+
+1. Configure test environment:
+```bash
+# .env.test
+NODE_ENV=test
+RATE_LIMIT_WINDOW=1000
+RATE_LIMIT_MAX_IP=10
+MAX_PAYLOAD_SIZE=1kb
+```
+
+2. Set up test database:
+```bash
+npm run db:test:setup
+```
+
+## Running Tests
+
+```bash
+# Run all API tests
+npm run test:api
+
+# Run security-specific tests
+npm run test:api:security
+
+# Run with coverage
+npm run test:api:coverage
+```
+
+## Test Reports
+
+Reports are generated in `test-results/api`:
+- JUnit XML reports
+- Coverage reports
+- Security audit reports
+
+## Best Practices
+
+1. **Security Testing**
+   - Test all security middleware
+   - Verify rate limiting
+   - Check input validation
+   - Test error handling
+
+2. **API Testing**
+   - Test all endpoints
+   - Verify responses
+   - Check status codes
+   - Validate payloads
+
+3. **Environment**
+   - Use isolated test DB
+   - Mock external services
+   - Reset state between tests
+
+4. **Monitoring**
+   - Log test results
+   - Track coverage
+   - Monitor performance
+
+## Continuous Integration
+
+```yaml
+api-tests:
+  stage: test
+  script:
+    - npm install
+    - npm run test:api
+  artifacts:
+    reports:
+      junit: test-results/api/*.xml
+      coverage: coverage/api/

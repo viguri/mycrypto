@@ -1,40 +1,87 @@
 # API Documentation
 
-## Response Format
+This document provides an overview of the MyCrypto API. For detailed endpoint documentation, see the API reference guides.
 
-All API responses follow a standardized format:
+## Quick Links
 
-### Success Response
+- [API Reference](./api/reference.md)
+- [Authentication](./api/authentication.md)
+- [Rate Limiting](./api/rate-limiting.md)
+- [Error Handling](./api/error-handling.md)
 
+## Core Components
+
+### 1. Blockchain API
+
+#### Transaction Endpoints
+```javascript
+POST /api/blockchain/transaction
+GET  /api/blockchain/transactions/pending
+```
+
+Security Features:
+- Transaction size validation
+- Rate limiting
+- Signature verification
+- Input/output validation
+
+#### Block Endpoints
+```javascript
+POST /api/blockchain/block
+GET  /api/blockchain/block/:height
+```
+
+Security Features:
+- Block size validation
+- Mining rate limiting
+- Proof-of-work verification
+- Chain validation
+
+### 2. Authentication
+
+- Session-based authentication
+- Secure cookie handling
+- Rate limiting per IP/user
+- Request validation
+
+### 3. Error Handling
+
+Standard error format:
 ```json
 {
-  "success": true,
-  "message": "Operation successful",
-  "data": {
-    // Response data here
-  },
-  "status": 200 // HTTP status code
+    "error": "ErrorType",
+    "message": "Human readable message",
+    "details": {} // Optional details
 }
 ```
 
-### Error Response
+Common error types:
+- InvalidTransaction
+- BlockTooLarge
+- TooManyRequests
+- InvalidSignature
 
-```json
-{
-  "success": false,
-  "message": "Error message here",
-  "error": "ErrorType",
-  "status": 400 // HTTP status code
-}
-```
+## Best Practices
 
-### Error Types
+1. **Rate Limiting**
+   - Use exponential backoff
+   - Handle rate limit errors
+   - Monitor usage patterns
 
-- ValidationError: Invalid request data
-- NotFoundError: Requested resource not found
-- UnauthorizedError: Authentication required
-- ForbiddenError: Permission denied
-- InternalError: Server error
+2. **Error Handling**
+   - Check error types
+   - Implement retry logic
+   - Log API errors
+
+3. **Security**
+   - Use HTTPS
+   - Validate inputs
+   - Handle timeouts
+   - Monitor responses
+
+## Implementation Examples
+
+See [API Examples](./api/examples.md) for detailed implementation examples.
 
 ## Frontend Utilities
 
@@ -83,186 +130,6 @@ Makes DELETE request.
   - `options`: Object - Fetch options
 - Returns: Promise<any>
 
-## Core Components
-
-### CryptoService
-
-[Previous CryptoService documentation remains unchanged...]
-
-## API Routes
-
-### Blockchain Routes (`/blockchain`)
-
-Located in `src/api/routes/blockchain.js`
-
-#### GET /blockchain
-
-Get entire blockchain state.
-
-- Response:
-
-```json
-{
-  "success": true,
-  "data": {
-    "chain": [],
-    "pendingTransactions": [],
-    "stats": {
-      "blockCount": 0,
-      "pendingCount": 0,
-      "walletCount": 0
-    }
-  }
-}
-```
-
-#### GET /blockchain/block/:index
-
-Get specific block.
-
-- Parameters:
-  - `index`: Number
-- Success Response:
-
-```json
-{
-  "success": true,
-  "data": {
-    "hash": "string",
-    "previousHash": "string",
-    "timestamp": "number",
-    "transactions": []
-  }
-}
-```
-
-- Error Response (404):
-
-```json
-{
-  "success": false,
-  "message": "Block not found",
-  "error": "NotFoundError",
-  "status": 404
-}
-```
-
-### Transaction Routes (`/transactions`)
-
-Located in `src/api/routes/transactions.js`
-
-#### POST /transactions
-
-Create new transaction.
-
-- Body:
-
-```json
-{
-  "from": "string",
-  "to": "string",
-  "amount": "number"
-}
-```
-
-- Success Response (201):
-
-```json
-{
-  "success": true,
-  "message": "Transaction created successfully",
-  "data": {
-    "hash": "string",
-    "from": "string",
-    "to": "string",
-    "amount": "number",
-    "timestamp": "number"
-  },
-  "status": 201
-}
-```
-
-#### GET /transactions/pending
-
-List pending transactions.
-
-- Success Response:
-
-```json
-{
-  "success": true,
-  "data": {
-    "transactions": []
-  }
-}
-```
-
-#### GET /transactions/wallet/:address
-
-Get transaction history for address.
-
-- Parameters:
-  - `address`: String
-- Success Response:
-
-```json
-{
-  "success": true,
-  "data": {
-    "transactions": [],
-    "count": "number"
-  }
-}
-```
-
-### Registration Routes (`/registration`)
-
-Located in `src/api/routes/registration.js`
-
-#### POST /registration/wallet
-
-Create new wallet.
-
-- Success Response (201):
-
-```json
-{
-  "success": true,
-  "message": "Wallet created successfully",
-  "data": {
-    "address": "string",
-    "balance": "number",
-    "createdAt": "number"
-  },
-  "status": 201
-}
-```
-
-#### GET /registration/:address
-
-Get wallet information.
-
-- Parameters:
-  - `address`: String
-- Success Response:
-
-```json
-{
-  "success": true,
-  "data": {
-    "address": "string",
-    "balance": "number",
-    "createdAt": "number",
-    "isMainWallet": "boolean",
-    "transactions": "number"
-  }
-}
-```
-
-### Mining Routes (`/mine`)
-
-[Previous mining routes documentation remains unchanged...]
-
 ## Middleware
 
 ### Response Handler
@@ -292,5 +159,3 @@ Creates error response.
   - `error`: String - Error type
   - `status`: Number - HTTP status code
 - Returns: Standardized error response
-
-[Previous middleware documentation remains unchanged...]

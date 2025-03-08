@@ -1,4 +1,5 @@
 import { jest } from '@jest/globals';
+import '@testing-library/jest-dom';
 import CryptoService from '../src/services/__mocks__/CryptoService.js';
 import mockFetch from './mocks/fetch.js';
 
@@ -25,6 +26,45 @@ process.memoryUsage = jest.fn().mockReturnValue(mockMemoryUsage);
 
 // Set up global fetch mock
 global.fetch = mockFetch;
+
+// Mock window.location for SSL tests
+Object.defineProperty(window, 'location', {
+  value: {
+    protocol: 'https:',
+    hostname: 'localhost',
+    port: '3000'
+  },
+  writable: true
+});
+
+// Security-related test utilities
+global.securityUtils = {
+  // Mock SSL verification
+  mockSecureConnection: () => {
+    Object.defineProperty(window, 'location', {
+      value: { protocol: 'https:' },
+      writable: true
+    });
+  },
+  mockInsecureConnection: () => {
+    Object.defineProperty(window, 'location', {
+      value: { protocol: 'http:' },
+      writable: true
+    });
+  },
+  // XSS prevention helpers
+  containsXSS: (str) => {
+    return /<script>|<\/script>|javascript:/i.test(str);
+  },
+  // Cookie security helpers
+  getCookieAttributes: (cookieStr) => {
+    return {
+      httpOnly: /HttpOnly/.test(cookieStr),
+      secure: /Secure/.test(cookieStr),
+      sameSite: /SameSite=Strict/.test(cookieStr)
+    };
+  }
+};
 
 // Mock modules
 jest.mock('@/utils/logger', () => ({
@@ -113,13 +153,18 @@ beforeEach(() => {
     cryptoService.generateBlockHash.mockClear();
     cryptoService.generateTransactionHash.mockClear();
 
-    // Reset fetch mock
+    // Reset fetch mock with security headers
     mockFetch.mockClear();
     mockFetch.mockImplementation(() => Promise.resolve({
         ok: true,
         status: 200,
         json: () => Promise.resolve({ data: 'test' }),
-        headers: new Map([['content-type', 'application/json']])
+        headers: new Map([
+            ['content-type', 'application/json'],
+            ['x-frame-options', 'DENY'],
+            ['x-content-type-options', 'nosniff'],
+            ['strict-transport-security', 'max-age=31536000; includeSubDomains']
+        ])
     }));
 
     // Reset logger mock
@@ -127,7 +172,7 @@ beforeEach(() => {
     mockLogger.error.mockReset();
     mockLogger.query.mockReset();
 
-    // Set up logger mock implementation
+    // Set up logger mock implementation with security events
     mockLogger.query.mockImplementation(async (options = {}) => {
         if (options.fail === true) {
             throw new Error('Query failed');
@@ -137,12 +182,14 @@ beforeEach(() => {
             {
                 level: 'info',
                 message: 'Test info log 1',
-                timestamp: '2025-03-05T11:00:00.000Z'
+                timestamp: '2025-03-05T11:00:00.000Z',
+                securityEvent: false
             },
             {
                 level: 'error',
                 message: 'Test error log 1',
-                timestamp: '2025-03-05T12:00:00.000Z'
+                timestamp: '2025-03-05T12:00:00.000Z',
+                securityEvent: true
             }
         ];
 
@@ -160,11 +207,21 @@ beforeEach(() => {
             filteredLogs = filteredLogs.filter(log => new Date(log.timestamp) <= new Date(options.to));
         }
 
+        if (options.securityEvent !== undefined) {
+            filteredLogs = filteredLogs.filter(log => log.securityEvent === options.securityEvent);
+        }
+
         return { logs: filteredLogs };
     });
 
     // Configure CryptoService mock responses
     CryptoService.generateKeyPair.mockResolvedValue(CryptoService.MOCK_ADDRESS);
+
+    // Reset window.location to secure HTTPS
+    Object.defineProperty(window, 'location', {
+        value: { protocol: 'https:' },
+        writable: true
+    });
 });
 
 // Cleanup after all tests
@@ -172,12 +229,13 @@ afterAll(() => {
     jest.restoreAllMocks();
 });
 
-// Add console error handler
+// Add console error handler for React warnings
 const originalError = console.error;
 console.error = (...args) => {
     if (
         typeof args[0] === 'string' &&
-        args[0].includes('Warning: An update to %s inside a test was not wrapped in act')
+        (args[0].includes('Warning: An update to %s inside a test was not wrapped in act') ||
+         args[0].includes('Warning: ReactDOM.render is no longer supported'))
     ) {
         return;
     }

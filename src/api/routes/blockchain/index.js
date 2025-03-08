@@ -1,4 +1,5 @@
 import express from 'express';
+import { createBlockchainSecurityMiddleware } from '../../../middleware/blockchain-security.js';
 import logger from '../../../utils/logger/index.js';
 
 const asyncHandler = fn => (req, res, next) => {
@@ -7,6 +8,7 @@ const asyncHandler = fn => (req, res, next) => {
 
 const blockchainRoutes = (blockchain) => {
     const router = express.Router();
+    const security = createBlockchainSecurityMiddleware();
 
     // Get full blockchain
     router.get('/', asyncHandler(async (req, res) => {
@@ -87,6 +89,72 @@ const blockchainRoutes = (blockchain) => {
             });
             throw error;
         }
+    }));
+
+    // Submit new block (mining)
+    router.post('/block', 
+        security.block,
+        security.mining,
+        asyncHandler(async (req, res) => {
+            try {
+                const block = req.body;
+                await blockchain.addBlock(block);
+                
+                logger.info('New block added to chain', {
+                    component: 'blockchain',
+                    height: block.height,
+                    hash: block.hash,
+                    transactions: block.transactions.length
+                });
+
+                res.json({
+                    message: 'Block accepted',
+                    height: block.height,
+                    hash: block.hash
+                });
+            } catch (error) {
+                logger.error('Failed to add block', {
+                    component: 'blockchain',
+                    error: error.message
+                });
+
+                res.status(400).json({
+                    error: 'InvalidBlock',
+                    message: error.message
+                });
+            }
+    }));
+
+    // Submit new transaction
+    router.post('/transaction', 
+        security.transaction,
+        asyncHandler(async (req, res) => {
+            try {
+                const transaction = req.body;
+                await blockchain.addTransaction(transaction);
+                
+                logger.info('New transaction added to pool', {
+                    component: 'blockchain',
+                    transactionId: transaction.id,
+                    inputs: transaction.inputs.length,
+                    outputs: transaction.outputs.length
+                });
+
+                res.json({
+                    message: 'Transaction accepted',
+                    id: transaction.id
+                });
+            } catch (error) {
+                logger.error('Failed to add transaction', {
+                    component: 'blockchain',
+                    error: error.message
+                });
+
+                res.status(400).json({
+                    error: 'InvalidTransaction',
+                    message: error.message
+                });
+            }
     }));
 
     return router;
