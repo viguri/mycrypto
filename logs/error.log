@@ -1,0 +1,119 @@
+[2025-03-04T19:41:24.906Z] ERROR: Failed to get blockchain
+[2025-03-04T19:41:24.909Z] ERROR: Mining failed
+[2025-03-04T19:41:24.915Z] ERROR: Failed to get mining stats
+[2025-03-04T19:41:24.921Z] ERROR: Failed to get blockchain stats
+[2025-03-04T19:56:31.897Z] ERROR: Failed to get blockchain
+[2025-03-04T19:56:31.900Z] ERROR: Mining failed
+[2025-03-04T19:56:31.906Z] ERROR: Failed to get mining stats
+[2025-03-04T19:56:31.912Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:55:44.423Z] ERROR: Failed to get blockchain
+[2025-03-04T20:55:44.437Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:55:44.687Z] ERROR: Mining failed
+[2025-03-04T20:55:44.697Z] ERROR: Failed to get mining stats
+[2025-03-04T20:58:00.313Z] ERROR: Failed to get blockchain
+[2025-03-04T20:58:00.324Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:58:00.482Z] ERROR: Mining failed
+[2025-03-04T20:58:00.492Z] ERROR: Failed to get mining stats
+[2025-03-04T21:53:15.016Z] ERROR: Failed to get blockchain
+[2025-03-04T21:53:15.028Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:53:15.199Z] ERROR: Mining failed
+[2025-03-04T21:53:15.206Z] ERROR: Failed to get mining stats
+[2025-03-04T21:55:15.572Z] ERROR: Failed to get blockchain
+[2025-03-04T21:55:15.583Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:55:15.744Z] ERROR: Mining failed
+[2025-03-04T21:55:15.749Z] ERROR: Failed to get mining stats
+[2025-03-04T21:55:16.657Z] ERROR: Failed to create wallet
+[2025-03-04T21:57:52.783Z] ERROR: Failed to create wallet
+[2025-03-04T21:57:53.264Z] ERROR: Failed to get blockchain
+[2025-03-04T21:57:53.343Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:57:53.464Z] ERROR: Mining failed
+[2025-03-04T21:57:53.467Z] ERROR: Failed to get mining stats
+[2025-03-04T21:59:54.354Z] ERROR: Failed to create wallet
+[2025-03-04T21:59:54.881Z] ERROR: Failed to get blockchain
+[2025-03-04T21:59:54.901Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:59:55.116Z] ERROR: Mining failed
+[2025-03-04T21:59:55.122Z] ERROR: Failed to get mining stats
+[2025-03-04T22:23:19.134Z] ERROR: Failed to create wallet
+[2025-03-04T22:23:19.605Z] ERROR: Failed to get blockchain
+[2025-03-04T22:23:19.624Z] ERROR: Failed to get blockchain stats
+[2025-03-04T22:23:19.875Z] ERROR: Mining failed
+[2025-03-04T22:23:19.884Z] ERROR: Failed to get mining stats
+[2025-03-04T22:25:13.759Z] ERROR: Failed to create wallet
+[2025-03-04T22:25:18.849Z] ERROR: Failed to get blockchain
+[2025-03-04T22:25:18.863Z] ERROR: Failed to get blockchain stats
+[2025-03-04T22:25:19.218Z] ERROR: Mining failed
+[2025-03-04T22:25:19.226Z] ERROR: Failed to get mining stats
+[2025-03-05T06:25:30.028Z] ERROR: Mining failed
+[2025-03-05T06:25:30.028Z] ERROR: Failed to get blockchain
+[2025-03-05T06:25:30.042Z] ERROR: Failed to get mining stats
+[2025-03-05T06:25:30.064Z] ERROR: Failed to get blockchain stats
+[2025-03-05T06:25:30.372Z] ERROR: Failed to create wallet
+[2025-03-05T11:29:53.107Z] ERROR: Failed to create wallet
+[2025-03-05T11:30:03.418Z] ERROR: Mining failed
+[2025-03-05T11:30:03.436Z] ERROR: Failed to get mining stats
+[2025-03-05T11:30:03.817Z] ERROR: Failed to get blockchain
+[2025-03-05T11:30:03.855Z] ERROR: Failed to get blockchain stats
+[2025-03-05T12:28:04.167Z] ERROR: Failed to create wallet
+[2025-03-05T12:40:34.625Z] ERROR: Failed to create wallet
+[2025-03-05T14:16:38.642Z] ERROR: Failed to create wallet
+[2025-03-05T14:16:58.984Z] ERROR: Mining failed
+[2025-03-05T14:16:59.004Z] ERROR: Failed to get mining stats
+[2025-03-05T14:17:00.094Z] ERROR: Failed to get blockchain
+[2025-03-05T14:17:00.140Z] ERROR: Failed to get blockchain stats
+[2025-03-05T14:41:58.266Z] ERROR: Failed to create wallet
+[2025-03-05T14:42:19.726Z] ERROR: Mining failed
+[2025-03-05T14:42:19.771Z] ERROR: Failed to get mining stats
+[2025-03-05T14:42:20.334Z] ERROR: Failed to get blockchain
+[2025-03-05T14:42:20.397Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:24:04.640Z] ERROR: Failed to create wallet
+[2025-03-05T16:24:25.156Z] ERROR: Failed to get blockchain
+[2025-03-05T16:24:25.195Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:24:25.499Z] ERROR: Mining failed
+[2025-03-05T16:24:25.516Z] ERROR: Failed to get mining stats
+[2025-03-05T16:26:51.175Z] ERROR: Failed to create wallet
+[2025-03-05T16:27:12.462Z] ERROR: Failed to get blockchain
+[2025-03-05T16:27:12.501Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:27:12.800Z] ERROR: Mining failed
+[2025-03-05T16:27:12.817Z] ERROR: Failed to get mining stats
+[2025-03-05T16:32:32.018Z] ERROR: Failed to get blockchain
+[2025-03-05T16:32:32.065Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:32:32.366Z] ERROR: Mining failed
+[2025-03-05T16:32:32.384Z] ERROR: Failed to get mining stats
+[2025-03-05T16:56:22.600Z] ERROR: Mining failed
+[2025-03-05T16:56:22.617Z] ERROR: Failed to get mining stats
+[2025-03-05T16:56:23.000Z] ERROR: Failed to get blockchain
+[2025-03-05T16:56:23.040Z] ERROR: Failed to get blockchain stats
+[2025-03-05T17:53:44.466Z] ERROR: Failed to get blockchain
+[2025-03-05T17:53:44.515Z] ERROR: Failed to get blockchain stats
+[2025-03-05T17:53:44.844Z] ERROR: Mining failed
+[2025-03-05T17:53:44.872Z] ERROR: Failed to get mining stats
+[2025-03-05T21:09:52.222Z] ERROR: Mining failed
+[2025-03-05T21:09:52.242Z] ERROR: Failed to get mining stats
+[2025-03-05T21:09:53.141Z] ERROR: Failed to get blockchain
+[2025-03-05T21:09:53.231Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:33:28.945Z] ERROR: Failed to get blockchain
+[2025-03-05T21:33:28.987Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:33:29.530Z] ERROR: Mining failed
+[2025-03-05T21:33:29.548Z] ERROR: Failed to get mining stats
+[2025-03-05T21:40:14.706Z] ERROR: Mining failed
+[2025-03-05T21:40:14.724Z] ERROR: Failed to get mining stats
+[2025-03-05T21:40:15.621Z] ERROR: Failed to get blockchain
+[2025-03-05T21:40:15.658Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:44:19.452Z] ERROR: Failed to get blockchain
+[2025-03-05T21:44:19.667Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:44:20.231Z] ERROR: Mining failed
+[2025-03-05T21:44:20.248Z] ERROR: Failed to get mining stats
+[2025-03-05T21:49:39.840Z] ERROR: Failed to get blockchain
+[2025-03-05T21:49:39.840Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:50:40.650Z] ERROR: Mining failed
+[2025-03-05T21:50:40.650Z] ERROR: Failed to get mining stats
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve error logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve error logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve info logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve info logs
+[2025-03-05T21:56:00.493Z] ERROR: Failed to get blockchain
+[2025-03-05T21:56:00.493Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:56:00.665Z] ERROR: Mining failed
+[2025-03-05T21:56:00.665Z] ERROR: Failed to get mining stats

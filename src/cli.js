@@ -51,6 +51,11 @@ program
     console.log('Creating a new wallet...');
     wallets.push(wallet);
     saveWallets();
+    console.log('\nWallet created successfully!');
+    console.log(`Wallet ID: ${wallet.id}`);
+    console.log(`Address: ${wallet.address}`);
+    console.log(`Balance: ${wallet.balance}`);
+    console.log(`Created: ${wallet.created}`);
   });
 
 program
@@ -71,6 +76,11 @@ program
       console.log(`Adding a new ${type}...`);
       wallets.push(wallet);
       saveWallets();
+      console.log('\nWallet created successfully!');
+      console.log(`Wallet ID: ${wallet.id}`);
+      console.log(`Address: ${wallet.address}`);
+      console.log(`Balance: ${wallet.balance}`);
+      console.log(`Created: ${wallet.created}`);
     }
   });
 
@@ -97,7 +107,12 @@ program
   .description('Delete a wallet or user by ID')
   .action((id) => {
     const numId = parseInt(id);
-    console.log(`Deleting wallet or user with ID: ${id}...`);
+    console.log(`Deleting wallet with ID: ${id}...`);
+    const walletExists = wallets.some(w => w.id === numId);
+    if (!walletExists) {
+      console.log(`Error: Wallet with ID ${id} not found.`);
+      return;
+    }
     wallets = wallets.filter(w => w.id !== numId);
     saveWallets();
     console.log(`Wallet ${id} deleted successfully.`);

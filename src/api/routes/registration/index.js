@@ -1,179 +1,232 @@
 import express from 'express';
-import logger from '../../../utils/logger/index.js';
 import CryptoService from '../../../services/CryptoService.js';
+import logger from '../../../utils/logger/index.js';
+import { success, error, ErrorTypes } from '../../../utils/response/index.js';
 
-const asyncHandler = fn => (req, res, next) => {
-    Promise.resolve(fn(req, res, next)).catch(next);
-};
+const router = express.Router();
 
-const registrationRoutes = (blockchain) => {
-    const router = express.Router();
-
+export default (blockchain) => {
     // Create new wallet
-    router.post('/wallet', asyncHandler(async (req, res) => {
+    router.post('/wallet', async (req, res) => {
         try {
-            // Generate new wallet address
             const address = await CryptoService.generateKeyPair();
+            if (!address) {
+                throw new Error('Failed to generate wallet address');
+            }
 
-            // Initialize wallet with starting balance
             const wallet = {
                 address,
-                balance: 1000,  // Initial balance for testing
+                balance: 1000,
                 createdAt: Date.now()
             };
 
-            await blockchain.addWallet(wallet);
-
-            logger.info('New wallet created', {
+            const result = await blockchain.addWallet(wallet);
+            if (!result) {
+                const errorDetails = {
+                    component: 'registration',
+                    operation: 'create_wallet',
+                    timestamp: new Date().toISOString()
+                };
+                logger.error('Failed to create wallet', errorDetails);
+                return res.status(500).json(error(
+                    'Failed to create wallet',
+                    ErrorTypes.INTERNAL,
+                    500,
+                    errorDetails
+                ));
+            }
+            
+            const metadata = {
+                address: wallet.address,
+                createdAt: wallet.createdAt,
+                initialBalance: wallet.balance
+            };
+            logger.info('New wallet created', metadata);
+            
+            return res.status(201).json(success(
+                result,
+                'Wallet created successfully',
+                201,
+                metadata
+            ));
+        } catch (err) {
+            const errorDetails = {
                 component: 'registration',
-                address: address.substring(0, 8) + '...',
-                balance: wallet.balance
-            });
-
-            res.status(201).json({
-                success: true,
-                data: {
-                    address: wallet.address,
-                    balance: wallet.balance,
-                    createdAt: wallet.createdAt
-                },
-                wallet: {
-                    address: wallet.address,
-                    balance: wallet.balance,
-                    createdAt: wallet.createdAt
-                }
-            });
-        } catch (error) {
-            logger.error('Failed to create wallet', {
-                component: 'registration',
-                error: error.message
-            });
-            throw error;
+                operation: 'create_wallet',
+                error: err.message,
+                timestamp: new Date().toISOString()
+            };
+            logger.error('Failed to create wallet', errorDetails);
+            return res.status(500).json(error(
+                'Failed to create wallet',
+                ErrorTypes.INTERNAL,
+                500,
+                errorDetails,
+                err
+            ));
         }
-    }));
+    });
 
     // Get all wallets
-    router.get('/wallets', asyncHandler(async (req, res) => {
+    router.get('/wallets', async (req, res) => {
         try {
-            const wallets = blockchain.getAllWallets();
-            
-            logger.info('Retrieved all wallets', {
+            const wallets = await blockchain.getAllWallets();
+            const metadata = {
+                count: wallets?.length || 0,
+                timestamp: new Date().toISOString()
+            };
+            logger.info('Retrieved all wallets', metadata);
+            return res.json(success(wallets || [], 'Wallets retrieved successfully', 200, metadata));
+        } catch (err) {
+            const errorDetails = {
                 component: 'registration',
-                count: wallets.length
-            });
-
-            res.json({
-                message: 'Wallets retrieved successfully',
-                wallets: wallets.map(wallet => ({
-                    address: wallet.address,
-                    balance: wallet.balance,
-                    createdAt: wallet.createdAt,
-                    isMainWallet: wallet.isMainWallet || false
-                }))
-            });
-        } catch (error) {
-            logger.error('Failed to get wallets', {
-                component: 'registration',
-                error: error.message
-            });
-            throw error;
+                operation: 'get_all_wallets',
+                error: err.message,
+                timestamp: new Date().toISOString()
+            };
+            logger.error('Failed to retrieve wallets', errorDetails);
+            return res.status(500).json(error(
+                'Failed to retrieve wallets',
+                ErrorTypes.INTERNAL,
+                500,
+                errorDetails,
+                err
+            ));
         }
-    }));
+    });
 
     // Get wallet by address
-    router.get('/:address', asyncHandler(async (req, res) => {
+    router.get('/:address', async (req, res) => {
         const { address } = req.params;
+        logger.info('Retrieving wallet info');
 
         try {
-            logger.info('Retrieving wallet info', {
-                component: 'registration',
-                address: address.substring(0, 8) + '...'
-            });
-
-            const wallet = blockchain.getWallet(address);
+            const wallet = await blockchain.getWallet(address);
             if (!wallet) {
-                return res.status(404).json({
-                    error: 'NotFound',
-                    message: 'Wallet not found'
-                });
+                return res.status(404).json(error(
+                    'Wallet not found',
+                    ErrorTypes.NOT_FOUND,
+                    404,
+                    { address }
+                ));
             }
 
-            logger.info('Wallet info retrieved', {
-                component: 'registration',
-                address: address.substring(0, 8) + '...',
-                balance: wallet.balance
-            });
+            const isMainWallet = address === 'main_wallet';
+            const transactions = await blockchain.getWalletTransactionCount(address);
+            const metadata = {
+                isMainWallet,
+                transactionCount: transactions,
+                lastUpdated: new Date().toISOString()
+            };
 
-            res.json({
-                address: wallet.address,
-                balance: wallet.balance,
-                createdAt: wallet.createdAt,
-                isMainWallet: wallet.isMainWallet || false,
-                transactions: blockchain.getWalletTransactionCount(address)
-            });
-        } catch (error) {
-            logger.error('Failed to get wallet', {
+            return res.json(success(
+                { ...wallet, isMainWallet, transactions },
+                'Wallet details retrieved successfully',
+                200,
+                metadata
+            ));
+        } catch (err) {
+            const errorDetails = {
                 component: 'registration',
-                error: error.message,
-                address: address?.substring(0, 8) + '...'
-            });
-            throw error;
+                operation: 'get_wallet',
+                error: err.message,
+                address,
+                timestamp: new Date().toISOString()
+            };
+            logger.error('Failed to retrieve wallet info', errorDetails);
+            return res.status(500).json(error(
+                'Failed to retrieve wallet information',
+                ErrorTypes.INTERNAL,
+                500,
+                errorDetails,
+                err
+            ));
         }
-    }));
+    });
 
     // Delete wallet (admin only)
-    router.delete('/:address', asyncHandler(async (req, res) => {
+    router.delete('/:address', async (req, res) => {
         const { address } = req.params;
         const { isAdmin } = req.body;
 
-        try {
-            if (!isAdmin) {
-                return res.status(403).json({
-                    error: 'Forbidden',
-                    message: 'Admin privileges required'
-                });
-            }
-
-            if (!blockchain.hasWallet(address)) {
-                return res.status(404).json({
-                    error: 'NotFound',
-                    message: 'Wallet not found'
-                });
-            }
-
-            if (address === 'main_wallet') {
-                return res.status(400).json({
-                    error: 'InvalidOperation',
-                    message: 'Cannot delete main wallet'
-                });
-            }
-
-            logger.info('Deleting wallet', {
+        if (!isAdmin) {
+            logger.error('Unauthorized wallet deletion attempt', {
                 component: 'registration',
-                address: address.substring(0, 8) + '...'
+                address,
+                error: 'Admin privileges required',
+                code: 403
             });
-
-            await blockchain.removeWallet(address);
-
-            logger.info('Wallet deleted', {
-                component: 'registration',
-                address: address.substring(0, 8) + '...'
-            });
-
-            res.json({
-                message: 'Wallet deleted successfully'
-            });
-        } catch (error) {
-            logger.error('Failed to delete wallet', {
-                component: 'registration',
-                error: error.message,
-                address: address?.substring(0, 8) + '...'
-            });
-            throw error;
+            return res.status(403).json(error(
+                'Admin privileges required',
+                ErrorTypes.FORBIDDEN,
+                403
+            ));
         }
-    }));
+
+        if (address === 'main_wallet') {
+            logger.error('Invalid wallet deletion attempt', {
+                component: 'registration',
+                address,
+                error: 'Cannot delete main wallet',
+                code: 400
+            });
+            return res.status(400).json(error(
+                'Cannot delete main wallet',
+                ErrorTypes.VALIDATION,
+                400
+            ));
+        }
+
+        try {
+            const exists = await blockchain.hasWallet(address);
+            if (!exists) {
+                logger.error('Wallet not found', {
+                    component: 'registration',
+                    address,
+                    error: 'Wallet not found',
+                    code: 404
+                });
+                return res.status(404).json(error(
+                    'Wallet not found',
+                    ErrorTypes.NOT_FOUND,
+                    404
+                ));
+            }
+
+            const walletInfo = await blockchain.getWallet(address);
+            await blockchain.removeWallet(address);
+            
+            const metadata = {
+                deletedAddress: address,
+                balanceTransferred: walletInfo?.balance || 0,
+                timestamp: new Date().toISOString()
+            };
+            
+            logger.info('Wallet deleted successfully', metadata);
+            return res.json(success(
+                null,
+                'Wallet deleted successfully. Balance transferred to main wallet.',
+                200,
+                metadata
+            ));
+        } catch (err) {
+            const errorDetails = {
+                component: 'registration',
+                operation: 'delete_wallet',
+                error: err.message,
+                address,
+                timestamp: new Date().toISOString()
+            };
+            logger.error('Failed to delete wallet', errorDetails);
+            return res.status(500).json(error(
+                'Failed to delete wallet',
+                ErrorTypes.INTERNAL,
+                500,
+                errorDetails,
+                err
+            ));
+        }
+    });
 
     return router;
 };
-
-export default registrationRoutes;

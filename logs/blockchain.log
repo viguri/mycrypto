@@ -1308,3 +1308,497 @@
 [2025-03-04T18:50:43.833Z] INFO: Retrieved blockchain stats
 [2025-03-04T18:50:53.938Z] INFO: Retrieved blockchain stats
 [2025-03-04T18:51:04.060Z] INFO: Retrieved blockchain stats
+[2025-03-04T19:41:24.893Z] INFO: Getting full blockchain
+[2025-03-04T19:41:24.893Z] INFO: Starting mining process
+[2025-03-04T19:41:24.899Z] INFO: Block mined successfully
+[2025-03-04T19:41:24.906Z] ERROR: Failed to get blockchain
+[2025-03-04T19:41:24.909Z] INFO: Starting mining process
+[2025-03-04T19:41:24.910Z] INFO: Block retrieved
+[2025-03-04T19:41:24.909Z] ERROR: Mining failed
+[2025-03-04T19:41:24.912Z] INFO: Mining stats retrieved
+[2025-03-04T19:41:24.915Z] ERROR: Failed to get mining stats
+[2025-03-04T19:41:24.917Z] INFO: Retrieved blockchain stats
+[2025-03-04T19:41:24.921Z] ERROR: Failed to get blockchain stats
+[2025-03-04T19:56:31.882Z] INFO: Getting full blockchain
+[2025-03-04T19:56:31.882Z] INFO: Starting mining process
+[2025-03-04T19:56:31.885Z] INFO: Block mined successfully
+[2025-03-04T19:56:31.897Z] ERROR: Failed to get blockchain
+[2025-03-04T19:56:31.900Z] INFO: Starting mining process
+[2025-03-04T19:56:31.900Z] ERROR: Mining failed
+[2025-03-04T19:56:31.901Z] INFO: Block retrieved
+[2025-03-04T19:56:31.903Z] INFO: Mining stats retrieved
+[2025-03-04T19:56:31.906Z] ERROR: Failed to get mining stats
+[2025-03-04T19:56:31.910Z] INFO: Retrieved blockchain stats
+[2025-03-04T19:56:31.912Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:55:44.411Z] INFO: Getting full blockchain
+[2025-03-04T20:55:44.423Z] ERROR: Failed to get blockchain
+[2025-03-04T20:55:44.426Z] INFO: Block retrieved
+[2025-03-04T20:55:44.433Z] INFO: Retrieved blockchain stats
+[2025-03-04T20:55:44.437Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:55:44.586Z] INFO: Starting mining process
+[2025-03-04T20:55:44.587Z] INFO: Block mined successfully
+[2025-03-04T20:55:44.686Z] INFO: Starting mining process
+[2025-03-04T20:55:44.687Z] ERROR: Mining failed
+[2025-03-04T20:55:44.693Z] INFO: Mining stats retrieved
+[2025-03-04T20:55:44.697Z] ERROR: Failed to get mining stats
+[2025-03-04T20:58:00.304Z] INFO: Getting full blockchain
+[2025-03-04T20:58:00.313Z] ERROR: Failed to get blockchain
+[2025-03-04T20:58:00.316Z] INFO: Block retrieved
+[2025-03-04T20:58:00.322Z] INFO: Retrieved blockchain stats
+[2025-03-04T20:58:00.324Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:58:00.434Z] INFO: Starting mining process
+[2025-03-04T20:58:00.435Z] INFO: Block mined successfully
+[2025-03-04T20:58:00.481Z] INFO: Starting mining process
+[2025-03-04T20:58:00.482Z] ERROR: Mining failed
+[2025-03-04T20:58:00.487Z] INFO: Mining stats retrieved
+[2025-03-04T20:58:00.492Z] ERROR: Failed to get mining stats
+[2025-03-04T21:53:15.003Z] INFO: Getting full blockchain
+[2025-03-04T21:53:15.016Z] ERROR: Failed to get blockchain
+[2025-03-04T21:53:15.020Z] INFO: Block retrieved
+[2025-03-04T21:53:15.026Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:53:15.028Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:53:15.189Z] INFO: Starting mining process
+[2025-03-04T21:53:15.190Z] INFO: Block mined successfully
+[2025-03-04T21:53:15.199Z] INFO: Starting mining process
+[2025-03-04T21:53:15.199Z] ERROR: Mining failed
+[2025-03-04T21:53:15.203Z] INFO: Mining stats retrieved
+[2025-03-04T21:53:15.206Z] ERROR: Failed to get mining stats
+[2025-03-04T21:55:15.563Z] INFO: Getting full blockchain
+[2025-03-04T21:55:15.572Z] ERROR: Failed to get blockchain
+[2025-03-04T21:55:15.574Z] INFO: Block retrieved
+[2025-03-04T21:55:15.581Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:55:15.583Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:55:15.695Z] INFO: Starting mining process
+[2025-03-04T21:55:15.696Z] INFO: Block mined successfully
+[2025-03-04T21:55:15.743Z] INFO: Starting mining process
+[2025-03-04T21:55:15.744Z] ERROR: Mining failed
+[2025-03-04T21:55:15.747Z] INFO: Mining stats retrieved
+[2025-03-04T21:55:15.749Z] ERROR: Failed to get mining stats
+[2025-03-04T21:55:16.037Z] INFO: New transaction created
+[2025-03-04T21:55:16.043Z] INFO: Getting pending transactions
+[2025-03-04T21:55:16.049Z] INFO: Transaction retrieved
+[2025-03-04T21:55:16.052Z] INFO: Wallet transactions retrieved
+[2025-03-04T21:55:16.374Z] INFO: New wallet created
+[2025-03-04T21:55:16.657Z] ERROR: Failed to create wallet
+[2025-03-04T21:55:16.660Z] INFO: Retrieved all wallets
+[2025-03-04T21:55:16.664Z] INFO: Retrieving wallet info
+[2025-03-04T21:55:16.664Z] INFO: Wallet info retrieved
+[2025-03-04T21:55:16.666Z] INFO: Retrieving wallet info
+[2025-03-04T21:55:16.671Z] INFO: Deleting wallet
+[2025-03-04T21:55:16.671Z] INFO: Wallet deleted
+[2025-03-04T21:57:52.703Z] INFO: New wallet created
+[2025-03-04T21:57:52.783Z] ERROR: Failed to create wallet
+[2025-03-04T21:57:52.786Z] INFO: Retrieved all wallets
+[2025-03-04T21:57:52.788Z] INFO: Retrieving wallet info
+[2025-03-04T21:57:52.788Z] INFO: Wallet info retrieved
+[2025-03-04T21:57:52.790Z] INFO: Retrieving wallet info
+[2025-03-04T21:57:52.799Z] INFO: Deleting wallet
+[2025-03-04T21:57:52.799Z] INFO: Wallet deleted
+[2025-03-04T21:57:53.137Z] INFO: New transaction created
+[2025-03-04T21:57:53.143Z] INFO: Getting pending transactions
+[2025-03-04T21:57:53.145Z] INFO: Transaction retrieved
+[2025-03-04T21:57:53.149Z] INFO: Wallet transactions retrieved
+[2025-03-04T21:57:53.258Z] INFO: Getting full blockchain
+[2025-03-04T21:57:53.264Z] ERROR: Failed to get blockchain
+[2025-03-04T21:57:53.266Z] INFO: Block retrieved
+[2025-03-04T21:57:53.331Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:57:53.343Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:57:53.456Z] INFO: Starting mining process
+[2025-03-04T21:57:53.456Z] INFO: Block mined successfully
+[2025-03-04T21:57:53.464Z] INFO: Starting mining process
+[2025-03-04T21:57:53.464Z] ERROR: Mining failed
+[2025-03-04T21:57:53.466Z] INFO: Mining stats retrieved
+[2025-03-04T21:57:53.467Z] ERROR: Failed to get mining stats
+[2025-03-04T21:59:54.130Z] INFO: New wallet created
+[2025-03-04T21:59:54.354Z] ERROR: Failed to create wallet
+[2025-03-04T21:59:54.357Z] INFO: Retrieved all wallets
+[2025-03-04T21:59:54.360Z] INFO: Retrieving wallet info
+[2025-03-04T21:59:54.360Z] INFO: Wallet info retrieved
+[2025-03-04T21:59:54.363Z] INFO: Retrieving wallet info
+[2025-03-04T21:59:54.372Z] INFO: Deleting wallet
+[2025-03-04T21:59:54.372Z] INFO: Wallet deleted
+[2025-03-04T21:59:54.509Z] INFO: New transaction created
+[2025-03-04T21:59:54.549Z] INFO: Getting pending transactions
+[2025-03-04T21:59:54.558Z] INFO: Transaction retrieved
+[2025-03-04T21:59:54.562Z] INFO: Wallet transactions retrieved
+[2025-03-04T21:59:54.870Z] INFO: Getting full blockchain
+[2025-03-04T21:59:54.881Z] ERROR: Failed to get blockchain
+[2025-03-04T21:59:54.885Z] INFO: Block retrieved
+[2025-03-04T21:59:54.899Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:59:54.901Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:59:55.102Z] INFO: Starting mining process
+[2025-03-04T21:59:55.103Z] INFO: Block mined successfully
+[2025-03-04T21:59:55.115Z] INFO: Starting mining process
+[2025-03-04T21:59:55.116Z] ERROR: Mining failed
+[2025-03-04T21:59:55.118Z] INFO: Mining stats retrieved
+[2025-03-04T21:59:55.122Z] ERROR: Failed to get mining stats
+[2025-03-04T22:23:18.691Z] INFO: New wallet created
+[2025-03-04T22:23:19.134Z] ERROR: Failed to create wallet
+[2025-03-04T22:23:19.137Z] INFO: Retrieved all wallets
+[2025-03-04T22:23:19.139Z] INFO: Retrieving wallet info
+[2025-03-04T22:23:19.139Z] INFO: Wallet info retrieved
+[2025-03-04T22:23:19.141Z] INFO: Retrieving wallet info
+[2025-03-04T22:23:19.151Z] INFO: Deleting wallet
+[2025-03-04T22:23:19.151Z] INFO: Wallet deleted
+[2025-03-04T22:23:19.597Z] INFO: Getting full blockchain
+[2025-03-04T22:23:19.605Z] ERROR: Failed to get blockchain
+[2025-03-04T22:23:19.608Z] INFO: Block retrieved
+[2025-03-04T22:23:19.620Z] INFO: Retrieved blockchain stats
+[2025-03-04T22:23:19.624Z] ERROR: Failed to get blockchain stats
+[2025-03-04T22:23:19.781Z] INFO: Starting mining process
+[2025-03-04T22:23:19.790Z] INFO: Block mined successfully
+[2025-03-04T22:23:19.874Z] INFO: Starting mining process
+[2025-03-04T22:23:19.875Z] ERROR: Mining failed
+[2025-03-04T22:23:19.882Z] INFO: Mining stats retrieved
+[2025-03-04T22:23:19.884Z] ERROR: Failed to get mining stats
+[2025-03-04T22:23:19.997Z] INFO: New transaction created
+[2025-03-04T22:23:20.003Z] INFO: Getting pending transactions
+[2025-03-04T22:23:20.004Z] INFO: Transaction retrieved
+[2025-03-04T22:23:20.007Z] INFO: Wallet transactions retrieved
+[2025-03-04T22:25:13.545Z] INFO: New wallet created
+[2025-03-04T22:25:13.759Z] ERROR: Failed to create wallet
+[2025-03-04T22:25:18.566Z] INFO: Retrieved all wallets
+[2025-03-04T22:25:18.574Z] INFO: Retrieving wallet info
+[2025-03-04T22:25:18.574Z] INFO: Wallet info retrieved
+[2025-03-04T22:25:18.582Z] INFO: Retrieving wallet info
+[2025-03-04T22:25:18.646Z] INFO: Deleting wallet
+[2025-03-04T22:25:18.646Z] INFO: Wallet deleted
+[2025-03-04T22:25:18.842Z] INFO: Getting full blockchain
+[2025-03-04T22:25:18.849Z] ERROR: Failed to get blockchain
+[2025-03-04T22:25:18.855Z] INFO: Block retrieved
+[2025-03-04T22:25:18.860Z] INFO: Retrieved blockchain stats
+[2025-03-04T22:25:18.863Z] ERROR: Failed to get blockchain stats
+[2025-03-04T22:25:19.208Z] INFO: Starting mining process
+[2025-03-04T22:25:19.209Z] INFO: Block mined successfully
+[2025-03-04T22:25:19.218Z] INFO: Starting mining process
+[2025-03-04T22:25:19.218Z] ERROR: Mining failed
+[2025-03-04T22:25:19.224Z] INFO: Mining stats retrieved
+[2025-03-04T22:25:19.226Z] ERROR: Failed to get mining stats
+[2025-03-04T22:25:19.341Z] INFO: New transaction created
+[2025-03-04T22:25:19.387Z] INFO: Getting pending transactions
+[2025-03-04T22:25:19.391Z] INFO: Transaction retrieved
+[2025-03-04T22:25:19.400Z] INFO: Wallet transactions retrieved
+[2025-03-05T06:25:30.000Z] INFO: Starting mining process
+[2025-03-05T06:25:30.005Z] INFO: Block mined successfully
+[2025-03-05T06:25:29.998Z] INFO: Getting full blockchain
+[2025-03-05T06:25:30.014Z] INFO: New transaction created
+[2025-03-05T06:25:30.027Z] INFO: Starting mining process
+[2025-03-05T06:25:30.028Z] ERROR: Failed to get blockchain
+[2025-03-05T06:25:30.028Z] ERROR: Mining failed
+[2025-03-05T06:25:30.036Z] INFO: Mining stats retrieved
+[2025-03-05T06:25:30.037Z] INFO: Block retrieved
+[2025-03-05T06:25:30.042Z] ERROR: Failed to get mining stats
+[2025-03-05T06:25:30.050Z] INFO: Getting pending transactions
+[2025-03-05T06:25:30.054Z] INFO: Retrieved blockchain stats
+[2025-03-05T06:25:30.060Z] INFO: Transaction retrieved
+[2025-03-05T06:25:30.064Z] ERROR: Failed to get blockchain stats
+[2025-03-05T06:25:30.077Z] INFO: Wallet transactions retrieved
+[2025-03-05T06:25:30.128Z] INFO: New wallet created
+[2025-03-05T06:25:30.372Z] ERROR: Failed to create wallet
+[2025-03-05T06:25:35.147Z] INFO: Retrieved all wallets
+[2025-03-05T06:25:35.150Z] INFO: Retrieving wallet info
+[2025-03-05T06:25:35.151Z] INFO: Wallet info retrieved
+[2025-03-05T06:25:35.154Z] INFO: Retrieving wallet info
+[2025-03-05T06:25:35.172Z] INFO: Deleting wallet
+[2025-03-05T06:25:35.172Z] INFO: Wallet deleted
+[2025-03-05T11:29:52.426Z] INFO: New transaction created
+[2025-03-05T11:29:52.458Z] INFO: Getting pending transactions
+[2025-03-05T11:29:52.486Z] INFO: Transaction retrieved
+[2025-03-05T11:29:52.502Z] INFO: Wallet transactions retrieved
+[2025-03-05T11:29:52.940Z] INFO: New wallet created
+[2025-03-05T11:29:53.107Z] ERROR: Failed to create wallet
+[2025-03-05T11:30:02.973Z] INFO: Retrieved all wallets
+[2025-03-05T11:30:03.004Z] INFO: Retrieving wallet info
+[2025-03-05T11:30:03.013Z] INFO: Wallet info retrieved
+[2025-03-05T11:30:03.033Z] INFO: Retrieving wallet info
+[2025-03-05T11:30:03.055Z] INFO: Deleting wallet
+[2025-03-05T11:30:03.058Z] INFO: Wallet deleted
+[2025-03-05T11:30:03.375Z] INFO: Starting mining process
+[2025-03-05T11:30:03.383Z] INFO: Block mined successfully
+[2025-03-05T11:30:03.413Z] INFO: Starting mining process
+[2025-03-05T11:30:03.418Z] ERROR: Mining failed
+[2025-03-05T11:30:03.426Z] INFO: Mining stats retrieved
+[2025-03-05T11:30:03.436Z] ERROR: Failed to get mining stats
+[2025-03-05T11:30:03.805Z] INFO: Getting full blockchain
+[2025-03-05T11:30:03.817Z] ERROR: Failed to get blockchain
+[2025-03-05T11:30:03.826Z] INFO: Block retrieved
+[2025-03-05T11:30:03.845Z] INFO: Retrieved blockchain stats
+[2025-03-05T11:30:03.855Z] ERROR: Failed to get blockchain stats
+[2025-03-05T12:28:04.054Z] INFO: New wallet created
+[2025-03-05T12:28:04.167Z] ERROR: Failed to create wallet
+[2025-03-05T12:28:14.098Z] INFO: Retrieved all wallets
+[2025-03-05T12:28:14.166Z] INFO: Retrieving wallet info
+[2025-03-05T12:28:14.179Z] INFO: Wallet info retrieved
+[2025-03-05T12:28:14.203Z] INFO: Retrieving wallet info
+[2025-03-05T12:28:14.225Z] INFO: Deleting wallet
+[2025-03-05T12:28:14.230Z] INFO: Wallet deleted
+[2025-03-05T12:40:34.417Z] INFO: New wallet created
+[2025-03-05T12:40:34.625Z] ERROR: Failed to create wallet
+[2025-03-05T12:40:49.460Z] INFO: Retrieved all wallets
+[2025-03-05T12:40:49.497Z] INFO: Retrieving wallet info
+[2025-03-05T12:40:49.543Z] INFO: Wallet info retrieved
+[2025-03-05T12:40:49.557Z] INFO: Retrieving wallet info
+[2025-03-05T12:40:49.574Z] INFO: Deleting wallet
+[2025-03-05T12:40:49.577Z] INFO: Wallet deleted
+[2025-03-05T14:16:38.378Z] INFO: New wallet created
+[2025-03-05T14:16:38.642Z] ERROR: Failed to create wallet
+[2025-03-05T14:16:58.439Z] INFO: Retrieved all wallets
+[2025-03-05T14:16:58.466Z] INFO: Retrieving wallet info
+[2025-03-05T14:16:58.472Z] INFO: Wallet info retrieved
+[2025-03-05T14:16:58.483Z] INFO: Retrieving wallet info
+[2025-03-05T14:16:58.508Z] INFO: Deleting wallet
+[2025-03-05T14:16:58.515Z] INFO: Wallet deleted
+[2025-03-05T14:16:58.945Z] INFO: Starting mining process
+[2025-03-05T14:16:58.953Z] INFO: Block mined successfully
+[2025-03-05T14:16:58.978Z] INFO: Starting mining process
+[2025-03-05T14:16:58.984Z] ERROR: Mining failed
+[2025-03-05T14:16:58.992Z] INFO: Mining stats retrieved
+[2025-03-05T14:16:59.004Z] ERROR: Failed to get mining stats
+[2025-03-05T14:16:59.273Z] INFO: New transaction created
+[2025-03-05T14:16:59.300Z] INFO: Getting pending transactions
+[2025-03-05T14:16:59.318Z] INFO: Transaction retrieved
+[2025-03-05T14:16:59.333Z] INFO: Wallet transactions retrieved
+[2025-03-05T14:17:00.063Z] INFO: Getting full blockchain
+[2025-03-05T14:17:00.094Z] ERROR: Failed to get blockchain
+[2025-03-05T14:17:00.108Z] INFO: Block retrieved
+[2025-03-05T14:17:00.127Z] INFO: Retrieved blockchain stats
+[2025-03-05T14:17:00.140Z] ERROR: Failed to get blockchain stats
+[2025-03-05T14:41:58.029Z] INFO: New wallet created
+[2025-03-05T14:41:58.266Z] ERROR: Failed to create wallet
+[2025-03-05T14:42:18.086Z] INFO: Retrieved all wallets
+[2025-03-05T14:42:18.137Z] INFO: Retrieving wallet info
+[2025-03-05T14:42:18.207Z] INFO: Wallet info retrieved
+[2025-03-05T14:42:18.319Z] INFO: Retrieving wallet info
+[2025-03-05T14:42:18.417Z] INFO: Deleting wallet
+[2025-03-05T14:42:18.436Z] INFO: Wallet deleted
+[2025-03-05T14:42:19.664Z] INFO: Starting mining process
+[2025-03-05T14:42:19.675Z] INFO: Block mined successfully
+[2025-03-05T14:42:19.722Z] INFO: Starting mining process
+[2025-03-05T14:42:19.726Z] ERROR: Mining failed
+[2025-03-05T14:42:19.750Z] INFO: Mining stats retrieved
+[2025-03-05T14:42:19.771Z] ERROR: Failed to get mining stats
+[2025-03-05T14:42:20.308Z] INFO: Getting full blockchain
+[2025-03-05T14:42:20.334Z] ERROR: Failed to get blockchain
+[2025-03-05T14:42:20.345Z] INFO: Block retrieved
+[2025-03-05T14:42:20.379Z] INFO: Retrieved blockchain stats
+[2025-03-05T14:42:20.397Z] ERROR: Failed to get blockchain stats
+[2025-03-05T14:42:20.717Z] INFO: New transaction created
+[2025-03-05T14:42:20.741Z] INFO: Getting pending transactions
+[2025-03-05T14:42:20.750Z] INFO: Transaction retrieved
+[2025-03-05T14:42:20.765Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:24:04.196Z] INFO: New wallet created
+[2025-03-05T16:24:04.640Z] ERROR: Failed to create wallet
+[2025-03-05T16:24:24.296Z] INFO: Retrieved all wallets
+[2025-03-05T16:24:24.337Z] INFO: Retrieving wallet info
+[2025-03-05T16:24:24.348Z] INFO: Wallet info retrieved
+[2025-03-05T16:24:24.367Z] INFO: Retrieving wallet info
+[2025-03-05T16:24:24.386Z] INFO: Deleting wallet
+[2025-03-05T16:24:24.390Z] INFO: Wallet deleted
+[2025-03-05T16:24:25.142Z] INFO: Getting full blockchain
+[2025-03-05T16:24:25.156Z] ERROR: Failed to get blockchain
+[2025-03-05T16:24:25.167Z] INFO: Block retrieved
+[2025-03-05T16:24:25.185Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:24:25.195Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:24:25.427Z] INFO: Starting mining process
+[2025-03-05T16:24:25.472Z] INFO: Block mined successfully
+[2025-03-05T16:24:25.496Z] INFO: Starting mining process
+[2025-03-05T16:24:25.499Z] ERROR: Mining failed
+[2025-03-05T16:24:25.507Z] INFO: Mining stats retrieved
+[2025-03-05T16:24:25.516Z] ERROR: Failed to get mining stats
+[2025-03-05T16:24:25.976Z] INFO: New transaction created
+[2025-03-05T16:24:25.997Z] INFO: Getting pending transactions
+[2025-03-05T16:24:26.014Z] INFO: Transaction retrieved
+[2025-03-05T16:24:26.040Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:26:51.035Z] INFO: New wallet created
+[2025-03-05T16:26:51.175Z] ERROR: Failed to create wallet
+[2025-03-05T16:27:11.087Z] INFO: Retrieved all wallets
+[2025-03-05T16:27:11.118Z] INFO: Retrieving wallet info
+[2025-03-05T16:27:11.128Z] INFO: Wallet info retrieved
+[2025-03-05T16:27:11.145Z] INFO: Retrieving wallet info
+[2025-03-05T16:27:11.165Z] INFO: Deleting wallet
+[2025-03-05T16:27:11.168Z] INFO: Wallet deleted
+[2025-03-05T16:27:12.123Z] INFO: New transaction created
+[2025-03-05T16:27:12.139Z] INFO: Getting pending transactions
+[2025-03-05T16:27:12.147Z] INFO: Transaction retrieved
+[2025-03-05T16:27:12.162Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:27:12.390Z] INFO: Getting full blockchain
+[2025-03-05T16:27:12.462Z] ERROR: Failed to get blockchain
+[2025-03-05T16:27:12.474Z] INFO: Block retrieved
+[2025-03-05T16:27:12.493Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:27:12.501Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:27:12.724Z] INFO: Starting mining process
+[2025-03-05T16:27:12.729Z] INFO: Block mined successfully
+[2025-03-05T16:27:12.795Z] INFO: Starting mining process
+[2025-03-05T16:27:12.800Z] ERROR: Mining failed
+[2025-03-05T16:27:12.808Z] INFO: Mining stats retrieved
+[2025-03-05T16:27:12.817Z] ERROR: Failed to get mining stats
+[2025-03-05T16:32:31.655Z] INFO: New transaction created
+[2025-03-05T16:32:31.673Z] INFO: Getting pending transactions
+[2025-03-05T16:32:31.681Z] INFO: Transaction retrieved
+[2025-03-05T16:32:31.698Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:32:31.997Z] INFO: Getting full blockchain
+[2025-03-05T16:32:32.018Z] ERROR: Failed to get blockchain
+[2025-03-05T16:32:32.031Z] INFO: Block retrieved
+[2025-03-05T16:32:32.051Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:32:32.065Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:32:32.343Z] INFO: Starting mining process
+[2025-03-05T16:32:32.347Z] INFO: Block mined successfully
+[2025-03-05T16:32:32.362Z] INFO: Starting mining process
+[2025-03-05T16:32:32.366Z] ERROR: Mining failed
+[2025-03-05T16:32:32.375Z] INFO: Mining stats retrieved
+[2025-03-05T16:32:32.384Z] ERROR: Failed to get mining stats
+[2025-03-05T16:56:22.122Z] INFO: New transaction created
+[2025-03-05T16:56:22.170Z] INFO: Getting pending transactions
+[2025-03-05T16:56:22.193Z] INFO: Transaction retrieved
+[2025-03-05T16:56:22.249Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:56:22.575Z] INFO: Starting mining process
+[2025-03-05T16:56:22.580Z] INFO: Block mined successfully
+[2025-03-05T16:56:22.596Z] INFO: Starting mining process
+[2025-03-05T16:56:22.600Z] ERROR: Mining failed
+[2025-03-05T16:56:22.607Z] INFO: Mining stats retrieved
+[2025-03-05T16:56:22.617Z] ERROR: Failed to get mining stats
+[2025-03-05T16:56:22.984Z] INFO: Getting full blockchain
+[2025-03-05T16:56:23.000Z] ERROR: Failed to get blockchain
+[2025-03-05T16:56:23.010Z] INFO: Block retrieved
+[2025-03-05T16:56:23.030Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:56:23.040Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:56:23.995Z] INFO: New wallet created
+[2025-03-05T16:56:24.297Z] INFO: New wallet created
+[2025-03-05T16:56:24.308Z] INFO: Retrieved all wallets
+[2025-03-05T16:56:24.320Z] INFO: Retrieving wallet info
+[2025-03-05T16:56:24.329Z] INFO: Retrieving wallet info
+[2025-03-05T17:53:44.086Z] INFO: New transaction created
+[2025-03-05T17:53:44.140Z] INFO: Getting pending transactions
+[2025-03-05T17:53:44.158Z] INFO: Transaction retrieved
+[2025-03-05T17:53:44.189Z] INFO: Wallet transactions retrieved
+[2025-03-05T17:53:44.447Z] INFO: Getting full blockchain
+[2025-03-05T17:53:44.466Z] ERROR: Failed to get blockchain
+[2025-03-05T17:53:44.480Z] INFO: Block retrieved
+[2025-03-05T17:53:44.504Z] INFO: Retrieved blockchain stats
+[2025-03-05T17:53:44.515Z] ERROR: Failed to get blockchain stats
+[2025-03-05T17:53:44.789Z] INFO: Starting mining process
+[2025-03-05T17:53:44.809Z] INFO: Block mined successfully
+[2025-03-05T17:53:44.840Z] INFO: Starting mining process
+[2025-03-05T17:53:44.844Z] ERROR: Mining failed
+[2025-03-05T17:53:44.859Z] INFO: Mining stats retrieved
+[2025-03-05T17:53:44.872Z] ERROR: Failed to get mining stats
+[2025-03-05T21:09:52.181Z] INFO: Starting mining process
+[2025-03-05T21:09:52.188Z] INFO: Block mined successfully
+[2025-03-05T21:09:52.218Z] INFO: Starting mining process
+[2025-03-05T21:09:52.222Z] ERROR: Mining failed
+[2025-03-05T21:09:52.231Z] INFO: Mining stats retrieved
+[2025-03-05T21:09:52.242Z] ERROR: Failed to get mining stats
+[2025-03-05T21:09:52.577Z] INFO: New transaction created
+[2025-03-05T21:09:52.599Z] INFO: Getting pending transactions
+[2025-03-05T21:09:52.615Z] INFO: Transaction retrieved
+[2025-03-05T21:09:52.636Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:09:52.906Z] INFO: Getting full blockchain
+[2025-03-05T21:09:53.141Z] ERROR: Failed to get blockchain
+[2025-03-05T21:09:53.196Z] INFO: Block retrieved
+[2025-03-05T21:09:53.220Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:09:53.231Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:09:54.430Z] INFO: New wallet created
+[2025-03-05T21:09:54.906Z] INFO: New wallet created
+[2025-03-05T21:09:54.922Z] INFO: Retrieved all wallets
+[2025-03-05T21:09:54.942Z] INFO: Retrieving wallet info
+[2025-03-05T21:09:54.955Z] INFO: Retrieving wallet info
+[2025-03-05T21:33:28.925Z] INFO: Getting full blockchain
+[2025-03-05T21:33:28.945Z] ERROR: Failed to get blockchain
+[2025-03-05T21:33:28.959Z] INFO: Block retrieved
+[2025-03-05T21:33:28.978Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:33:28.987Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:33:29.507Z] INFO: Starting mining process
+[2025-03-05T21:33:29.511Z] INFO: Block mined successfully
+[2025-03-05T21:33:29.527Z] INFO: Starting mining process
+[2025-03-05T21:33:29.530Z] ERROR: Mining failed
+[2025-03-05T21:33:29.538Z] INFO: Mining stats retrieved
+[2025-03-05T21:33:29.548Z] ERROR: Failed to get mining stats
+[2025-03-05T21:33:29.868Z] INFO: New transaction created
+[2025-03-05T21:33:29.897Z] INFO: Getting pending transactions
+[2025-03-05T21:33:29.908Z] INFO: Transaction retrieved
+[2025-03-05T21:33:29.925Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:40:14.615Z] INFO: Starting mining process
+[2025-03-05T21:40:14.622Z] INFO: Block mined successfully
+[2025-03-05T21:40:14.700Z] INFO: Starting mining process
+[2025-03-05T21:40:14.706Z] ERROR: Mining failed
+[2025-03-05T21:40:14.715Z] INFO: Mining stats retrieved
+[2025-03-05T21:40:14.724Z] ERROR: Failed to get mining stats
+[2025-03-05T21:40:14.958Z] INFO: New transaction created
+[2025-03-05T21:40:15.043Z] INFO: Getting pending transactions
+[2025-03-05T21:40:15.056Z] INFO: Transaction retrieved
+[2025-03-05T21:40:15.076Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:40:15.607Z] INFO: Getting full blockchain
+[2025-03-05T21:40:15.621Z] ERROR: Failed to get blockchain
+[2025-03-05T21:40:15.631Z] INFO: Block retrieved
+[2025-03-05T21:40:15.649Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:40:15.658Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:40:16.451Z] INFO: New wallet created
+[2025-03-05T21:40:16.785Z] INFO: New wallet created
+[2025-03-05T21:40:16.791Z] INFO: Retrieved all wallets
+[2025-03-05T21:40:16.803Z] INFO: Retrieving wallet info
+[2025-03-05T21:40:16.811Z] INFO: Retrieving wallet info
+[2025-03-05T21:44:18.341Z] INFO: New wallet created
+[2025-03-05T21:44:18.651Z] INFO: New wallet created
+[2025-03-05T21:44:18.666Z] INFO: Retrieved all wallets
+[2025-03-05T21:44:18.691Z] INFO: Retrieving wallet info
+[2025-03-05T21:44:18.715Z] INFO: Retrieving wallet info
+[2025-03-05T21:44:19.433Z] INFO: Getting full blockchain
+[2025-03-05T21:44:19.452Z] ERROR: Failed to get blockchain
+[2025-03-05T21:44:19.489Z] INFO: Block retrieved
+[2025-03-05T21:44:19.654Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:44:19.667Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:44:19.940Z] INFO: New transaction created
+[2025-03-05T21:44:19.955Z] INFO: Getting pending transactions
+[2025-03-05T21:44:19.964Z] INFO: Transaction retrieved
+[2025-03-05T21:44:19.978Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:44:20.202Z] INFO: Starting mining process
+[2025-03-05T21:44:20.209Z] INFO: Block mined successfully
+[2025-03-05T21:44:20.225Z] INFO: Starting mining process
+[2025-03-05T21:44:20.231Z] ERROR: Mining failed
+[2025-03-05T21:44:20.240Z] INFO: Mining stats retrieved
+[2025-03-05T21:44:20.248Z] ERROR: Failed to get mining stats
+[2025-03-05T21:48:38.517Z] INFO: New wallet created
+[2025-03-05T21:48:38.517Z] INFO: New wallet created
+[2025-03-05T21:48:38.517Z] INFO: Retrieved all wallets
+[2025-03-05T21:48:38.517Z] INFO: Retrieving wallet info
+[2025-03-05T21:48:38.517Z] INFO: Retrieving wallet info
+[2025-03-05T21:49:39.840Z] INFO: Getting full blockchain
+[2025-03-05T21:49:39.840Z] ERROR: Failed to get blockchain
+[2025-03-05T21:49:39.840Z] INFO: Block retrieved
+[2025-03-05T21:49:39.840Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:49:39.840Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:50:10.231Z] INFO: New transaction created
+[2025-03-05T21:50:10.231Z] INFO: Getting pending transactions
+[2025-03-05T21:50:10.231Z] INFO: Transaction retrieved
+[2025-03-05T21:50:10.231Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:50:40.650Z] INFO: Starting mining process
+[2025-03-05T21:50:40.650Z] INFO: Block mined successfully
+[2025-03-05T21:50:40.650Z] INFO: Starting mining process
+[2025-03-05T21:50:40.650Z] ERROR: Mining failed
+[2025-03-05T21:50:40.650Z] INFO: Mining stats retrieved
+[2025-03-05T21:50:40.650Z] ERROR: Failed to get mining stats
+[2025-03-05T21:55:58.739Z] INFO: New wallet created
+[2025-03-05T21:55:58.739Z] INFO: New wallet created
+[2025-03-05T21:55:58.739Z] INFO: Retrieving wallet info
+[2025-03-05T21:55:58.739Z] INFO: Retrieving wallet info
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve error logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve error logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve info logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve info logs
+[2025-03-05T21:56:00.244Z] INFO: New transaction created
+[2025-03-05T21:56:00.244Z] INFO: Getting pending transactions
+[2025-03-05T21:56:00.244Z] INFO: Transaction retrieved
+[2025-03-05T21:56:00.244Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:56:00.493Z] INFO: Getting full blockchain
+[2025-03-05T21:56:00.493Z] ERROR: Failed to get blockchain
+[2025-03-05T21:56:00.493Z] INFO: Block retrieved
+[2025-03-05T21:56:00.493Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:56:00.493Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:56:00.665Z] INFO: Starting mining process
+[2025-03-05T21:56:00.665Z] INFO: Block mined successfully
+[2025-03-05T21:56:00.665Z] INFO: Starting mining process
+[2025-03-05T21:56:00.665Z] ERROR: Mining failed
+[2025-03-05T21:56:00.665Z] INFO: Mining stats retrieved
+[2025-03-05T21:56:00.665Z] ERROR: Failed to get mining stats

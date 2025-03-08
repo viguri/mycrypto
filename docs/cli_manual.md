@@ -15,6 +15,22 @@ Before using the CLI, ensure that:
 
 You can also run the CLI using Docker, which is useful for testing or when you don't want to install Node.js locally.
 
+### Building and Running the Backend Server
+
+To run the backend server in a Docker container:
+
+1. Build the server image:
+
+```bash
+docker build -t backend-server .
+```
+
+2. Run the container:
+
+```bash
+docker run -p 8080:8080 -d backend-server
+```
+
 ### Building the Docker Image
 
 ```bash

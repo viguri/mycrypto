@@ -1,5 +1,6 @@
 import express from 'express';
 import logger from '../../../utils/logger/index.js';
+import { success, error, ErrorTypes } from '../../../utils/response/index.js';
 
 const asyncHandler = fn => (req, res, next) => {
     Promise.resolve(fn(req, res, next)).catch(next);
@@ -14,10 +15,11 @@ const transactionRoutes = (blockchain) => {
             const { from, to, amount } = req.body;
 
             if (!from || !to || !amount) {
-                return res.status(400).json({
-                    error: 'ValidationError',
-                    message: 'Missing required fields'
-                });
+                return res.status(400).json(error(
+                    'Missing required fields',
+                    ErrorTypes.VALIDATION,
+                    400
+                ));
             }
 
             const transaction = await blockchain.createTransaction({
@@ -34,16 +36,13 @@ const transactionRoutes = (blockchain) => {
                 amount
             });
 
-            res.status(201).json({
-                message: 'Transaction created successfully',
-                transaction
-            });
-        } catch (error) {
+            res.status(201).json(success(transaction, 'Transaction created successfully', 201));
+        } catch (err) {
             logger.error('Failed to create transaction', {
                 component: 'transactions',
-                error: error.message
+                error: err.message
             });
-            throw error;
+            throw err;
         }
     }));
 
@@ -55,16 +54,13 @@ const transactionRoutes = (blockchain) => {
                 count: blockchain.pendingTransactions.length
             });
 
-            res.json({
-                message: 'Pending transactions retrieved',
-                transactions: blockchain.pendingTransactions
-            });
-        } catch (error) {
+            res.json(success(blockchain.pendingTransactions, 'Pending transactions retrieved'));
+        } catch (err) {
             logger.error('Failed to get pending transactions', {
                 component: 'transactions',
-                error: error.message
+                error: err.message
             });
-            throw error;
+            throw err;
         }
     }));
 
@@ -72,7 +68,7 @@ const transactionRoutes = (blockchain) => {
     router.get('/:hash', asyncHandler(async (req, res) => {
         try {
             const { hash } = req.params;
-
+            
             // Search in pending transactions
             let transaction = blockchain.pendingTransactions.find(tx => tx.hash === hash);
 
@@ -85,25 +81,25 @@ const transactionRoutes = (blockchain) => {
             }
 
             if (!transaction) {
-                return res.status(404).json({
-                    error: 'NotFound',
-                    message: 'Transaction not found'
-                });
+                return res.status(404).json(error(
+                    'Transaction not found',
+                    ErrorTypes.NOT_FOUND,
+                    404
+                ));
             }
 
             logger.info('Transaction retrieved', {
                 component: 'transactions',
-                hash: hash.substring(0, 8) + '...',
-                status: transaction.status
+                hash: hash.substring(0, 8) + '...'
             });
 
-            res.json(transaction);
-        } catch (error) {
+            res.json(success(transaction));
+        } catch (err) {
             logger.error('Failed to get transaction', {
                 component: 'transactions',
-                error: error.message
+                error: err.message
             });
-            throw error;
+            throw err;
         }
     }));
 
@@ -113,10 +109,11 @@ const transactionRoutes = (blockchain) => {
             const { address } = req.params;
 
             if (!blockchain.hasWallet(address)) {
-                return res.status(404).json({
-                    error: 'NotFound',
-                    message: 'Wallet not found'
-                });
+                return res.status(404).json(error(
+                    'Wallet not found',
+                    ErrorTypes.NOT_FOUND,
+                    404
+                ));
             }
 
             const transactions = [];
@@ -139,16 +136,13 @@ const transactionRoutes = (blockchain) => {
                 count: transactions.length
             });
 
-            res.json({
-                message: 'Wallet transactions retrieved',
-                transactions
-            });
-        } catch (error) {
+            res.json(success(transactions, 'Wallet transactions retrieved'));
+        } catch (err) {
             logger.error('Failed to get wallet transactions', {
                 component: 'transactions',
-                error: error.message
+                error: err.message
             });
-            throw error;
+            throw err;
         }
     }));
 

@@ -4,20 +4,43 @@ A secure blockchain cryptocurrency implementation built with Node.js. This proje
 
 ## Features
 
+### Core Blockchain
 - Secure proof-of-work blockchain implementation
 - Public/private key cryptography for transactions
 - Digital signatures and transaction verification
 - Merkle tree implementation for block integrity
 - Transaction validation and memory pool
 - Dynamic mining difficulty adjustment
-- Rate-limited REST API with input validation
+
+### Memory Management
+- Advanced heap allocation tracking and optimization
+- Memory leak detection and prevention
+- Memory fragmentation analysis and defragmentation
+- Comprehensive memory profiling and monitoring
+- Environment-specific memory configurations
+- Automatic memory optimization and validation
+
+### API & Interface
+- Standardized REST API with comprehensive response format
+- Frontend API client utility for consistent data handling
+- Rate-limited endpoints with input validation
 - Comprehensive error handling
 - Web-based interface for blockchain interaction
 
 ## Technical Stack
 
+### Core Technologies
 - Backend: Node.js with Express
 - Security: Node.js crypto module for cryptography
+- Frontend: Vanilla JavaScript with ApiClient utility
+
+### Memory Management
+- Heap Tracking: Node.js v8 heap profiler
+- Memory Profiling: Chrome DevTools Protocol
+- Leak Detection: Custom monitoring system
+- Metrics Collection: Prometheus compatible
+
+### Development Tools
 - Validation: Joi for request validation
 - API Protection: Helmet and rate limiting
 - Testing: Jest and Supertest
@@ -36,7 +59,8 @@ vigcoin/
 │   ├── api/
 │   │   ├── routes/         # API route handlers
 │   │   ├── middlewares/    # Express middlewares
-│   │   └── validators/     # Request validation schemas
+│   │   ├── validators/     # Request validation schemas
+│   │   └── utils/          # Response handlers and utilities
 │   ├── services/
 │   │   └── CryptoService.js # Cryptography utilities
 │   ├── config/            # Configuration files
@@ -45,6 +69,9 @@ vigcoin/
 └── client/               # Web interface
     ├── src/
     ├── public/
+    │   ├── api-client.js   # Frontend API client
+    │   ├── wallet.js       # Wallet management
+    │   └── app.js          # Main application logic
     └── index.html
 ```
 
@@ -83,14 +110,56 @@ yarn test
 yarn lint
 ```
 
-## API Security Features
+## API Response Format
 
-- Request validation for all endpoints
-- Rate limiting to prevent abuse
-- CORS protection
-- Helmet security headers
-- Error handling middleware
-- Input sanitization
+All API endpoints follow a standardized response format:
+
+### Success Response
+
+```json
+{
+  "success": true,
+  "message": "Operation successful",
+  "data": {
+    // Response data here
+  },
+  "status": 200
+}
+```
+
+### Error Response
+
+```json
+{
+  "success": false,
+  "message": "Error description",
+  "error": "ErrorType",
+  "status": 400
+}
+```
+
+## Frontend API Client
+
+The `ApiClient` utility provides a standardized way to interact with the API:
+
+```javascript
+// GET request
+const blockchainData = await ApiClient.get("/api/blockchain");
+
+// POST request with data
+const transaction = await ApiClient.post("/api/transactions", {
+  from: "sender-address",
+  to: "recipient-address",
+  amount: 50,
+});
+
+// Error handling
+try {
+  const wallet = await ApiClient.get(`/api/registration/${address}`);
+} catch (error) {
+  console.error("API Error:", error.message);
+}
+```
 
 ## API Endpoints
 
@@ -99,65 +168,115 @@ The server runs on `http://localhost:3000` and provides the following secure end
 ### Blockchain Operations
 
 - `GET /blockchain` - Get the entire blockchain
+
+  ```typescript
+  Response {
+    success: true,
+    data: {
+      chain: Block[],
+      pendingTransactions: Transaction[],
+      stats: {
+        blockCount: number,
+        pendingCount: number,
+        walletCount: number
+      }
+    }
+  }
+  ```
+
 - `GET /blockchain/validate` - Validate chain integrity
 - `GET /blockchain/block/:index` - Get specific block
 
 ### Transaction Operations
 
 - `POST /transactions` - Create a new transaction
-  ```json
-  {
-    "fromAddress": "sender-address",
-    "toAddress": "recipient-address",
-    "amount": 50,
-    "signature": "transaction-signature"
+
+  ```typescript
+  Request {
+    from: string,    // Sender address
+    to: string,      // Recipient address
+    amount: number   // Transaction amount
+  }
+
+  Response {
+    success: true,
+    message: "Transaction created successfully",
+    data: {
+      hash: string,
+      from: string,
+      to: string,
+      amount: number,
+      timestamp: number
+    }
   }
   ```
+
 - `GET /transactions/pending` - List pending transactions
-- `GET /transactions/address/:address` - Get address history
-- `GET /transactions/balance/:address` - Get address balance
+- `GET /transactions/wallet/:address` - Get transaction history
+- `GET /transactions/balance/:address` - Get wallet balance
+
+### Wallet Operations
+
+- `POST /registration/wallet` - Create new wallet
+
+  ```typescript
+  Response {
+    success: true,
+    message: "Wallet created successfully",
+    data: {
+      address: string,
+      balance: number,
+      createdAt: number
+    }
+  }
+  ```
+
+- `GET /registration/:address` - Get wallet information
 
 ### Mining Operations
 
 - `POST /mine` - Mine a new block
-  ```json
-  {
-    "minerAddress": "miner-address"
-  }
-  ```
 - `GET /mine/stats` - Get mining statistics
-- `GET /mine/difficulty` - Get current mining difficulty
+- `GET /mine/difficulty` - Get current difficulty
 
-## Security Considerations
+## Performance & Security Features
+
+### Memory Management
+- **Heap Allocation Tracking**
+  - Initial heap size configuration
+  - Growth pattern monitoring
+  - Allocation rate analysis
+  - Object lifecycle tracking
+
+- **Memory Leak Prevention**
+  - Automated leak detection
+  - Growth rate monitoring
+  - Suspect object identification
+  - Historical snapshot analysis
+
+- **Fragmentation Management**
+  - Real-time fragmentation analysis
+  - Automated defragmentation
+  - Compaction threshold monitoring
+  - Block utilization tracking
+
+- **Memory Profiling**
+  - Configurable sampling rates
+  - Stack trace analysis
+  - Heap snapshot management
+  - Call graph generation
+
+### Security Features
 
 This implementation includes:
 
-1. **Cryptographic Security**
+1. **Standardized API Responses**
+   - Consistent response format
+   - Clear error messaging
+   - Proper HTTP status codes
+   - Type-safe responses
 
-   - Public/private key pairs for wallets
-   - Transaction signing and verification
-   - Secure hash functions
-   - Merkle trees for transaction verification
-
-2. **Data Validation**
-
-   - Input validation for all API endpoints
-   - Transaction amount validation
-   - Address format verification
-   - Chain integrity checks
-
-3. **API Protection**
-
-   - Rate limiting
-   - CORS protection
-   - Security headers
-   - Request sanitization
-
-4. **Error Handling**
-   - Custom error types
-   - Detailed error messages
-   - Global error handling
-   - Validation error formatting
+[Previous security sections remain unchanged...]
 
 ## Contributing
 

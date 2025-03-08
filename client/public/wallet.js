@@ -10,32 +10,13 @@ class Wallet {
         try {
             console.log('Creating new wallet...');
             
-            const response = await fetch('/api/registration/wallet', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            });
-
-            // Check if response is JSON
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new Error('Server returned invalid response format');
-            }
-
-            const data = await response.json();
-            console.log('Server response:', data);
-            if (!response.ok) {
-                throw new Error(data.message || 'Failed to create wallet');
-            }
-
+            const data = await ApiClient.post('/api/registration/wallet');
             console.log('Wallet created:', data);
 
             const wallet = new Wallet();
-            wallet.address = data.wallet?.address || data.address;
-            wallet.balance = data.wallet?.balance || data.balance;
-            wallet.createdAt = data.wallet?.createdAt || data.createdAt;
+            wallet.address = data.address;
+            wallet.balance = data.balance;
+            wallet.createdAt = data.createdAt;
 
             // Save to local storage
             localStorage.setItem('wallet', JSON.stringify({
@@ -47,9 +28,6 @@ class Wallet {
             return wallet;
         } catch (error) {
             console.error('Wallet creation failed:', error);
-            if (error.name === 'SyntaxError') {
-                throw new Error('Server returned invalid data format');
-            }
             throw error;
         }
     }
@@ -62,24 +40,7 @@ class Wallet {
             }
 
             const data = JSON.parse(stored);
-            
-            const response = await fetch(`/api/registration/${data.address}`, {
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new Error('Server returned invalid response format');
-            }
-
-            const walletData = await response.json();
-
-            if (!response.ok) {
-                localStorage.removeItem('wallet');
-                throw new Error(walletData.message || 'Failed to load wallet');
-            }
+            const walletData = await ApiClient.get(`/api/registration/${data.address}`);
 
             const wallet = new Wallet();
             wallet.address = walletData.address;
@@ -90,9 +51,6 @@ class Wallet {
         } catch (error) {
             console.error('Failed to load wallet:', error);
             localStorage.removeItem('wallet');
-            if (error.name === 'SyntaxError') {
-                throw new Error('Server returned invalid data format');
-            }
             return null;
         }
     }
@@ -103,30 +61,11 @@ class Wallet {
                 throw new Error('Wallet not initialized');
             }
 
-            const response = await fetch(`/api/registration/${this.address}`, {
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new Error('Server returned invalid response format');
-            }
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Failed to get wallet info');
-            }
-
+            const data = await ApiClient.get(`/api/registration/${this.address}`);
             this.balance = data.balance;
             return this.balance;
         } catch (error) {
             console.error('Failed to get balance:', error);
-            if (error.name === 'SyntaxError') {
-                throw new Error('Server returned invalid data format');
-            }
             throw error;
         }
     }
@@ -137,31 +76,11 @@ class Wallet {
                 throw new Error('Wallet not initialized');
             }
 
-            const response = await fetch('/api/transactions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    from: this.address,
-                    to,
-                    amount: parseFloat(amount)
-                })
+            const transaction = await ApiClient.post('/api/transactions', {
+                from: this.address,
+                to,
+                amount: parseFloat(amount)
             });
-
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new Error('Server returned invalid response format');
-            }
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Transaction failed');
-            }
-
-            const transaction = data;
             
             // Auto-mine the transaction
             await this.mineTransaction();
@@ -172,39 +91,16 @@ class Wallet {
             return transaction;
         } catch (error) {
             console.error('Transaction failed:', error);
-            if (error.name === 'SyntaxError') {
-                throw new Error('Server returned invalid data format');
-            }
             throw error;
         }
     }
 
     async mineTransaction() {
         try {
-            const response = await fetch('/api/mining/mine', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new Error('Server returned invalid response format');
-            }
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Mining failed');
-            }
-
+            const data = await ApiClient.post('/api/mining/mine');
             return data;
         } catch (error) {
             console.error('Mining failed:', error);
-            if (error.name === 'SyntaxError') {
-                throw new Error('Server returned invalid data format');
-            }
             throw error;
         }
     }

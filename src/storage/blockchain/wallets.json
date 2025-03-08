@@ -1,26 +1,20 @@
 [
   [
-    "56df22040bb59ae122b030e0dd4ac1847534d2a2c36614eb2ff81c41b3f56b20",
+    "main_wallet",
     {
-      "address": "56df22040bb59ae122b030e0dd4ac1847534d2a2c36614eb2ff81c41b3f56b20",
-      "balance": 950,
-      "createdAt": 1740860015027
+      "address": "main_wallet",
+      "balance": 999700,
+      "createdAt": 1741392134284,
+      "isMainWallet": true
     }
   ],
   [
-    "2be54cec5401995d9089b2286742587d124aa725643aa693bfd5f56b8ed1c6a9",
+    "test_wallet",
     {
-      "address": "2be54cec5401995d9089b2286742587d124aa725643aa693bfd5f56b8ed1c6a9",
-      "balance": 1050,
-      "createdAt": 1740860015189
-    }
-  ],
-  [
-    "9b762c51035fe769ebe7f6958bfed16c246a1927812b7432cf1ef08a563c91f7",
-    {
-      "address": "9b762c51035fe769ebe7f6958bfed16c246a1927812b7432cf1ef08a563c91f7",
-      "balance": 1000,
-      "createdAt": 1740861684277
+      "address": "test_wallet",
+      "balance": 300,
+      "createdAt": 1741392134283,
+      "isMainWallet": false
     }
   ]
 ]

@@ -19,18 +19,28 @@ tests/
 │   │   ├── Block.test.js
 │   │   ├── Transaction.test.js
 │   │   └── Blockchain.test.js
-│   └── services/
-│       └── CryptoService.test.js
+│   ├── services/
+│   │   └── CryptoService.test.js
+│   └── memory/
+│       ├── HeapMonitor.test.js
+│       ├── FragmentationAnalyzer.test.js
+│       ├── MemoryProfiler.test.js
+│       └── LeakDetector.test.js
 ├── integration/
 │   ├── api/
 │   │   ├── blockchain.test.js
 │   │   ├── transactions.test.js
 │   │   └── mining.test.js
-│   └── middleware/
-│       ├── validation.test.js
-│       └── errorHandler.test.js
+│   ├── middleware/
+│   │   ├── validation.test.js
+│   │   └── errorHandler.test.js
+│   └── memory/
+│       ├── heap-tracking.test.js
+│       ├── leak-detection.test.js
+│       └── memory-profiling.test.js
 └── e2e/
-    └── api.test.js
+    ├── api.test.js
+    └── memory-management.test.js
 ```
 
 ## Unit Tests
@@ -135,6 +145,156 @@ describe("CryptoService", () => {
 });
 ```
 
+## Memory Management Tests
+
+### Heap Allocation Tests
+
+```javascript
+const HeapMonitor = require('../../src/memory/HeapMonitor');
+
+describe('HeapMonitor', () => {
+  let monitor;
+
+  beforeEach(() => {
+    monitor = new HeapMonitor({
+      initialSize: '128M',
+      growthSize: '32M',
+      gcTrigger: '64M',
+      usageRatio: 0.5
+    });
+  });
+
+  test('should track heap allocation', async () => {
+    const stats = await monitor.trackAllocation();
+    expect(stats.heapUsed).toBeDefined();
+    expect(stats.heapTotal).toBeDefined();
+    expect(stats.external).toBeDefined();
+  });
+
+  test('should trigger GC when threshold reached', async () => {
+    // Create memory pressure
+    const largeArray = new Array(1000000).fill('test');
+    const stats = await monitor.trackAllocation();
+    expect(stats.heapUsed).toBeLessThan(monitor.config.gcTrigger);
+  });
+});
+```
+
+### Memory Leak Detection Tests
+
+```javascript
+const LeakDetector = require('../../src/memory/LeakDetector');
+
+describe('LeakDetector', () => {
+  let detector;
+  let leakingArray;
+
+  beforeEach(() => {
+    detector = new LeakDetector({
+      detectionInterval: 100,
+      growthRateThreshold: '1M',
+      retentionTime: 1000
+    });
+    leakingArray = [];
+  });
+
+  test('should detect memory growth', async () => {
+    // Simulate memory leak
+    const interval = setInterval(() => {
+      leakingArray.push(new Array(10000).fill('leak'));
+    }, 10);
+
+    const result = await detector.analyze();
+    clearInterval(interval);
+
+    expect(result.hasLeak).toBe(true);
+    expect(result.growthRate).toBeGreaterThan(0);
+  });
+
+  test('should identify leak sources', async () => {
+    const leakSource = await detector.findLeakSources();
+    expect(leakSource).toContainEqual({
+      type: 'Array',
+      size: expect.any(Number),
+      count: expect.any(Number)
+    });
+  });
+});
+```
+
+### Memory Fragmentation Tests
+
+```javascript
+const FragmentationAnalyzer = require('../../src/memory/FragmentationAnalyzer');
+
+describe('FragmentationAnalyzer', () => {
+  let analyzer;
+
+  beforeEach(() => {
+    analyzer = new FragmentationAnalyzer({
+      ratio: 0.2,
+      defragInterval: 1000,
+      compactThreshold: 0.5
+    });
+  });
+
+  test('should calculate fragmentation ratio', async () => {
+    const ratio = await analyzer.analyzeFragmentation();
+    expect(ratio).toBeGreaterThanOrEqual(0);
+    expect(ratio).toBeLessThanOrEqual(1);
+  });
+
+  test('should trigger defragmentation', async () => {
+    // Create fragmentation
+    const fragments = [];
+    for (let i = 0; i < 1000; i++) {
+      fragments.push(new Array(Math.random() * 1000).fill('x'));
+      if (i % 2 === 0) fragments.pop();
+    }
+
+    const result = await analyzer.defragmentHeap();
+    expect(result.compacted).toBe(true);
+    expect(result.fragmentsRemoved).toBeGreaterThan(0);
+  });
+});
+```
+
+### Memory Profiling Tests
+
+```javascript
+const MemoryProfiler = require('../../src/memory/MemoryProfiler');
+
+describe('MemoryProfiler', () => {
+  let profiler;
+
+  beforeEach(() => {
+    profiler = new MemoryProfiler({
+      samplingRate: 100,
+      stackDepth: 10,
+      snapshotInterval: 1000
+    });
+  });
+
+  test('should collect memory metrics', async () => {
+    await profiler.startProfiling();
+    const metrics = await profiler.collectMetrics();
+
+    expect(metrics).toHaveProperty('samples');
+    expect(metrics).toHaveProperty('stackFrames');
+    expect(metrics.samples.length).toBeGreaterThan(0);
+  });
+
+  test('should analyze heap snapshot', async () => {
+    const snapshot = await profiler.takeSnapshot();
+    const analysis = await profiler.analyzeSnapshot(snapshot);
+
+    expect(analysis).toHaveProperty('statistics');
+    expect(analysis).toHaveProperty('leaks');
+    expect(analysis).toHaveProperty('retainedSize');
+  });
+});
+```
+
 ## Integration Tests
 
 ### API Endpoints
@@ -213,7 +373,41 @@ describe("Validation Middleware", () => {
 
 ## End-to-End Tests
 
+### Memory Management Integration Tests
+
 ```javascript
+describe('Memory Management Integration', () => {
+  test('should handle memory pressure', async () => {
+    const response = await request(app)
+      .post('/api/stress-test')
+      .send({ duration: 5000, load: 'high' })
+      .expect(200);
+
+    expect(response.body.metrics).toHaveProperty('heapUsage');
+    expect(response.body.metrics).toHaveProperty('gcEvents');
+    expect(response.body.status).toBe('stable');
+  });
+
+  test('should detect and handle memory leaks', async () => {
+    const monitorResponse = await request(app)
+      .get('/api/memory/monitor')
+      .expect(200);
+
+    expect(monitorResponse.body).toHaveProperty('leaks');
+    expect(monitorResponse.body.status).toBe('healthy');
+  });
+
+  test('should manage fragmentation', async () => {
+    const fragResponse = await request(app)
+      .get('/api/memory/fragmentation')
+      .expect(200);
+
+    expect(fragResponse.body.ratio).toBeLessThan(0.3);
+    expect(fragResponse.body.status).toBe('optimized');
+  });
+});
+```
+
 describe("E2E Tests", () => {
   test("Complete transaction flow", async () => {
     // 1. Generate wallet

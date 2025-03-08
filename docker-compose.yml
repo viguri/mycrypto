@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - SKIP_TESTS=true
+        - NODE_ENV=development
+      target: development
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/logs # Exclude logs directory from mounting to avoid nodemon watching it
+    environment:
+      - NODE_ENV=development
+      - PORT=${PORT:-3000}
+      - LOG_LEVEL=debug
+      - BLOCKCHAIN_DIFFICULTY=2
+    command: yarn dev
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/test"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  cli:
+    build:
+      context: .
+      dockerfile: Dockerfile.cli
+    volumes:
+      - ./wallets.json:/app/wallets.json
+    environment:
+      - API_URL=http://server:3000/api
+      - NODE_ENV=development
+    depends_on:
+      server:
+        condition: service_healthy

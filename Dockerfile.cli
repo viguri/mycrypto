@@ -18,4 +18,4 @@ COPY src/services ./src/services
 ENV API_URL=http://localhost:3000/api
 
 # Set entrypoint to CLI
-ENTRYPOINT ["yarn", "cli"]
+ENTRYPOINT ["node", "src/cli.js"]

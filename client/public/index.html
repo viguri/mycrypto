@@ -58,12 +58,24 @@
                 <h2>Admin Login</h2>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <div class="password-input-group">
+                        <input type="password" id="password" name="password" required
+                               placeholder="Enter admin password"
+                               autocomplete="current-password"
+                               minlength="6"
+                               maxlength="32">
+                        <button type="button" id="toggle-password" aria-label="Toggle password visibility">
+                            👁️
+                        </button>
+                    </div>
+                    <small class="input-help">Password must be between 6 and 32 characters</small>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" class="primary-button" id="login-btn">Login</button>
                 <div id="login-error" class="error" style="display: none;"></div>
+                <div id="attempts-info" class="info" style="display: none;"></div>
+                <div id="login-success" class="success" style="display: none;">Login successful! Loading wallets...</div>
             </form>
-            <button id="logout-btn" style="display: none;">Logout</button>
+            <button id="logout-btn" class="secondary-button" style="display: none;">Logout</button>
         </section>
     </div>
 
@@ -71,14 +83,21 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Wallet Details</h2>
-            <p>Address: <span class="wallet-address"></span></p>
-            <p>Balance: <span class="wallet-balance">0</span> VIG</p>
-            <p>Created: <span class="wallet-created"></span></p>
-            <div class="transactions-list"></div>
+            <div class="wallet-info">
+                <p><strong>Address:</strong> <span class="wallet-address monospace"></span></p>
+                <p><strong>Balance:</strong> <span class="wallet-balance">0</span> VIG</p>
+                <p><strong>Created:</strong> <span class="wallet-created"></span></p>
+            </div>
+            <div class="transactions-section">
+                <h3>Transaction History</h3>
+                <div class="transactions-list"></div>
+                <div class="no-transactions" style="display: none;">No transactions found</div>
+            </div>
         </div>
     </div>
 
     <!-- Load scripts in correct order -->
+    <script src="api-client.js"></script>
     <script src="wallet.js"></script>
     <script src="wallet-manager.js"></script>
     <script src="auth.js"></script>

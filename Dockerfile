@@ -1,24 +1,39 @@
-FROM node:20-alpine
-
+# Base stage for common setup
+FROM node:20-alpine AS base
 WORKDIR /app
-
-# Install system dependencies
-RUN apk add --no-cache curl
-
-# Copy package files
+RUN apk add --no-cache curl python3 make g++
 COPY package.json yarn.lock ./
 
-# Install dependencies
+# Development stage
+FROM base AS development
 RUN yarn install
+COPY . .
+ARG SKIP_TESTS=false
+RUN if [ "$SKIP_TESTS" = "false" ] ; then yarn test; fi
+ENV NODE_ENV=development
+CMD ["yarn", "dev"]
 
-# Copy application files
+# Production stage
+FROM base AS production
+RUN yarn install --production
 COPY . .
 
 # Create necessary directories
 RUN mkdir -p logs src/storage/blockchain
 
-# Expose ports for API and client
-EXPOSE 3000 8080
+# Create necessary directories with proper permissions
+RUN mkdir -p logs src/storage/blockchain && \
+    chown -R node:node /app
 
-# Set default command
-CMD ["yarn", "start"]
+# Set environment variables
+ENV PORT=3000
+
+# Switch to non-root user
+USER node
+
+# Expose API port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD curl -f http://localhost:3000/test || exit 1

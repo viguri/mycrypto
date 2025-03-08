@@ -4,17 +4,31 @@ services:
   server:
     build: .
     ports:
-      - "3000:3000"
-      - "8080:8080"
+      - "${PORT:-3000}:3000"
     volumes:
       - ./logs:/app/logs
       - ./src/storage:/app/src/storage
-    command: yarn start
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT:-3000}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - BLOCKCHAIN_DIFFICULTY=${BLOCKCHAIN_DIFFICULTY:-4}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - RATE_LIMIT_MAX=${RATE_LIMIT_MAX:-100}
+    command: yarn start:prod
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/api/blockchain/stats"]
-      interval: 10s
+      test: ["CMD", "curl", "-f", "http://localhost:3000/test"]
+      interval: 30s
       timeout: 5s
       retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
 
   cli:
     build:
@@ -23,6 +37,7 @@ services:
     volumes:
       - ./wallets.json:/app/wallets.json
     environment:
+      - NODE_ENV=production
       - API_URL=http://server:3000/api
     depends_on:
       server:

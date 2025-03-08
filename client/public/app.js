@@ -31,7 +31,7 @@ class App {
             }
         } catch (error) {
             console.error('Failed to load wallet:', error);
-            this.showMessage('Failed to load wallet: ' + this.getErrorMessage(error), 'error');
+            this.showMessage('Failed to load wallet: ' + error.message, 'error');
         }
     }
 
@@ -68,7 +68,7 @@ class App {
 
         } catch (error) {
             console.error('Failed to create wallet:', error);
-            this.showMessage('Failed to create wallet: ' + this.getErrorMessage(error), 'error');
+            this.showMessage('Failed to create wallet: ' + error.message, 'error');
         } finally {
             this.elements.createWalletBtn.disabled = false;
         }
@@ -97,24 +97,18 @@ class App {
         try {
             this.showMessage('Processing transaction...', 'pending');
 
-            // Check if the recipient is a known address first
-            const response = await fetch(`/api/register/${recipient}`);
-            let recipientAddress;
-
-            if (response.ok) {
-                // It's a valid address
-                recipientAddress = recipient;
-            } else {
-                // Try to convert it as an alias
-                recipientAddress = await CryptoUtils.aliasToAddress(recipient);
-                // Verify the generated alias address exists
-                const aliasCheck = await fetch(`/api/register/${recipientAddress}`);
-                if (!aliasCheck.ok) {
+            // Check if recipient exists
+            try {
+                await ApiClient.get(`/api/registration/${recipient}`);
+            } catch (error) {
+                // Try to resolve as alias
+                const aliasCheck = await ApiClient.get(`/api/registration/${recipient}`);
+                if (!aliasCheck) {
                     throw new Error('Invalid recipient address or alias');
                 }
             }
 
-            await this.wallet.sendTransaction(recipientAddress, amount);
+            await this.wallet.sendTransaction(recipient, amount);
             
             form.reset();
             await this.wallet.getBalance();
@@ -124,7 +118,7 @@ class App {
 
         } catch (error) {
             console.error('Transaction failed:', error);
-            this.showMessage('Failed to send transaction: ' + this.getErrorMessage(error), 'error');
+            this.showMessage('Failed to send transaction: ' + error.message, 'error');
         } finally {
             submitButton.disabled = false;
         }
@@ -144,23 +138,14 @@ class App {
         }
     }
 
-    getErrorMessage(error) {
-        if (error.message.includes('<!DOCTYPE')) {
-            return 'Server error. Please try again later.';
-        }
-        return error.message;
-    }
-
     startPolling() {
-        // Update blockchain info
+        // Update blockchain info every 5 seconds
         setInterval(async () => {
             try {
-                const response = await fetch('/api/blockchain');
-                if (!response.ok) return;
+                const blockchainData = await ApiClient.get('/api/blockchain');
                 
-                const data = await response.json();
-                this.elements.blockCount.textContent = data.chain.length;
-                this.elements.pendingCount.textContent = data.pendingTransactions.length;
+                this.elements.blockCount.textContent = blockchainData.chain.length;
+                this.elements.pendingCount.textContent = blockchainData.pendingTransactions.length;
                 
                 // Update wallet balance if exists
                 if (this.wallet) {
