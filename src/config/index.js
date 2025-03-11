@@ -1,13 +1,18 @@
+import dotenv from 'dotenv';
+import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load environment-specific .env file
+const envFile = `.env.${process.env.NODE_ENV || 'development'}`;
+dotenv.config({ path: path.resolve(__dirname, '../../', envFile) });
 
 // Environment configurations
 import developmentConfig from './environments/development.js';
 import productionConfig from './environments/production.js';
 import testConfig from './environments/test.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // Determine the current environment
 const env = process.env.NODE_ENV || 'development';
@@ -27,6 +32,7 @@ const baseConfig = {
   server: {
     env,
     apiPrefix: '/api',
+    corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:3000'
   },
 
   // Application version and info
@@ -45,7 +51,12 @@ const config = {
     ...baseConfig.server,
     ...envConfig.server,
     env,
+    port: process.env.PORT || 3001,
   },
+  logging: {
+    level: process.env.LOG_LEVEL || 'info',
+    format: process.env.LOG_FORMAT || 'json'
+  }
 };
 
 // Freeze the config object to prevent runtime modifications

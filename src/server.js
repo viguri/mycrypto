@@ -11,6 +11,7 @@
  * - ALLOWED_ORIGINS: Comma-separated list of allowed CORS origins
  * - RATE_LIMIT_MAX: Maximum requests per 15 minutes window
  * - LOG_LEVEL: Logging level (error/warn/info/debug)
+ * - OPENAI_API_KEY: OpenAI API key for chat functionality
  */
 
 import express from 'express';
@@ -27,6 +28,9 @@ import transactionRoutes from './api/routes/transactions/index.js';
 import miningRoutes from './api/routes/mining/index.js';
 import blockchainRoutes from './api/routes/blockchain/index.js';
 import logsRoutes from './api/routes/logs/index.js';
+import walletRoutes from './api/routes/wallet/index.js';
+import healthRoutes from './api/routes/health.js';
+import chatRoutes from './api/routes/chat/index.js';
 
 // Initialize blockchain
 const blockchain = new Blockchain();
@@ -125,34 +129,22 @@ app.use(`${API_PREFIX}/transactions`, transactionRoutes(blockchain));
 app.use(`${API_PREFIX}/mining`, miningRoutes(blockchain));
 app.use(`${API_PREFIX}/blockchain`, blockchainRoutes(blockchain));
 app.use(`${API_PREFIX}/logs`, logsRoutes());
+app.use(`${API_PREFIX}/wallet`, walletRoutes);
+app.use(`${API_PREFIX}/health`, healthRoutes);
+app.use(`${API_PREFIX}/chat`, chatRoutes(blockchain));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    logger.error('Unhandled error', {
+    logger.error('Server error', {
         component: 'server',
         error: err.message,
-        stack: config.server.env === 'development' ? err.stack : undefined
+        stack: err.stack,
+        path: req.path
     });
 
-    // Handle different types of errors
-    if (err.name === 'ValidationError') {
-        return res.status(400).json({
-            error: 'ValidationError',
-            message: err.message
-        });
-    }
-
-    if (err.name === 'UnauthorizedError') {
-        return res.status(401).json({
-            error: 'UnauthorizedError',
-            message: 'Invalid or missing authentication token'
-        });
-    }
-
-    // Generic error response - don't expose internal details in production
     res.status(err.status || 500).json({
-        error: config.server.env === 'development' ? err.name : 'InternalError',
-        message: config.server.env === 'development' ? err.message : 'An unexpected error occurred'
+        error: err.type || 'ServerError',
+        message: err.public || 'An unexpected error occurred'
     });
 });
 
@@ -224,7 +216,13 @@ async function initializeLogging() {
                 port,
                 env: config.server.env,
                 genesisHash: blockchain.chain[0].hash,
-                allowedOrigins: securityConfig.trustedOrigins
+                allowedOrigins: securityConfig.trustedOrigins,
+                security: {
+                    helmet: true,
+                    cors: true,
+                    rateLimit: true,
+                    session: true
+                }
             });
         });
 

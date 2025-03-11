@@ -1,0 +1,24 @@
+{
+  "verbose": true,
+  "watch": [
+    "src/server.js",
+    "src/api",
+    "src/blockchain",
+    "src/config",
+    "src/middleware",
+    "src/services",
+    "src/utils"
+  ],
+  "ignore": [
+    "src/client",
+    "*.test.js",
+    "logs/*",
+    "node_modules/*"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3001",
+    "API_PREFIX": "/api"
+  },
+  "ext": "js,json"
+}

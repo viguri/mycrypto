@@ -10,6 +10,8 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import crypto from 'crypto';
+import logger from '../utils/logger/index.js';
 
 // Security configuration
 const securityConfig = {
@@ -199,85 +201,22 @@ export const createSecurityMiddleware = () => {
             
             res.on('finish', () => {
                 const [seconds, nanoseconds] = process.hrtime(start);
-                const responseTime = seconds * 1000 + nanoseconds / 1000000;
+                const ms = (seconds * 1000) + (nanoseconds / 1000000);
                 
                 logger.debug('Request completed', {
                     component: 'security',
                     requestId,
-                    responseTime: `${responseTime.toFixed(2)}ms`,
-                    statusCode: res.statusCode
+                    method: req.method,
+                    url: req.url,
+                    status: res.statusCode,
+                    duration: `${ms.toFixed(2)}ms`
                 });
             });
-
-            next();
-        },
-        
-        // Helmet with custom CSP
-        helmet({
-            contentSecurityPolicy: {
-                directives: securityConfig.helmet.contentSecurityPolicy.directives
-            }
-        }),
-        
-        // Rate limiting
-        createRateLimiter(),
-        
-        // Custom security headers
-        (req, res, next) => {
-            // HSTS
-            if (securityConfig.helmet.hsts) {
-                res.setHeader(
-                    'Strict-Transport-Security',
-                    `max-age=${securityConfig.helmet.hsts.maxAge}${
-                        securityConfig.helmet.hsts.includeSubDomains ? '; includeSubDomains' : ''
-                    }${
-                        securityConfig.helmet.hsts.preload ? '; preload' : ''
-                    }`
-                );
-            }
-
-            // Expect-CT
-            if (securityConfig.headers.expectCt) {
-                res.setHeader(
-                    'Expect-CT',
-                    `max-age=${securityConfig.headers.expectCt.maxAge}${
-                        securityConfig.headers.expectCt.enforce ? ', enforce' : ''
-                    }`
-                );
-            }
-
-            // Permissions Policy
-            if (securityConfig.headers.permissionsPolicy) {
-                const policies = Object.entries(securityConfig.headers.permissionsPolicy)
-                    .map(([feature, value]) => `${feature}=${value.join(' ')}`)
-                    .join(', ');
-                
-                res.setHeader('Permissions-Policy', policies);
-            }
-
-            // Referrer Policy
-            res.setHeader('Referrer-Policy', securityConfig.headers.referrerPolicy);
-
-            next();
-        },
-
-        // Request validation and sanitization
-        validateRequest,
-        (req, res, next) => {
-            if (securityConfig.validation.sanitization.trimStrings) {
-                sanitizeStrings(req.body);
-                sanitizeStrings(req.query);
-                sanitizeStrings(req.params);
-            }
-            
-            if (securityConfig.validation.sanitization.escapeHTML) {
-                escapeHtml(req.body);
-                escapeHtml(req.query);
-                escapeHtml(req.params);
-            }
             
             next();
-        }
+        },
+        ...securityMiddleware,
+        errorHandler
     ];
 };
 

@@ -16,5 +16,13 @@
       "createdAt": 1741392134283,
       "isMainWallet": false
     }
+  ],
+  [
+    "d5695e447499f78c54d744d3126f96685a91a2972f98da2e2b5be43b46b61c42",
+    {
+      "address": "d5695e447499f78c54d744d3126f96685a91a2972f98da2e2b5be43b46b61c42",
+      "balance": 1000,
+      "createdAt": 1741716589339
+    }
   ]
 ]

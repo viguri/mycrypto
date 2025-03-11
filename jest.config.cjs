@@ -11,8 +11,9 @@ module.exports = {
     },
     verbose: true,
     testMatch: [
+        '**/src/**/__tests__/**/*.test.{js,jsx}',
         '**/tests/**/*.test.{js,jsx}',
-        '**/tests/ui/**/*.security.test.{js,jsx}'
+        '**/src/**/*.test.{js,jsx}'
     ],
     setupFilesAfterEnv: ['<rootDir>/tests/setup.js'],
     resetMocks: true,
