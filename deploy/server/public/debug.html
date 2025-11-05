@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .debug-info {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>MyCrypto Debug Page</h1>
+    
+    <div class="debug-info">
+        <h2>Static File Serving Test</h2>
+        <p class="success">✓ If you can see this page, static file serving is working correctly!</p>
+        <p>Current time: <span id="current-time"></span></p>
+    </div>
+    
+    <div class="debug-info">
+        <h2>API Connection Test</h2>
+        <button id="test-api">Test API Connection</button>
+        <div id="api-result">Click the button to test the API connection</div>
+    </div>
+    
+    <script>
+        // Update current time
+        document.getElementById('current-time').textContent = new Date().toLocaleString();
+        
+        // Test API connection
+        document.getElementById('test-api').addEventListener('click', async () => {
+            const resultElement = document.getElementById('api-result');
+            resultElement.textContent = 'Testing connection...';
+            
+            try {
+                const response = await fetch('/api/test');
+                const data = await response.json();
+                resultElement.innerHTML = `<p class="success">✓ API Connection Successful</p>
+                                          <pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                resultElement.innerHTML = `<p style="color: red;">✗ API Connection Failed</p>
+                                          <pre>${error.message}</pre>`;
+            }
+        });
+    </script>
+</body>
+</html>

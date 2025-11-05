@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCrypto API Diagnostic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .endpoint-group {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .endpoint {
+            margin-bottom: 20px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .endpoint h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .status {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .config-section {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #server-info {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>MyCrypto API Diagnostic Tool</h1>
+    
+    <div class="config-section">
+        <h2>Server Information</h2>
+        <button onclick="getDiagnosticInfo()">Get Server Info</button>
+        <pre id="server-info">Click the button to retrieve server information...</pre>
+    </div>
+    
+    <div class="endpoint-group">
+        <h2>Blockchain Endpoints</h2>
+        
+        <div class="endpoint">
+            <h3>Get Blockchain</h3>
+            <button onclick="testEndpoint('/api/blockchain', 'blockchain-result')">Test</button>
+            <div class="status" id="blockchain-status"></div>
+            <pre id="blockchain-result">Results will appear here...</pre>
+        </div>
+        
+        <div class="endpoint">
+            <h3>Get Blockchain Stats</h3>
+            <button onclick="testEndpoint('/api/blockchain/stats', 'blockchain-stats-result')">Test</button>
+            <div class="status" id="blockchain-stats-status"></div>
+            <pre id="blockchain-stats-result">Results will appear here...</pre>
+        </div>
+    </div>
+    
+    <div class="endpoint-group">
+        <h2>Registration Endpoints</h2>
+        
+        <div class="endpoint">
+            <h3>Get All Wallets</h3>
+            <button onclick="testEndpoint('/api/registration/wallets', 'wallets-result')">Test</button>
+            <div class="status" id="wallets-status"></div>
+            <pre id="wallets-result">Results will appear here...</pre>
+        </div>
+        
+        <div class="endpoint">
+            <h3>Create New Wallet</h3>
+            <button onclick="testPostEndpoint('/api/registration/wallet', {}, 'create-wallet-result')">Create</button>
+            <div class="status" id="create-wallet-status"></div>
+            <pre id="create-wallet-result">Results will appear here...</pre>
+        </div>
+    </div>
+    
+    <div class="endpoint-group">
+        <h2>Transaction Endpoints</h2>
+        
+        <div class="endpoint">
+            <h3>Get Pending Transactions</h3>
+            <button onclick="testEndpoint('/api/transactions/pending', 'pending-result')">Test</button>
+            <div class="status" id="pending-status"></div>
+            <pre id="pending-result">Results will appear here...</pre>
+        </div>
+    </div>
+    
+    <div class="endpoint-group">
+        <h2>Basic Endpoints</h2>
+        
+        <div class="endpoint">
+            <h3>Test Endpoint</h3>
+            <button onclick="testEndpoint('/test', 'test-result')">Test</button>
+            <div class="status" id="test-status"></div>
+            <pre id="test-result">Results will appear here...</pre>
+        </div>
+        
+        <div class="endpoint">
+            <h3>Diagnostic Endpoint</h3>
+            <button onclick="testEndpoint('/diagnostic', 'diagnostic-result')">Test</button>
+            <div class="status" id="diagnostic-status"></div>
+            <pre id="diagnostic-result">Results will appear here...</pre>
+        </div>
+    </div>
+
+    <script>
+        async function testEndpoint(endpoint, resultId) {
+            const resultElement = document.getElementById(resultId);
+            const statusElement = document.getElementById(resultId.replace('-result', '-status'));
+            
+            resultElement.textContent = 'Loading...';
+            statusElement.textContent = 'Testing...';
+            statusElement.className = 'status';
+            
+            try {
+                console.log(`Testing endpoint: ${endpoint}`);
+                const response = await fetch(endpoint);
+                const contentType = response.headers.get('content-type');
+                
+                let result;
+                if (contentType && contentType.includes('application/json')) {
+                    result = await response.json();
+                    resultElement.textContent = JSON.stringify(result, null, 2);
+                } else {
+                    result = await response.text();
+                    resultElement.textContent = result;
+                }
+                
+                if (response.ok) {
+                    statusElement.textContent = `Success (${response.status})`;
+                    statusElement.className = 'status success';
+                } else {
+                    statusElement.textContent = `Error (${response.status})`;
+                    statusElement.className = 'status error';
+                }
+                
+                console.log(`Response from ${endpoint}:`, result);
+                return result;
+            } catch (error) {
+                console.error(`Error testing ${endpoint}:`, error);
+                resultElement.textContent = `Error: ${error.message}`;
+                statusElement.textContent = 'Connection Error';
+                statusElement.className = 'status error';
+            }
+        }
+        
+        async function testPostEndpoint(endpoint, data, resultId) {
+            const resultElement = document.getElementById(resultId);
+            const statusElement = document.getElementById(resultId.replace('-result', '-status'));
+            
+            resultElement.textContent = 'Sending request...';
+            statusElement.textContent = 'Testing...';
+            statusElement.className = 'status';
+            
+            try {
+                console.log(`Testing POST endpoint: ${endpoint}`);
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const contentType = response.headers.get('content-type');
+                let result;
+                
+                if (contentType && contentType.includes('application/json')) {
+                    result = await response.json();
+                    resultElement.textContent = JSON.stringify(result, null, 2);
+                } else {
+                    result = await response.text();
+                    resultElement.textContent = result;
+                }
+                
+                if (response.ok) {
+                    statusElement.textContent = `Success (${response.status})`;
+                    statusElement.className = 'status success';
+                } else {
+                    statusElement.textContent = `Error (${response.status})`;
+                    statusElement.className = 'status error';
+                }
+                
+                console.log(`Response from ${endpoint}:`, result);
+                return result;
+            } catch (error) {
+                console.error(`Error testing ${endpoint}:`, error);
+                resultElement.textContent = `Error: ${error.message}`;
+                statusElement.textContent = 'Connection Error';
+                statusElement.className = 'status error';
+            }
+        }
+        
+        async function getDiagnosticInfo() {
+            const infoElement = document.getElementById('server-info');
+            infoElement.textContent = 'Loading server information...';
+            
+            try {
+                const diagnosticData = await testEndpoint('/diagnostic', 'server-info');
+                const testData = await testEndpoint('/test', 'server-info');
+                
+                const serverInfo = {
+                    diagnostic: diagnosticData,
+                    test: testData,
+                    browserInfo: {
+                        userAgent: navigator.userAgent,
+                        url: window.location.href,
+                        port: window.location.port
+                    }
+                };
+                
+                infoElement.textContent = JSON.stringify(serverInfo, null, 2);
+            } catch (error) {
+                infoElement.textContent = `Error retrieving server info: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

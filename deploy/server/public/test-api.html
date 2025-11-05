@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Test Page</h1>
+    
+    <div>
+        <button onclick="testAPI('/api/blockchain')">Test Blockchain API</button>
+        <pre id="blockchain-result">Results will appear here...</pre>
+    </div>
+    
+    <div>
+        <button onclick="testAPI('/api/registration/wallets')">Test Wallets API</button>
+        <pre id="wallets-result">Results will appear here...</pre>
+    </div>
+    
+    <div>
+        <button onclick="testAPI('/test')">Test Basic Endpoint</button>
+        <pre id="test-result">Results will appear here...</pre>
+    </div>
+    
+    <script>
+        async function testAPI(endpoint) {
+            const resultId = endpoint.split('/')[endpoint.startsWith('/api/') ? 2 : 1] + '-result';
+            const resultElement = document.getElementById(resultId);
+            resultElement.textContent = 'Loading...';
+            
+            try {
+                const response = await fetch(endpoint);
+                const contentType = response.headers.get('content-type');
+                
+                if (contentType && contentType.includes('application/json')) {
+                    const data = await response.json();
+                    resultElement.textContent = JSON.stringify(data, null, 2);
+                } else {
+                    const text = await response.text();
+                    resultElement.textContent = text;
+                }
+                
+                resultElement.textContent = `Status: ${response.status}\n\n` + resultElement.textContent;
+            } catch (error) {
+                resultElement.textContent = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

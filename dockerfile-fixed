@@ -1,0 +1,30 @@
+FROM node:20-alpine as base
+
+WORKDIR /app
+RUN mkdir -p /app/logs && chmod -R 777 /app/logs
+COPY package*.json ./
+RUN npm ci
+
+# Create log directories with proper permissions
+RUN mkdir -p logs/archive server/logs/archive && \
+    chmod -R 777 logs server/logs
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+FROM base as production
+
+WORKDIR /app
+RUN mkdir -p /app/logs && chmod -R 777 /app/logs
+COPY . .
+RUN npm prune --production
+
+# Copy health check script
+COPY healthcheck.sh /healthcheck.sh
+RUN chmod +x /healthcheck.sh
+
+# Expose the port the app runs on
+EXPOSE 3003
+
+# Command to run the app
+CMD ["node", "server/server.js"]

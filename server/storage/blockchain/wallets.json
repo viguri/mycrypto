@@ -1,0 +1,68 @@
+[
+  [
+    "main_wallet",
+    {
+      "address": "main_wallet",
+      "balance": 999700,
+      "createdAt": 1741392134284,
+      "isMainWallet": true
+    }
+  ],
+  [
+    "test_wallet",
+    {
+      "address": "test_wallet",
+      "balance": 300,
+      "createdAt": 1741392134283,
+      "isMainWallet": false
+    }
+  ],
+  [
+    "dc80811438a681c359742d034149a50bca033469fecc784db67155a2839162b2",
+    {
+      "address": "dc80811438a681c359742d034149a50bca033469fecc784db67155a2839162b2",
+      "balance": 1000,
+      "createdAt": 1743083839962
+    }
+  ],
+  [
+    "a707d4ac82d7a11bcfcf12f43d5ede6021ff62efc2ab953a46db156d5a314167",
+    {
+      "address": "a707d4ac82d7a11bcfcf12f43d5ede6021ff62efc2ab953a46db156d5a314167",
+      "balance": 1000,
+      "createdAt": 1743097012639
+    }
+  ],
+  [
+    "f02f00c6f55824430e2ef4e35af5ea1be1d39e704f0884cf68eae178463fcebc",
+    {
+      "address": "f02f00c6f55824430e2ef4e35af5ea1be1d39e704f0884cf68eae178463fcebc",
+      "balance": 1000,
+      "createdAt": 1743153229606
+    }
+  ],
+  [
+    "cd88b19e295daeb4a5bcb812f56e54c7f512c0936bf13a2776460012515699d6",
+    {
+      "address": "cd88b19e295daeb4a5bcb812f56e54c7f512c0936bf13a2776460012515699d6",
+      "balance": 1000,
+      "createdAt": 1743153279659
+    }
+  ],
+  [
+    "f74832df0c5a0a2d924eb252642315c505a69180a703d977b30d05dc1ecec059",
+    {
+      "address": "f74832df0c5a0a2d924eb252642315c505a69180a703d977b30d05dc1ecec059",
+      "balance": 1000,
+      "createdAt": 1743153310703
+    }
+  ],
+  [
+    "12c81f671eac6413e15a84f2c476f2e9bf077503d85bc67ee000746a4bc3730c",
+    {
+      "address": "12c81f671eac6413e15a84f2c476f2e9bf077503d85bc67ee000746a4bc3730c",
+      "balance": 1000,
+      "createdAt": 1743153351583
+    }
+  ]
+]

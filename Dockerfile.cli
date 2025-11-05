@@ -1,0 +1,21 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json yarn.lock ./
+
+# Install dependencies
+RUN yarn install
+
+# Copy CLI files and required modules
+COPY cli ./cli
+COPY server/utils ./server/utils
+COPY server/cli.js ./server/cli.js
+COPY server/services ./server/services
+
+# Set API URL environment variable to be configurable
+ENV API_URL=http://localhost:3003/api
+
+# Set entrypoint to CLI
+ENTRYPOINT ["node", "server/cli.js"]

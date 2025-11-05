@@ -1,0 +1,1804 @@
+[2025-03-04T09:56:01.053Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:56:11.155Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:56:21.287Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:56:31.445Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:56:41.541Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:56:51.648Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:57:01.744Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:57:11.849Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:57:21.928Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:57:32.015Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:57:42.218Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:57:52.323Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:58:02.479Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:58:13.430Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:58:23.784Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:58:34.072Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:58:44.898Z] INFO: Initializing blockchain
+[2025-03-04T09:58:44.902Z] INFO: Blockchain storage initialized
+[2025-03-04T09:58:44.905Z] INFO: Chain loaded
+[2025-03-04T09:58:44.905Z] INFO: Wallets loaded
+[2025-03-04T09:58:44.906Z] INFO: Pending transactions loaded
+[2025-03-04T09:58:44.906Z] INFO: Blockchain initialized
+[2025-03-04T09:58:44.910Z] INFO: Server started
+[2025-03-04T09:58:54.359Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:59:04.461Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:59:14.599Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:59:24.734Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:59:34.848Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:59:44.966Z] INFO: Retrieved blockchain stats
+[2025-03-04T09:59:55.079Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:00:05.156Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:00:15.221Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:00:25.318Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:00:35.399Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:00:45.518Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:00:55.612Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:01:05.708Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:01:15.795Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:01:25.880Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:01:35.947Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:01:46.019Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:01:56.083Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:02:06.154Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:02:16.259Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:02:26.342Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:02:36.437Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:02:46.512Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:02:56.595Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:03:06.685Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:03:16.749Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:03:26.862Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:03:36.942Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:03:47.028Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:03:57.119Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:04:07.203Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:04:17.263Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:04:27.372Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:04:37.451Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:04:47.532Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:04:57.600Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:05:07.669Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:05:17.742Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:05:27.809Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:05:37.885Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:05:47.988Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:05:58.063Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:06:08.135Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:06:18.218Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:06:28.303Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:06:38.440Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:06:48.519Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:06:58.642Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:07:08.765Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:07:18.836Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:07:28.907Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:07:38.980Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:07:49.091Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:07:59.175Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:08:09.297Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:08:19.372Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:08:29.451Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:08:39.529Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:08:49.606Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:08:59.720Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:09:09.798Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:09:19.886Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:09:30.015Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:09:40.096Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:09:50.158Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:10:00.243Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:10:10.329Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:10:20.401Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:10:30.498Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:10:40.607Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:10:50.683Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:11:00.759Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:11:10.832Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:11:20.938Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:11:31.052Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:11:41.130Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:11:51.239Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:12:01.308Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:12:11.388Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:12:21.475Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:12:31.550Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:12:41.670Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:12:51.749Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:13:01.829Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:13:11.944Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:13:22.020Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:13:32.093Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:13:42.163Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:13:52.251Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:14:02.326Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:14:12.406Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:14:22.483Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:14:32.608Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:14:42.722Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:14:52.822Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:15:02.932Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:29:08.622Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:29:18.700Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:29:28.831Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:29:58.872Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:30:08.954Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:30:19.037Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:30:29.111Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:30:39.177Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:30:49.271Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:30:59.347Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:31:09.423Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:31:19.492Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:31:29.566Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:31:39.672Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:31:49.767Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:31:59.983Z] INFO: Retrieved blockchain stats
+[2025-03-04T10:32:10.113Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:04:53.213Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:05:03.356Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:05:13.471Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:05:23.632Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:05:33.815Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:05:43.943Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:05:54.067Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:06:04.161Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:06:14.276Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:06:24.423Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:06:34.511Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:06:44.592Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:06:54.660Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:07:04.778Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:07:14.890Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:07:24.979Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:07:35.197Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:07:45.359Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:07:55.449Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:08:05.566Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:08:15.681Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:08:25.814Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:08:35.907Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:08:45.975Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:08:56.083Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:09:06.168Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:09:16.268Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:09:26.354Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:09:36.439Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:09:46.515Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:09:56.615Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:10:06.700Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:10:16.773Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:10:26.869Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:10:36.970Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:10:47.102Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:10:57.224Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:11:07.331Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:11:17.456Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:11:27.559Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:11:37.678Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:11:47.795Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:11:57.914Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:12:08.014Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:12:18.132Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:12:28.207Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:12:38.298Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:12:48.399Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:12:58.484Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:13:08.582Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:13:18.716Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:13:28.810Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:13:38.919Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:13:49.018Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:13:59.113Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:14:09.183Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:14:19.246Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:14:29.346Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:14:39.414Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:14:49.543Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:14:59.632Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:15:09.710Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:15:19.799Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:15:29.904Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:15:40.010Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:15:50.085Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:16:00.161Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:16:10.241Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:16:20.318Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:16:30.390Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:16:40.490Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:16:50.560Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:17:00.641Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:17:10.773Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:17:20.879Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:17:30.990Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:17:41.082Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:17:51.160Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:18:01.230Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:18:11.316Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:18:21.395Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:18:31.464Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:18:41.534Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:18:51.631Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:19:01.707Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:19:11.783Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:19:21.862Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:19:31.936Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:19:42.025Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:19:52.093Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:20:02.201Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:20:12.275Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:20:22.367Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:20:32.427Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:20:42.543Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:20:52.625Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:21:02.709Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:21:12.782Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:21:22.864Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:21:32.943Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:21:43.037Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:21:53.119Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:22:03.203Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:22:13.276Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:22:23.368Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:22:33.447Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:22:43.535Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:22:53.621Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:23:03.747Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:23:13.870Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:23:24.002Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:23:34.096Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:23:44.170Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:23:54.246Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:24:04.312Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:24:14.413Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:24:24.560Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:24:34.638Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:24:44.707Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:24:54.811Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:25:04.882Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:25:14.954Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:25:25.039Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:25:35.172Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:25:45.253Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:25:55.351Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:26:05.422Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:26:15.491Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:26:25.567Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:26:35.648Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:26:45.730Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:26:55.812Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:27:05.896Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:27:16.000Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:27:26.075Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:27:36.171Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:27:46.240Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:27:56.315Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:28:06.405Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:28:16.501Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:28:26.578Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:28:36.651Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:28:46.725Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:28:56.800Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:29:06.910Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:29:17.028Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:29:27.155Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:29:37.263Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:29:47.357Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:29:57.469Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:30:07.546Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:30:17.616Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:30:27.693Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:30:37.788Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:30:47.914Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:30:58.088Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:31:08.215Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:31:18.335Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:35:20.356Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:35:30.471Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:35:40.541Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:35:50.600Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:36:00.738Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:36:10.851Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:40:08.967Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:40:19.042Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:40:29.118Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:40:39.198Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:40:49.312Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:40:59.456Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:41:09.555Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:41:19.674Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:41:29.731Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:41:39.831Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:41:49.930Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:42:00.040Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:42:10.142Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:42:20.230Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:42:30.330Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:42:40.449Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:42:50.587Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:43:00.698Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:43:10.794Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:43:20.901Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:43:30.990Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:43:41.060Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:43:51.157Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:44:01.261Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:44:11.371Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:44:21.443Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:44:31.541Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:44:41.620Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:44:51.718Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:45:01.794Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:45:11.881Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:45:21.973Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:45:32.046Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:45:42.124Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:45:52.217Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:46:02.325Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:46:12.440Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:46:22.513Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:46:32.585Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:46:42.665Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:46:52.799Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:47:02.935Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:47:13.059Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:47:23.184Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:47:33.258Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:47:43.325Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:47:53.401Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:48:03.482Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:48:13.559Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:48:23.641Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:48:33.714Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:48:43.836Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:48:53.938Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:49:04.038Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:49:14.108Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:49:24.203Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:49:34.277Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:49:44.391Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:49:54.482Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:50:04.567Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:50:14.660Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:50:24.745Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:50:34.813Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:50:44.894Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:50:54.971Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:51:05.080Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:51:15.197Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:51:25.275Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:51:35.394Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:51:45.490Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:51:55.570Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:52:05.673Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:52:15.760Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:52:25.866Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:52:35.954Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:52:46.065Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:52:56.190Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:53:06.338Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:53:16.473Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:53:26.562Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:53:36.637Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:53:46.698Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:53:56.781Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:54:06.879Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:54:16.960Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:54:27.027Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:54:37.089Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:54:47.185Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:54:57.305Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:55:07.390Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:55:17.511Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:55:27.640Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:55:37.738Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:55:47.857Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:55:57.973Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:56:08.068Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:56:18.150Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:56:28.257Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:56:38.336Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:56:48.416Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:56:58.496Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:57:08.600Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:57:18.699Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:57:28.815Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:57:38.944Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:57:49.046Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:57:59.147Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:58:09.274Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:58:19.348Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:58:29.418Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:58:39.524Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:58:49.641Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:58:59.762Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:59:09.883Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:59:19.954Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:59:30.021Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:59:40.123Z] INFO: Retrieved blockchain stats
+[2025-03-04T11:59:50.200Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:00:00.261Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:00:10.353Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:00:20.418Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:00:30.511Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:00:40.577Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:00:50.635Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:01:00.712Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:01:10.780Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:01:20.873Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:01:30.943Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:01:41.007Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:01:51.076Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:02:01.170Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:02:11.238Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:02:21.325Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:02:31.395Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:02:41.470Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:02:51.558Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:03:01.637Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:03:11.720Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:03:21.803Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:03:31.872Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:03:41.947Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:03:52.035Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:04:02.124Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:04:12.231Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:04:22.401Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:04:32.487Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:04:42.618Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:04:52.744Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:05:02.829Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:05:12.906Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:05:22.989Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:05:33.064Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:05:43.133Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:05:53.195Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:06:03.268Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:06:13.325Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:06:23.414Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:06:33.488Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:06:43.549Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:06:53.631Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:07:03.728Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:07:13.808Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:07:23.877Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:07:33.951Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:07:44.035Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:07:54.113Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:08:04.193Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:08:14.270Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:08:24.357Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:08:34.434Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:08:44.504Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:08:54.584Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:09:04.700Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:09:14.778Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:09:24.854Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:09:34.938Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:09:45.025Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:09:55.095Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:10:05.158Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:10:15.289Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:10:25.374Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:10:35.474Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:10:45.549Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:10:55.623Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:11:05.680Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:11:15.757Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:11:25.840Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:11:35.921Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:11:45.983Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:11:56.041Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:12:06.124Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:12:16.196Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:12:26.274Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:12:36.365Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:12:46.451Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:12:56.562Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:13:06.643Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:13:16.719Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:13:26.816Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:13:36.896Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:13:46.974Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:13:57.053Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:14:07.135Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:14:17.249Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:14:27.386Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:15:14.925Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:15:25.006Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:15:35.083Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:15:45.158Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:15:55.238Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:16:05.304Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:32:44.749Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:32:54.843Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:33:04.951Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:33:15.104Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:33:25.224Z] INFO: Retrieved blockchain stats
+[2025-03-04T12:33:35.373Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:25:46.730Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:25:56.802Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:26:06.906Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:26:17.062Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:26:27.128Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:26:37.198Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:27:10.962Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:27:21.086Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:27:31.234Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:45:24.227Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:45:34.549Z] INFO: Retrieved blockchain stats
+[2025-03-04T13:45:44.649Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:05:22.218Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:05:32.341Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:05:42.410Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:05:52.510Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:06:02.630Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:06:12.761Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:20:21.863Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:20:31.954Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:20:42.095Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:35:56.146Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:36:06.251Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:36:16.377Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:36:26.509Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:36:36.615Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:36:46.757Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:48:09.888Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:48:19.958Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:48:30.031Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:48:40.138Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:48:50.251Z] INFO: Retrieved blockchain stats
+[2025-03-04T14:49:00.387Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:06:34.423Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:06:44.505Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:06:54.605Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:09:19.459Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:09:29.542Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:09:39.625Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:09:49.688Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:09:59.805Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:10:09.883Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:10:28.880Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:10:38.954Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:10:49.094Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:44:23.719Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:44:33.898Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:58:11.035Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:58:21.206Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:58:31.353Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:58:41.495Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:58:51.618Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:59:01.767Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:59:11.856Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:59:22.004Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:59:32.141Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:59:42.223Z] INFO: Retrieved blockchain stats
+[2025-03-04T15:59:52.325Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:00:02.406Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:00:12.479Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:00:22.595Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:00:32.678Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:00:42.765Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:00:52.839Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:01:02.972Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:01:13.071Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:01:23.141Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:01:33.265Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:01:43.337Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:01:53.408Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:02:03.497Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:02:13.577Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:02:23.676Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:02:33.744Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:02:43.851Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:02:53.931Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:03:04.000Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:03:14.084Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:03:24.159Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:03:34.233Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:03:44.309Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:03:54.433Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:04:04.515Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:04:14.611Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:04:24.722Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:04:34.837Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:04:44.931Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:04:55.024Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:05:05.119Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:05:15.192Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:05:25.295Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:05:35.377Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:05:45.457Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:05:55.549Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:06:05.616Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:06:15.700Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:06:25.772Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:06:35.873Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:06:45.957Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:06:56.047Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:07:06.137Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:07:16.245Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:07:26.308Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:07:36.372Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:07:46.447Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:07:56.536Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:08:06.654Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:08:16.734Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:08:26.824Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:08:36.900Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:08:47.000Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:08:57.091Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:09:07.164Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:09:17.262Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:09:27.346Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:09:37.434Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:09:47.546Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:09:57.649Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:10:07.770Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:10:17.847Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:10:27.941Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:10:38.012Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:10:48.119Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:10:58.228Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:11:08.327Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:11:18.450Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:11:28.573Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:11:38.649Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:11:48.727Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:11:58.796Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:12:08.898Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:12:18.996Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:12:29.084Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:12:39.148Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:12:49.227Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:12:59.303Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:13:09.423Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:13:19.504Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:13:29.588Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:13:39.653Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:13:49.727Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:13:59.809Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:14:09.869Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:14:19.943Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:14:30.043Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:14:40.135Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:14:50.232Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:15:00.318Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:15:10.382Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:15:20.454Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:15:30.532Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:15:40.605Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:15:50.678Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:16:00.749Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:16:10.825Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:16:20.887Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:16:30.950Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:16:41.018Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:16:51.098Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:17:01.198Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:17:11.276Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:17:21.393Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:17:31.464Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:17:41.531Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:17:51.616Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:18:01.691Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:18:11.772Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:18:21.844Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:18:31.932Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:18:42.009Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:18:52.134Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:19:02.230Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:19:12.303Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:19:22.382Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:19:32.476Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:19:42.560Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:19:52.640Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:20:02.706Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:20:12.776Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:20:22.842Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:20:32.918Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:20:43.011Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:20:53.086Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:21:03.156Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:21:13.230Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:21:23.299Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:21:33.375Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:21:43.450Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:21:53.524Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:22:03.634Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:22:13.715Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:22:23.782Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:22:33.845Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:22:43.977Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:22:54.109Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:23:04.245Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:23:14.368Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:23:24.447Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:23:34.525Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:23:44.600Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:23:54.679Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:24:04.740Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:24:14.805Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:24:24.864Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:24:34.935Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:24:45.005Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:24:55.072Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:25:05.145Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:25:15.228Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:25:25.302Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:25:35.363Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:25:45.441Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:25:55.509Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:26:05.590Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:26:15.672Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:26:25.784Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:26:35.862Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:26:45.926Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:26:55.987Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:27:06.082Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:27:16.164Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:27:26.259Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:27:36.341Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:27:46.406Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:27:56.498Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:28:06.578Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:28:16.650Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:28:26.771Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:28:36.888Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:28:47.003Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:28:57.123Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:29:07.241Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:29:17.333Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:29:27.451Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:29:37.528Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:29:47.611Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:29:57.716Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:30:07.837Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:30:17.962Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:30:28.049Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:30:38.184Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:30:48.274Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:30:58.368Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:31:08.488Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:31:18.913Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:31:29.024Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:31:39.115Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:31:49.248Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:31:59.354Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:32:09.455Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:32:19.521Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:32:29.598Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:32:39.672Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:32:49.739Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:32:59.805Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:33:09.869Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:33:19.952Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:33:30.027Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:33:40.113Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:33:50.206Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:34:00.278Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:34:10.393Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:34:20.477Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:34:30.542Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:34:40.646Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:34:50.719Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:35:00.843Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:35:10.983Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:35:21.074Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:35:31.168Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:35:41.270Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:35:51.354Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:36:01.465Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:36:11.546Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:36:21.687Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:36:31.905Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:36:42.004Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:36:52.163Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:37:02.282Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:37:12.403Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:37:22.553Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:37:32.715Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:37:42.843Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:37:53.007Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:38:03.208Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:38:13.353Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:38:23.419Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:38:33.524Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:38:43.612Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:38:53.701Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:39:03.812Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:39:13.890Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:39:23.952Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:39:34.047Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:39:44.127Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:39:54.257Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:40:04.338Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:40:14.459Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:40:24.550Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:40:34.619Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:40:44.738Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:40:54.879Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:41:04.956Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:41:15.061Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:41:25.191Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:41:35.312Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:41:45.418Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:41:55.496Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:42:05.584Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:42:15.656Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:42:25.758Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:42:35.833Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:42:45.973Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:42:56.103Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:43:06.215Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:43:16.308Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:43:26.410Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:43:36.504Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:43:46.615Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:43:56.802Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:44:06.918Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:44:17.039Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:44:27.153Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:44:37.255Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:44:47.354Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:44:57.478Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:45:07.593Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:45:17.705Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:45:27.807Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:45:37.916Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:45:48.018Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:45:58.092Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:46:08.158Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:46:18.249Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:46:28.316Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:46:38.395Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:46:48.472Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:46:58.538Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:47:08.628Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:47:18.694Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:47:28.760Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:47:38.863Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:47:48.933Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:47:59.019Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:48:09.086Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:48:19.158Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:48:29.241Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:48:39.316Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:48:49.393Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:48:59.455Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:49:09.516Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:49:19.608Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:49:29.705Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:49:39.827Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:49:49.904Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:49:59.973Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:50:10.036Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:50:20.099Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:50:30.174Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:50:40.248Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:50:50.309Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:51:00.367Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:51:10.429Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:51:20.501Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:51:30.609Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:51:40.709Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:51:50.792Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:52:00.894Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:52:10.964Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:52:21.040Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:52:31.120Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:52:41.195Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:52:51.266Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:53:01.349Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:53:11.456Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:53:21.537Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:53:31.626Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:53:41.700Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:53:51.763Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:54:01.841Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:54:11.903Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:54:21.976Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:54:32.059Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:54:42.135Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:54:52.206Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:55:02.296Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:55:12.359Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:55:22.512Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:55:32.613Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:55:42.702Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:55:52.791Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:56:02.883Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:56:12.943Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:56:23.076Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:56:33.158Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:56:43.249Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:56:53.321Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:57:03.404Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:57:13.471Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:57:23.538Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:57:33.605Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:57:43.676Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:57:53.746Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:58:03.855Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:58:13.933Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:58:23.992Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:58:34.069Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:58:44.168Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:58:54.264Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:59:04.356Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:59:14.470Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:59:24.567Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:59:34.664Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:59:44.760Z] INFO: Retrieved blockchain stats
+[2025-03-04T16:59:54.870Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:00:04.950Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:00:15.030Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:00:25.091Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:00:35.168Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:00:45.252Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:00:55.373Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:01:05.506Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:01:15.629Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:01:25.721Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:01:35.813Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:17:36.067Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:17:46.131Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:17:56.212Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:18:06.258Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:18:16.326Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:18:26.395Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:18:36.510Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:18:46.609Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:18:56.665Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:19:06.773Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:19:16.882Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:19:26.971Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:28:21.295Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:28:31.393Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:28:41.531Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:44:25.381Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:44:35.510Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:44:45.609Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:44:55.746Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:45:05.858Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:45:15.979Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:45:26.061Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:45:36.160Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:45:46.248Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:45:56.369Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:46:06.484Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:46:16.593Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:46:26.712Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:46:36.791Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:46:46.959Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:46:57.053Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:47:07.145Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:47:17.257Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:47:27.349Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:47:37.484Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:47:47.613Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:47:57.761Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:48:07.837Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:48:17.963Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:48:28.073Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:48:38.211Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:48:48.380Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:48:58.511Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:49:08.666Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:49:18.771Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:49:28.849Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:49:38.920Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:49:49.084Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:49:59.298Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:50:09.468Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:50:19.568Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:50:29.653Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:50:39.763Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:50:49.840Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:51:00.025Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:51:10.142Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:51:20.271Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:51:30.407Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:51:40.488Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:51:50.598Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:52:00.738Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:52:10.829Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:52:20.947Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:52:31.020Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:52:41.111Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:52:51.300Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:53:01.425Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:53:11.501Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:53:21.604Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:53:31.739Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:53:41.859Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:53:51.947Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:54:02.060Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:54:12.129Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:54:22.242Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:54:32.316Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:54:42.387Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:54:52.503Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:55:02.587Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:55:12.655Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:55:22.756Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:55:32.830Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:55:42.918Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:55:53.006Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:56:03.124Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:56:13.358Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:56:23.462Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:56:33.548Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:56:43.620Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:56:53.691Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:57:03.765Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:57:13.833Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:57:23.915Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:57:33.984Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:57:44.050Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:57:54.113Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:58:04.189Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:58:14.262Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:58:24.317Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:58:34.422Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:58:44.509Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:58:54.588Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:59:04.673Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:59:14.794Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:59:24.885Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:59:34.977Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:59:45.059Z] INFO: Retrieved blockchain stats
+[2025-03-04T17:59:55.132Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:00:05.258Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:00:15.352Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:00:25.428Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:00:35.517Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:00:45.593Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:00:55.682Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:01:05.777Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:01:15.844Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:01:25.912Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:01:36.028Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:01:46.153Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:01:56.290Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:02:06.429Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:02:16.512Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:02:26.576Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:02:36.648Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:02:46.716Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:02:56.802Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:03:06.891Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:03:16.969Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:03:27.047Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:03:37.116Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:03:47.213Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:03:57.289Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:04:07.362Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:04:17.432Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:04:27.513Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:04:37.576Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:04:47.653Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:04:57.763Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:05:07.834Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:05:17.896Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:05:27.972Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:05:38.043Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:05:48.109Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:05:58.213Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:06:08.314Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:06:18.408Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:06:28.483Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:06:38.572Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:06:48.661Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:06:58.740Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:07:08.831Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:07:18.902Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:07:29.022Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:07:39.169Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:07:49.304Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:07:59.406Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:08:09.481Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:08:19.561Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:08:29.635Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:08:39.695Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:08:49.776Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:08:59.854Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:09:09.932Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:09:20.003Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:09:30.075Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:09:40.149Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:09:50.242Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:10:00.320Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:10:10.420Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:10:20.496Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:10:30.571Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:10:40.685Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:10:50.779Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:11:00.902Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:11:11.008Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:11:21.108Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:11:31.197Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:11:41.329Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:11:51.409Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:12:01.488Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:12:11.555Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:12:21.630Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:12:31.733Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:12:41.794Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:12:51.868Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:13:01.941Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:13:12.018Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:13:22.088Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:13:32.148Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:13:42.221Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:13:52.322Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:14:02.396Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:14:12.501Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:14:22.580Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:14:32.663Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:14:42.742Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:14:52.812Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:15:02.874Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:15:12.947Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:15:23.018Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:15:33.087Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:15:43.156Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:15:53.217Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:16:03.313Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:16:13.387Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:16:23.461Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:16:33.526Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:16:43.576Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:16:53.675Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:17:03.799Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:17:13.902Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:27:06.758Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:27:16.924Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:27:27.022Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:27:37.151Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:27:47.253Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:27:57.316Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:28:07.393Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:28:17.480Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:28:27.645Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:28:37.761Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:28:47.844Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:28:57.956Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:29:08.055Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:29:18.139Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:29:28.246Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:29:38.313Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:29:48.423Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:29:58.510Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:30:08.652Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:30:18.844Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:30:29.033Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:30:39.154Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:30:49.298Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:30:53.990Z] INFO: Initializing blockchain
+[2025-03-04T18:30:53.994Z] INFO: Blockchain storage initialized
+[2025-03-04T18:30:53.996Z] INFO: Chain loaded
+[2025-03-04T18:30:53.997Z] INFO: Wallets loaded
+[2025-03-04T18:30:53.997Z] INFO: Pending transactions loaded
+[2025-03-04T18:30:53.997Z] INFO: Blockchain initialized
+[2025-03-04T18:30:53.999Z] INFO: Server started
+[2025-03-04T18:31:03.498Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:31:13.612Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:31:23.726Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:31:33.848Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:31:43.969Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:31:54.091Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:32:04.198Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:32:14.274Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:32:24.366Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:32:34.484Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:32:44.598Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:32:54.698Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:33:04.821Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:33:14.962Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:33:25.075Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:33:35.188Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:33:45.256Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:33:55.318Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:34:05.379Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:34:15.449Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:34:25.504Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:34:35.591Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:34:45.702Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:34:55.780Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:35:05.853Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:35:15.910Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:35:26.000Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:35:36.066Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:35:46.139Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:35:56.198Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:36:06.258Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:36:16.329Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:36:26.396Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:36:36.475Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:36:46.577Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:36:56.685Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:37:06.825Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:37:16.953Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:37:27.047Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:37:37.130Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:37:47.245Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:37:57.373Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:38:07.478Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:38:17.603Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:38:27.685Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:38:37.753Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:38:47.863Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:38:57.979Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:39:08.095Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:39:18.207Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:39:28.283Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:39:38.372Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:39:48.505Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:39:58.572Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:40:08.675Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:40:18.747Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:40:28.825Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:40:38.902Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:40:48.985Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:40:59.054Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:41:09.125Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:41:19.204Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:41:29.285Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:41:39.360Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:41:49.449Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:41:59.535Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:42:09.620Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:42:19.695Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:42:29.784Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:42:39.863Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:42:49.929Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:43:00.009Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:43:10.101Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:43:20.191Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:43:30.291Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:43:40.385Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:43:50.514Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:44:00.630Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:44:10.727Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:44:20.819Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:44:30.902Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:44:40.996Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:44:51.131Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:45:01.277Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:45:11.447Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:45:21.562Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:45:31.674Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:45:41.791Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:45:51.874Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:46:01.971Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:46:12.060Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:46:22.163Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:46:32.279Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:46:42.411Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:46:52.521Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:47:02.639Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:47:12.747Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:47:22.819Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:47:32.442Z] INFO: Initializing blockchain
+[2025-03-04T18:47:32.445Z] INFO: Blockchain storage initialized
+[2025-03-04T18:47:32.448Z] INFO: Chain loaded
+[2025-03-04T18:47:32.448Z] INFO: Wallets loaded
+[2025-03-04T18:47:32.448Z] INFO: Pending transactions loaded
+[2025-03-04T18:47:32.449Z] INFO: Blockchain initialized
+[2025-03-04T18:47:32.451Z] INFO: Server started
+[2025-03-04T18:47:42.048Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:47:52.178Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:48:02.260Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:48:12.357Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:48:22.472Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:48:32.557Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:48:42.675Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:48:52.785Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:49:02.888Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:49:13.000Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:49:23.090Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:49:33.207Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:49:43.299Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:49:53.405Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:50:03.480Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:50:13.543Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:50:23.649Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:50:33.740Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:50:43.833Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:50:53.938Z] INFO: Retrieved blockchain stats
+[2025-03-04T18:51:04.060Z] INFO: Retrieved blockchain stats
+[2025-03-04T19:41:24.893Z] INFO: Getting full blockchain
+[2025-03-04T19:41:24.893Z] INFO: Starting mining process
+[2025-03-04T19:41:24.899Z] INFO: Block mined successfully
+[2025-03-04T19:41:24.906Z] ERROR: Failed to get blockchain
+[2025-03-04T19:41:24.909Z] INFO: Starting mining process
+[2025-03-04T19:41:24.910Z] INFO: Block retrieved
+[2025-03-04T19:41:24.909Z] ERROR: Mining failed
+[2025-03-04T19:41:24.912Z] INFO: Mining stats retrieved
+[2025-03-04T19:41:24.915Z] ERROR: Failed to get mining stats
+[2025-03-04T19:41:24.917Z] INFO: Retrieved blockchain stats
+[2025-03-04T19:41:24.921Z] ERROR: Failed to get blockchain stats
+[2025-03-04T19:56:31.882Z] INFO: Getting full blockchain
+[2025-03-04T19:56:31.882Z] INFO: Starting mining process
+[2025-03-04T19:56:31.885Z] INFO: Block mined successfully
+[2025-03-04T19:56:31.897Z] ERROR: Failed to get blockchain
+[2025-03-04T19:56:31.900Z] INFO: Starting mining process
+[2025-03-04T19:56:31.900Z] ERROR: Mining failed
+[2025-03-04T19:56:31.901Z] INFO: Block retrieved
+[2025-03-04T19:56:31.903Z] INFO: Mining stats retrieved
+[2025-03-04T19:56:31.906Z] ERROR: Failed to get mining stats
+[2025-03-04T19:56:31.910Z] INFO: Retrieved blockchain stats
+[2025-03-04T19:56:31.912Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:55:44.411Z] INFO: Getting full blockchain
+[2025-03-04T20:55:44.423Z] ERROR: Failed to get blockchain
+[2025-03-04T20:55:44.426Z] INFO: Block retrieved
+[2025-03-04T20:55:44.433Z] INFO: Retrieved blockchain stats
+[2025-03-04T20:55:44.437Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:55:44.586Z] INFO: Starting mining process
+[2025-03-04T20:55:44.587Z] INFO: Block mined successfully
+[2025-03-04T20:55:44.686Z] INFO: Starting mining process
+[2025-03-04T20:55:44.687Z] ERROR: Mining failed
+[2025-03-04T20:55:44.693Z] INFO: Mining stats retrieved
+[2025-03-04T20:55:44.697Z] ERROR: Failed to get mining stats
+[2025-03-04T20:58:00.304Z] INFO: Getting full blockchain
+[2025-03-04T20:58:00.313Z] ERROR: Failed to get blockchain
+[2025-03-04T20:58:00.316Z] INFO: Block retrieved
+[2025-03-04T20:58:00.322Z] INFO: Retrieved blockchain stats
+[2025-03-04T20:58:00.324Z] ERROR: Failed to get blockchain stats
+[2025-03-04T20:58:00.434Z] INFO: Starting mining process
+[2025-03-04T20:58:00.435Z] INFO: Block mined successfully
+[2025-03-04T20:58:00.481Z] INFO: Starting mining process
+[2025-03-04T20:58:00.482Z] ERROR: Mining failed
+[2025-03-04T20:58:00.487Z] INFO: Mining stats retrieved
+[2025-03-04T20:58:00.492Z] ERROR: Failed to get mining stats
+[2025-03-04T21:53:15.003Z] INFO: Getting full blockchain
+[2025-03-04T21:53:15.016Z] ERROR: Failed to get blockchain
+[2025-03-04T21:53:15.020Z] INFO: Block retrieved
+[2025-03-04T21:53:15.026Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:53:15.028Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:53:15.189Z] INFO: Starting mining process
+[2025-03-04T21:53:15.190Z] INFO: Block mined successfully
+[2025-03-04T21:53:15.199Z] INFO: Starting mining process
+[2025-03-04T21:53:15.199Z] ERROR: Mining failed
+[2025-03-04T21:53:15.203Z] INFO: Mining stats retrieved
+[2025-03-04T21:53:15.206Z] ERROR: Failed to get mining stats
+[2025-03-04T21:55:15.563Z] INFO: Getting full blockchain
+[2025-03-04T21:55:15.572Z] ERROR: Failed to get blockchain
+[2025-03-04T21:55:15.574Z] INFO: Block retrieved
+[2025-03-04T21:55:15.581Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:55:15.583Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:55:15.695Z] INFO: Starting mining process
+[2025-03-04T21:55:15.696Z] INFO: Block mined successfully
+[2025-03-04T21:55:15.743Z] INFO: Starting mining process
+[2025-03-04T21:55:15.744Z] ERROR: Mining failed
+[2025-03-04T21:55:15.747Z] INFO: Mining stats retrieved
+[2025-03-04T21:55:15.749Z] ERROR: Failed to get mining stats
+[2025-03-04T21:55:16.037Z] INFO: New transaction created
+[2025-03-04T21:55:16.043Z] INFO: Getting pending transactions
+[2025-03-04T21:55:16.049Z] INFO: Transaction retrieved
+[2025-03-04T21:55:16.052Z] INFO: Wallet transactions retrieved
+[2025-03-04T21:55:16.374Z] INFO: New wallet created
+[2025-03-04T21:55:16.657Z] ERROR: Failed to create wallet
+[2025-03-04T21:55:16.660Z] INFO: Retrieved all wallets
+[2025-03-04T21:55:16.664Z] INFO: Retrieving wallet info
+[2025-03-04T21:55:16.664Z] INFO: Wallet info retrieved
+[2025-03-04T21:55:16.666Z] INFO: Retrieving wallet info
+[2025-03-04T21:55:16.671Z] INFO: Deleting wallet
+[2025-03-04T21:55:16.671Z] INFO: Wallet deleted
+[2025-03-04T21:57:52.703Z] INFO: New wallet created
+[2025-03-04T21:57:52.783Z] ERROR: Failed to create wallet
+[2025-03-04T21:57:52.786Z] INFO: Retrieved all wallets
+[2025-03-04T21:57:52.788Z] INFO: Retrieving wallet info
+[2025-03-04T21:57:52.788Z] INFO: Wallet info retrieved
+[2025-03-04T21:57:52.790Z] INFO: Retrieving wallet info
+[2025-03-04T21:57:52.799Z] INFO: Deleting wallet
+[2025-03-04T21:57:52.799Z] INFO: Wallet deleted
+[2025-03-04T21:57:53.137Z] INFO: New transaction created
+[2025-03-04T21:57:53.143Z] INFO: Getting pending transactions
+[2025-03-04T21:57:53.145Z] INFO: Transaction retrieved
+[2025-03-04T21:57:53.149Z] INFO: Wallet transactions retrieved
+[2025-03-04T21:57:53.258Z] INFO: Getting full blockchain
+[2025-03-04T21:57:53.264Z] ERROR: Failed to get blockchain
+[2025-03-04T21:57:53.266Z] INFO: Block retrieved
+[2025-03-04T21:57:53.331Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:57:53.343Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:57:53.456Z] INFO: Starting mining process
+[2025-03-04T21:57:53.456Z] INFO: Block mined successfully
+[2025-03-04T21:57:53.464Z] INFO: Starting mining process
+[2025-03-04T21:57:53.464Z] ERROR: Mining failed
+[2025-03-04T21:57:53.466Z] INFO: Mining stats retrieved
+[2025-03-04T21:57:53.467Z] ERROR: Failed to get mining stats
+[2025-03-04T21:59:54.130Z] INFO: New wallet created
+[2025-03-04T21:59:54.354Z] ERROR: Failed to create wallet
+[2025-03-04T21:59:54.357Z] INFO: Retrieved all wallets
+[2025-03-04T21:59:54.360Z] INFO: Retrieving wallet info
+[2025-03-04T21:59:54.360Z] INFO: Wallet info retrieved
+[2025-03-04T21:59:54.363Z] INFO: Retrieving wallet info
+[2025-03-04T21:59:54.372Z] INFO: Deleting wallet
+[2025-03-04T21:59:54.372Z] INFO: Wallet deleted
+[2025-03-04T21:59:54.509Z] INFO: New transaction created
+[2025-03-04T21:59:54.549Z] INFO: Getting pending transactions
+[2025-03-04T21:59:54.558Z] INFO: Transaction retrieved
+[2025-03-04T21:59:54.562Z] INFO: Wallet transactions retrieved
+[2025-03-04T21:59:54.870Z] INFO: Getting full blockchain
+[2025-03-04T21:59:54.881Z] ERROR: Failed to get blockchain
+[2025-03-04T21:59:54.885Z] INFO: Block retrieved
+[2025-03-04T21:59:54.899Z] INFO: Retrieved blockchain stats
+[2025-03-04T21:59:54.901Z] ERROR: Failed to get blockchain stats
+[2025-03-04T21:59:55.102Z] INFO: Starting mining process
+[2025-03-04T21:59:55.103Z] INFO: Block mined successfully
+[2025-03-04T21:59:55.115Z] INFO: Starting mining process
+[2025-03-04T21:59:55.116Z] ERROR: Mining failed
+[2025-03-04T21:59:55.118Z] INFO: Mining stats retrieved
+[2025-03-04T21:59:55.122Z] ERROR: Failed to get mining stats
+[2025-03-04T22:23:18.691Z] INFO: New wallet created
+[2025-03-04T22:23:19.134Z] ERROR: Failed to create wallet
+[2025-03-04T22:23:19.137Z] INFO: Retrieved all wallets
+[2025-03-04T22:23:19.139Z] INFO: Retrieving wallet info
+[2025-03-04T22:23:19.139Z] INFO: Wallet info retrieved
+[2025-03-04T22:23:19.141Z] INFO: Retrieving wallet info
+[2025-03-04T22:23:19.151Z] INFO: Deleting wallet
+[2025-03-04T22:23:19.151Z] INFO: Wallet deleted
+[2025-03-04T22:23:19.597Z] INFO: Getting full blockchain
+[2025-03-04T22:23:19.605Z] ERROR: Failed to get blockchain
+[2025-03-04T22:23:19.608Z] INFO: Block retrieved
+[2025-03-04T22:23:19.620Z] INFO: Retrieved blockchain stats
+[2025-03-04T22:23:19.624Z] ERROR: Failed to get blockchain stats
+[2025-03-04T22:23:19.781Z] INFO: Starting mining process
+[2025-03-04T22:23:19.790Z] INFO: Block mined successfully
+[2025-03-04T22:23:19.874Z] INFO: Starting mining process
+[2025-03-04T22:23:19.875Z] ERROR: Mining failed
+[2025-03-04T22:23:19.882Z] INFO: Mining stats retrieved
+[2025-03-04T22:23:19.884Z] ERROR: Failed to get mining stats
+[2025-03-04T22:23:19.997Z] INFO: New transaction created
+[2025-03-04T22:23:20.003Z] INFO: Getting pending transactions
+[2025-03-04T22:23:20.004Z] INFO: Transaction retrieved
+[2025-03-04T22:23:20.007Z] INFO: Wallet transactions retrieved
+[2025-03-04T22:25:13.545Z] INFO: New wallet created
+[2025-03-04T22:25:13.759Z] ERROR: Failed to create wallet
+[2025-03-04T22:25:18.566Z] INFO: Retrieved all wallets
+[2025-03-04T22:25:18.574Z] INFO: Retrieving wallet info
+[2025-03-04T22:25:18.574Z] INFO: Wallet info retrieved
+[2025-03-04T22:25:18.582Z] INFO: Retrieving wallet info
+[2025-03-04T22:25:18.646Z] INFO: Deleting wallet
+[2025-03-04T22:25:18.646Z] INFO: Wallet deleted
+[2025-03-04T22:25:18.842Z] INFO: Getting full blockchain
+[2025-03-04T22:25:18.849Z] ERROR: Failed to get blockchain
+[2025-03-04T22:25:18.855Z] INFO: Block retrieved
+[2025-03-04T22:25:18.860Z] INFO: Retrieved blockchain stats
+[2025-03-04T22:25:18.863Z] ERROR: Failed to get blockchain stats
+[2025-03-04T22:25:19.208Z] INFO: Starting mining process
+[2025-03-04T22:25:19.209Z] INFO: Block mined successfully
+[2025-03-04T22:25:19.218Z] INFO: Starting mining process
+[2025-03-04T22:25:19.218Z] ERROR: Mining failed
+[2025-03-04T22:25:19.224Z] INFO: Mining stats retrieved
+[2025-03-04T22:25:19.226Z] ERROR: Failed to get mining stats
+[2025-03-04T22:25:19.341Z] INFO: New transaction created
+[2025-03-04T22:25:19.387Z] INFO: Getting pending transactions
+[2025-03-04T22:25:19.391Z] INFO: Transaction retrieved
+[2025-03-04T22:25:19.400Z] INFO: Wallet transactions retrieved
+[2025-03-05T06:25:30.000Z] INFO: Starting mining process
+[2025-03-05T06:25:30.005Z] INFO: Block mined successfully
+[2025-03-05T06:25:29.998Z] INFO: Getting full blockchain
+[2025-03-05T06:25:30.014Z] INFO: New transaction created
+[2025-03-05T06:25:30.027Z] INFO: Starting mining process
+[2025-03-05T06:25:30.028Z] ERROR: Failed to get blockchain
+[2025-03-05T06:25:30.028Z] ERROR: Mining failed
+[2025-03-05T06:25:30.036Z] INFO: Mining stats retrieved
+[2025-03-05T06:25:30.037Z] INFO: Block retrieved
+[2025-03-05T06:25:30.042Z] ERROR: Failed to get mining stats
+[2025-03-05T06:25:30.050Z] INFO: Getting pending transactions
+[2025-03-05T06:25:30.054Z] INFO: Retrieved blockchain stats
+[2025-03-05T06:25:30.060Z] INFO: Transaction retrieved
+[2025-03-05T06:25:30.064Z] ERROR: Failed to get blockchain stats
+[2025-03-05T06:25:30.077Z] INFO: Wallet transactions retrieved
+[2025-03-05T06:25:30.128Z] INFO: New wallet created
+[2025-03-05T06:25:30.372Z] ERROR: Failed to create wallet
+[2025-03-05T06:25:35.147Z] INFO: Retrieved all wallets
+[2025-03-05T06:25:35.150Z] INFO: Retrieving wallet info
+[2025-03-05T06:25:35.151Z] INFO: Wallet info retrieved
+[2025-03-05T06:25:35.154Z] INFO: Retrieving wallet info
+[2025-03-05T06:25:35.172Z] INFO: Deleting wallet
+[2025-03-05T06:25:35.172Z] INFO: Wallet deleted
+[2025-03-05T11:29:52.426Z] INFO: New transaction created
+[2025-03-05T11:29:52.458Z] INFO: Getting pending transactions
+[2025-03-05T11:29:52.486Z] INFO: Transaction retrieved
+[2025-03-05T11:29:52.502Z] INFO: Wallet transactions retrieved
+[2025-03-05T11:29:52.940Z] INFO: New wallet created
+[2025-03-05T11:29:53.107Z] ERROR: Failed to create wallet
+[2025-03-05T11:30:02.973Z] INFO: Retrieved all wallets
+[2025-03-05T11:30:03.004Z] INFO: Retrieving wallet info
+[2025-03-05T11:30:03.013Z] INFO: Wallet info retrieved
+[2025-03-05T11:30:03.033Z] INFO: Retrieving wallet info
+[2025-03-05T11:30:03.055Z] INFO: Deleting wallet
+[2025-03-05T11:30:03.058Z] INFO: Wallet deleted
+[2025-03-05T11:30:03.375Z] INFO: Starting mining process
+[2025-03-05T11:30:03.383Z] INFO: Block mined successfully
+[2025-03-05T11:30:03.413Z] INFO: Starting mining process
+[2025-03-05T11:30:03.418Z] ERROR: Mining failed
+[2025-03-05T11:30:03.426Z] INFO: Mining stats retrieved
+[2025-03-05T11:30:03.436Z] ERROR: Failed to get mining stats
+[2025-03-05T11:30:03.805Z] INFO: Getting full blockchain
+[2025-03-05T11:30:03.817Z] ERROR: Failed to get blockchain
+[2025-03-05T11:30:03.826Z] INFO: Block retrieved
+[2025-03-05T11:30:03.845Z] INFO: Retrieved blockchain stats
+[2025-03-05T11:30:03.855Z] ERROR: Failed to get blockchain stats
+[2025-03-05T12:28:04.054Z] INFO: New wallet created
+[2025-03-05T12:28:04.167Z] ERROR: Failed to create wallet
+[2025-03-05T12:28:14.098Z] INFO: Retrieved all wallets
+[2025-03-05T12:28:14.166Z] INFO: Retrieving wallet info
+[2025-03-05T12:28:14.179Z] INFO: Wallet info retrieved
+[2025-03-05T12:28:14.203Z] INFO: Retrieving wallet info
+[2025-03-05T12:28:14.225Z] INFO: Deleting wallet
+[2025-03-05T12:28:14.230Z] INFO: Wallet deleted
+[2025-03-05T12:40:34.417Z] INFO: New wallet created
+[2025-03-05T12:40:34.625Z] ERROR: Failed to create wallet
+[2025-03-05T12:40:49.460Z] INFO: Retrieved all wallets
+[2025-03-05T12:40:49.497Z] INFO: Retrieving wallet info
+[2025-03-05T12:40:49.543Z] INFO: Wallet info retrieved
+[2025-03-05T12:40:49.557Z] INFO: Retrieving wallet info
+[2025-03-05T12:40:49.574Z] INFO: Deleting wallet
+[2025-03-05T12:40:49.577Z] INFO: Wallet deleted
+[2025-03-05T14:16:38.378Z] INFO: New wallet created
+[2025-03-05T14:16:38.642Z] ERROR: Failed to create wallet
+[2025-03-05T14:16:58.439Z] INFO: Retrieved all wallets
+[2025-03-05T14:16:58.466Z] INFO: Retrieving wallet info
+[2025-03-05T14:16:58.472Z] INFO: Wallet info retrieved
+[2025-03-05T14:16:58.483Z] INFO: Retrieving wallet info
+[2025-03-05T14:16:58.508Z] INFO: Deleting wallet
+[2025-03-05T14:16:58.515Z] INFO: Wallet deleted
+[2025-03-05T14:16:58.945Z] INFO: Starting mining process
+[2025-03-05T14:16:58.953Z] INFO: Block mined successfully
+[2025-03-05T14:16:58.978Z] INFO: Starting mining process
+[2025-03-05T14:16:58.984Z] ERROR: Mining failed
+[2025-03-05T14:16:58.992Z] INFO: Mining stats retrieved
+[2025-03-05T14:16:59.004Z] ERROR: Failed to get mining stats
+[2025-03-05T14:16:59.273Z] INFO: New transaction created
+[2025-03-05T14:16:59.300Z] INFO: Getting pending transactions
+[2025-03-05T14:16:59.318Z] INFO: Transaction retrieved
+[2025-03-05T14:16:59.333Z] INFO: Wallet transactions retrieved
+[2025-03-05T14:17:00.063Z] INFO: Getting full blockchain
+[2025-03-05T14:17:00.094Z] ERROR: Failed to get blockchain
+[2025-03-05T14:17:00.108Z] INFO: Block retrieved
+[2025-03-05T14:17:00.127Z] INFO: Retrieved blockchain stats
+[2025-03-05T14:17:00.140Z] ERROR: Failed to get blockchain stats
+[2025-03-05T14:41:58.029Z] INFO: New wallet created
+[2025-03-05T14:41:58.266Z] ERROR: Failed to create wallet
+[2025-03-05T14:42:18.086Z] INFO: Retrieved all wallets
+[2025-03-05T14:42:18.137Z] INFO: Retrieving wallet info
+[2025-03-05T14:42:18.207Z] INFO: Wallet info retrieved
+[2025-03-05T14:42:18.319Z] INFO: Retrieving wallet info
+[2025-03-05T14:42:18.417Z] INFO: Deleting wallet
+[2025-03-05T14:42:18.436Z] INFO: Wallet deleted
+[2025-03-05T14:42:19.664Z] INFO: Starting mining process
+[2025-03-05T14:42:19.675Z] INFO: Block mined successfully
+[2025-03-05T14:42:19.722Z] INFO: Starting mining process
+[2025-03-05T14:42:19.726Z] ERROR: Mining failed
+[2025-03-05T14:42:19.750Z] INFO: Mining stats retrieved
+[2025-03-05T14:42:19.771Z] ERROR: Failed to get mining stats
+[2025-03-05T14:42:20.308Z] INFO: Getting full blockchain
+[2025-03-05T14:42:20.334Z] ERROR: Failed to get blockchain
+[2025-03-05T14:42:20.345Z] INFO: Block retrieved
+[2025-03-05T14:42:20.379Z] INFO: Retrieved blockchain stats
+[2025-03-05T14:42:20.397Z] ERROR: Failed to get blockchain stats
+[2025-03-05T14:42:20.717Z] INFO: New transaction created
+[2025-03-05T14:42:20.741Z] INFO: Getting pending transactions
+[2025-03-05T14:42:20.750Z] INFO: Transaction retrieved
+[2025-03-05T14:42:20.765Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:24:04.196Z] INFO: New wallet created
+[2025-03-05T16:24:04.640Z] ERROR: Failed to create wallet
+[2025-03-05T16:24:24.296Z] INFO: Retrieved all wallets
+[2025-03-05T16:24:24.337Z] INFO: Retrieving wallet info
+[2025-03-05T16:24:24.348Z] INFO: Wallet info retrieved
+[2025-03-05T16:24:24.367Z] INFO: Retrieving wallet info
+[2025-03-05T16:24:24.386Z] INFO: Deleting wallet
+[2025-03-05T16:24:24.390Z] INFO: Wallet deleted
+[2025-03-05T16:24:25.142Z] INFO: Getting full blockchain
+[2025-03-05T16:24:25.156Z] ERROR: Failed to get blockchain
+[2025-03-05T16:24:25.167Z] INFO: Block retrieved
+[2025-03-05T16:24:25.185Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:24:25.195Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:24:25.427Z] INFO: Starting mining process
+[2025-03-05T16:24:25.472Z] INFO: Block mined successfully
+[2025-03-05T16:24:25.496Z] INFO: Starting mining process
+[2025-03-05T16:24:25.499Z] ERROR: Mining failed
+[2025-03-05T16:24:25.507Z] INFO: Mining stats retrieved
+[2025-03-05T16:24:25.516Z] ERROR: Failed to get mining stats
+[2025-03-05T16:24:25.976Z] INFO: New transaction created
+[2025-03-05T16:24:25.997Z] INFO: Getting pending transactions
+[2025-03-05T16:24:26.014Z] INFO: Transaction retrieved
+[2025-03-05T16:24:26.040Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:26:51.035Z] INFO: New wallet created
+[2025-03-05T16:26:51.175Z] ERROR: Failed to create wallet
+[2025-03-05T16:27:11.087Z] INFO: Retrieved all wallets
+[2025-03-05T16:27:11.118Z] INFO: Retrieving wallet info
+[2025-03-05T16:27:11.128Z] INFO: Wallet info retrieved
+[2025-03-05T16:27:11.145Z] INFO: Retrieving wallet info
+[2025-03-05T16:27:11.165Z] INFO: Deleting wallet
+[2025-03-05T16:27:11.168Z] INFO: Wallet deleted
+[2025-03-05T16:27:12.123Z] INFO: New transaction created
+[2025-03-05T16:27:12.139Z] INFO: Getting pending transactions
+[2025-03-05T16:27:12.147Z] INFO: Transaction retrieved
+[2025-03-05T16:27:12.162Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:27:12.390Z] INFO: Getting full blockchain
+[2025-03-05T16:27:12.462Z] ERROR: Failed to get blockchain
+[2025-03-05T16:27:12.474Z] INFO: Block retrieved
+[2025-03-05T16:27:12.493Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:27:12.501Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:27:12.724Z] INFO: Starting mining process
+[2025-03-05T16:27:12.729Z] INFO: Block mined successfully
+[2025-03-05T16:27:12.795Z] INFO: Starting mining process
+[2025-03-05T16:27:12.800Z] ERROR: Mining failed
+[2025-03-05T16:27:12.808Z] INFO: Mining stats retrieved
+[2025-03-05T16:27:12.817Z] ERROR: Failed to get mining stats
+[2025-03-05T16:32:31.655Z] INFO: New transaction created
+[2025-03-05T16:32:31.673Z] INFO: Getting pending transactions
+[2025-03-05T16:32:31.681Z] INFO: Transaction retrieved
+[2025-03-05T16:32:31.698Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:32:31.997Z] INFO: Getting full blockchain
+[2025-03-05T16:32:32.018Z] ERROR: Failed to get blockchain
+[2025-03-05T16:32:32.031Z] INFO: Block retrieved
+[2025-03-05T16:32:32.051Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:32:32.065Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:32:32.343Z] INFO: Starting mining process
+[2025-03-05T16:32:32.347Z] INFO: Block mined successfully
+[2025-03-05T16:32:32.362Z] INFO: Starting mining process
+[2025-03-05T16:32:32.366Z] ERROR: Mining failed
+[2025-03-05T16:32:32.375Z] INFO: Mining stats retrieved
+[2025-03-05T16:32:32.384Z] ERROR: Failed to get mining stats
+[2025-03-05T16:56:22.122Z] INFO: New transaction created
+[2025-03-05T16:56:22.170Z] INFO: Getting pending transactions
+[2025-03-05T16:56:22.193Z] INFO: Transaction retrieved
+[2025-03-05T16:56:22.249Z] INFO: Wallet transactions retrieved
+[2025-03-05T16:56:22.575Z] INFO: Starting mining process
+[2025-03-05T16:56:22.580Z] INFO: Block mined successfully
+[2025-03-05T16:56:22.596Z] INFO: Starting mining process
+[2025-03-05T16:56:22.600Z] ERROR: Mining failed
+[2025-03-05T16:56:22.607Z] INFO: Mining stats retrieved
+[2025-03-05T16:56:22.617Z] ERROR: Failed to get mining stats
+[2025-03-05T16:56:22.984Z] INFO: Getting full blockchain
+[2025-03-05T16:56:23.000Z] ERROR: Failed to get blockchain
+[2025-03-05T16:56:23.010Z] INFO: Block retrieved
+[2025-03-05T16:56:23.030Z] INFO: Retrieved blockchain stats
+[2025-03-05T16:56:23.040Z] ERROR: Failed to get blockchain stats
+[2025-03-05T16:56:23.995Z] INFO: New wallet created
+[2025-03-05T16:56:24.297Z] INFO: New wallet created
+[2025-03-05T16:56:24.308Z] INFO: Retrieved all wallets
+[2025-03-05T16:56:24.320Z] INFO: Retrieving wallet info
+[2025-03-05T16:56:24.329Z] INFO: Retrieving wallet info
+[2025-03-05T17:53:44.086Z] INFO: New transaction created
+[2025-03-05T17:53:44.140Z] INFO: Getting pending transactions
+[2025-03-05T17:53:44.158Z] INFO: Transaction retrieved
+[2025-03-05T17:53:44.189Z] INFO: Wallet transactions retrieved
+[2025-03-05T17:53:44.447Z] INFO: Getting full blockchain
+[2025-03-05T17:53:44.466Z] ERROR: Failed to get blockchain
+[2025-03-05T17:53:44.480Z] INFO: Block retrieved
+[2025-03-05T17:53:44.504Z] INFO: Retrieved blockchain stats
+[2025-03-05T17:53:44.515Z] ERROR: Failed to get blockchain stats
+[2025-03-05T17:53:44.789Z] INFO: Starting mining process
+[2025-03-05T17:53:44.809Z] INFO: Block mined successfully
+[2025-03-05T17:53:44.840Z] INFO: Starting mining process
+[2025-03-05T17:53:44.844Z] ERROR: Mining failed
+[2025-03-05T17:53:44.859Z] INFO: Mining stats retrieved
+[2025-03-05T17:53:44.872Z] ERROR: Failed to get mining stats
+[2025-03-05T21:09:52.181Z] INFO: Starting mining process
+[2025-03-05T21:09:52.188Z] INFO: Block mined successfully
+[2025-03-05T21:09:52.218Z] INFO: Starting mining process
+[2025-03-05T21:09:52.222Z] ERROR: Mining failed
+[2025-03-05T21:09:52.231Z] INFO: Mining stats retrieved
+[2025-03-05T21:09:52.242Z] ERROR: Failed to get mining stats
+[2025-03-05T21:09:52.577Z] INFO: New transaction created
+[2025-03-05T21:09:52.599Z] INFO: Getting pending transactions
+[2025-03-05T21:09:52.615Z] INFO: Transaction retrieved
+[2025-03-05T21:09:52.636Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:09:52.906Z] INFO: Getting full blockchain
+[2025-03-05T21:09:53.141Z] ERROR: Failed to get blockchain
+[2025-03-05T21:09:53.196Z] INFO: Block retrieved
+[2025-03-05T21:09:53.220Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:09:53.231Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:09:54.430Z] INFO: New wallet created
+[2025-03-05T21:09:54.906Z] INFO: New wallet created
+[2025-03-05T21:09:54.922Z] INFO: Retrieved all wallets
+[2025-03-05T21:09:54.942Z] INFO: Retrieving wallet info
+[2025-03-05T21:09:54.955Z] INFO: Retrieving wallet info
+[2025-03-05T21:33:28.925Z] INFO: Getting full blockchain
+[2025-03-05T21:33:28.945Z] ERROR: Failed to get blockchain
+[2025-03-05T21:33:28.959Z] INFO: Block retrieved
+[2025-03-05T21:33:28.978Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:33:28.987Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:33:29.507Z] INFO: Starting mining process
+[2025-03-05T21:33:29.511Z] INFO: Block mined successfully
+[2025-03-05T21:33:29.527Z] INFO: Starting mining process
+[2025-03-05T21:33:29.530Z] ERROR: Mining failed
+[2025-03-05T21:33:29.538Z] INFO: Mining stats retrieved
+[2025-03-05T21:33:29.548Z] ERROR: Failed to get mining stats
+[2025-03-05T21:33:29.868Z] INFO: New transaction created
+[2025-03-05T21:33:29.897Z] INFO: Getting pending transactions
+[2025-03-05T21:33:29.908Z] INFO: Transaction retrieved
+[2025-03-05T21:33:29.925Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:40:14.615Z] INFO: Starting mining process
+[2025-03-05T21:40:14.622Z] INFO: Block mined successfully
+[2025-03-05T21:40:14.700Z] INFO: Starting mining process
+[2025-03-05T21:40:14.706Z] ERROR: Mining failed
+[2025-03-05T21:40:14.715Z] INFO: Mining stats retrieved
+[2025-03-05T21:40:14.724Z] ERROR: Failed to get mining stats
+[2025-03-05T21:40:14.958Z] INFO: New transaction created
+[2025-03-05T21:40:15.043Z] INFO: Getting pending transactions
+[2025-03-05T21:40:15.056Z] INFO: Transaction retrieved
+[2025-03-05T21:40:15.076Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:40:15.607Z] INFO: Getting full blockchain
+[2025-03-05T21:40:15.621Z] ERROR: Failed to get blockchain
+[2025-03-05T21:40:15.631Z] INFO: Block retrieved
+[2025-03-05T21:40:15.649Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:40:15.658Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:40:16.451Z] INFO: New wallet created
+[2025-03-05T21:40:16.785Z] INFO: New wallet created
+[2025-03-05T21:40:16.791Z] INFO: Retrieved all wallets
+[2025-03-05T21:40:16.803Z] INFO: Retrieving wallet info
+[2025-03-05T21:40:16.811Z] INFO: Retrieving wallet info
+[2025-03-05T21:44:18.341Z] INFO: New wallet created
+[2025-03-05T21:44:18.651Z] INFO: New wallet created
+[2025-03-05T21:44:18.666Z] INFO: Retrieved all wallets
+[2025-03-05T21:44:18.691Z] INFO: Retrieving wallet info
+[2025-03-05T21:44:18.715Z] INFO: Retrieving wallet info
+[2025-03-05T21:44:19.433Z] INFO: Getting full blockchain
+[2025-03-05T21:44:19.452Z] ERROR: Failed to get blockchain
+[2025-03-05T21:44:19.489Z] INFO: Block retrieved
+[2025-03-05T21:44:19.654Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:44:19.667Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:44:19.940Z] INFO: New transaction created
+[2025-03-05T21:44:19.955Z] INFO: Getting pending transactions
+[2025-03-05T21:44:19.964Z] INFO: Transaction retrieved
+[2025-03-05T21:44:19.978Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:44:20.202Z] INFO: Starting mining process
+[2025-03-05T21:44:20.209Z] INFO: Block mined successfully
+[2025-03-05T21:44:20.225Z] INFO: Starting mining process
+[2025-03-05T21:44:20.231Z] ERROR: Mining failed
+[2025-03-05T21:44:20.240Z] INFO: Mining stats retrieved
+[2025-03-05T21:44:20.248Z] ERROR: Failed to get mining stats
+[2025-03-05T21:48:38.517Z] INFO: New wallet created
+[2025-03-05T21:48:38.517Z] INFO: New wallet created
+[2025-03-05T21:48:38.517Z] INFO: Retrieved all wallets
+[2025-03-05T21:48:38.517Z] INFO: Retrieving wallet info
+[2025-03-05T21:48:38.517Z] INFO: Retrieving wallet info
+[2025-03-05T21:49:39.840Z] INFO: Getting full blockchain
+[2025-03-05T21:49:39.840Z] ERROR: Failed to get blockchain
+[2025-03-05T21:49:39.840Z] INFO: Block retrieved
+[2025-03-05T21:49:39.840Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:49:39.840Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:50:10.231Z] INFO: New transaction created
+[2025-03-05T21:50:10.231Z] INFO: Getting pending transactions
+[2025-03-05T21:50:10.231Z] INFO: Transaction retrieved
+[2025-03-05T21:50:10.231Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:50:40.650Z] INFO: Starting mining process
+[2025-03-05T21:50:40.650Z] INFO: Block mined successfully
+[2025-03-05T21:50:40.650Z] INFO: Starting mining process
+[2025-03-05T21:50:40.650Z] ERROR: Mining failed
+[2025-03-05T21:50:40.650Z] INFO: Mining stats retrieved
+[2025-03-05T21:50:40.650Z] ERROR: Failed to get mining stats
+[2025-03-05T21:55:58.739Z] INFO: New wallet created
+[2025-03-05T21:55:58.739Z] INFO: New wallet created
+[2025-03-05T21:55:58.739Z] INFO: Retrieving wallet info
+[2025-03-05T21:55:58.739Z] INFO: Retrieving wallet info
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve error logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve error logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve info logs
+[2025-03-05T21:55:59.974Z] ERROR: Failed to retrieve info logs
+[2025-03-05T21:56:00.244Z] INFO: New transaction created
+[2025-03-05T21:56:00.244Z] INFO: Getting pending transactions
+[2025-03-05T21:56:00.244Z] INFO: Transaction retrieved
+[2025-03-05T21:56:00.244Z] INFO: Wallet transactions retrieved
+[2025-03-05T21:56:00.493Z] INFO: Getting full blockchain
+[2025-03-05T21:56:00.493Z] ERROR: Failed to get blockchain
+[2025-03-05T21:56:00.493Z] INFO: Block retrieved
+[2025-03-05T21:56:00.493Z] INFO: Retrieved blockchain stats
+[2025-03-05T21:56:00.493Z] ERROR: Failed to get blockchain stats
+[2025-03-05T21:56:00.665Z] INFO: Starting mining process
+[2025-03-05T21:56:00.665Z] INFO: Block mined successfully
+[2025-03-05T21:56:00.665Z] INFO: Starting mining process
+[2025-03-05T21:56:00.665Z] ERROR: Mining failed
+[2025-03-05T21:56:00.665Z] INFO: Mining stats retrieved
+[2025-03-05T21:56:00.665Z] ERROR: Failed to get mining stats

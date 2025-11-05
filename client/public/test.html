@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VigCoin API Test</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .endpoint-test {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .test-log {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-indicator.pending {
+            background-color: #ffc107;
+        }
+
+        .status-indicator.success {
+            background-color: #28a745;
+        }
+
+        .status-indicator.error {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div id="connection-status">Initializing...</div>
+    </div>
+
+    <!-- Test Results -->
+    <div class="container">
+        <div class="test-container">
+            <h1>VigCoin API Test</h1>
+            
+            <div class="endpoint-test">
+                <h3>API Connection Status</h3>
+                <div id="test-result" class="pending">Running connectivity tests...</div>
+            </div>
+
+            <div class="endpoint-test">
+                <h3>Test Log</h3>
+                <div id="test-log" class="test-log">Initializing tests...</div>
+            </div>
+
+            <div class="endpoint-test">
+                <h3>Manual Test</h3>
+                <button id="run-test">Run Tests Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="connection-monitor.js?v=3"></script>
+    <script>
+        // Override console.log to also update UI
+        const testLog = document.getElementById('test-log');
+        const originalConsole = {
+            log: console.log,
+            error: console.error,
+            group: console.group,
+            groupEnd: console.groupEnd
+        };
+
+        console.log = function(...args) {
+            originalConsole.log.apply(console, args);
+            testLog.textContent += args.join(' ') + '\n';
+        };
+
+        console.error = function(...args) {
+            originalConsole.error.apply(console, args);
+            testLog.textContent += '❌ ' + args.join(' ') + '\n';
+        };
+
+        console.group = function(label) {
+            originalConsole.group.call(console, label);
+            testLog.textContent += `\n=== ${label} ===\n`;
+        };
+
+        console.groupEnd = function() {
+            originalConsole.groupEnd.call(console);
+            testLog.textContent += '\n';
+        };
+
+        // Run test when button is clicked
+        document.getElementById('run-test').addEventListener('click', () => {
+            testLog.textContent = ''; // Clear previous logs
+            testApiConnectivity();
+        });
+    </script>
+    <script src="test.js?v=3"></script>
+</body>
+</html>
